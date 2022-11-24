@@ -111,6 +111,12 @@ export const MENUITEMS = [
 
                 ]
             },
+            {
+                title: 'Crieteria', icon: BarChart, type: 'sub', active: false, children: [
+                    { path: `${process.env.PUBLIC_URL}/form-widget/switch`, type: 'link', title: 'Signup Crieteria' },
+                    { path: `${process.env.PUBLIC_URL}/form-widget/switch`, type: 'link', title: 'Add ETH Amount' }
+                ]
+            },
         ]
     },
     {

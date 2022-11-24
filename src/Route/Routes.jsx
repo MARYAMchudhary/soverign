@@ -194,16 +194,16 @@ export const routes = [
         { path: `${process.env.PUBLIC_URL}/dashboard/default`, Component: <Default /> },
         { path: `${process.env.PUBLIC_URL}/dashboard/ecommerce`, Component: <Ecommerce /> },
 
-        // //widgets
+        //widgets
         { path: `${process.env.PUBLIC_URL}/widgets/general`, Component: <General /> },
         { path: `${process.env.PUBLIC_URL}/widgets/chart`, Component: <Chart /> },
 
-        // //page-layout
+        //page-layout
         { path: `${process.env.PUBLIC_URL}/page-layout/footer-light`, Component: <FooterLight /> },
         { path: `${process.env.PUBLIC_URL}/page-layout/footer-fixed`, Component: <FooterFixed /> },
         { path: `${process.env.PUBLIC_URL}/page-layout/footer-dark`, Component: <FooterDark /> },
 
-        // //ui-kits
+        //ui-kits
         { path: `${process.env.PUBLIC_URL}/ui-kits/typography` , Component: <Typography /> },
         { path: `${process.env.PUBLIC_URL}/ui-kits/avatars` , Component: <Avatars /> },
         { path: `${process.env.PUBLIC_URL}/ui-kits/helper-classes` , Component: <HelperClasses /> },
