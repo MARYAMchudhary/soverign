@@ -2,12 +2,6 @@ import { Home, Airplay, Box, FolderPlus, Command, Cloud, BarChart, Users, Shoppi
 
 export const MENUITEMS = [
     {
-        menutitle: 'Admin Pages',
-        Items: [
-            { path: `${process.env.PUBLIC_URL}/admin-pages/welcome-message`, icon: Heart, type: 'link', title: 'Welcome Message' },
-        ]
-    },
-    {
         menutitle: 'General',
         menucontent: 'Dashboards,Widgets',
         Items: [
