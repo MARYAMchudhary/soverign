@@ -193,6 +193,7 @@ import FAQContent from "../Components/FAQ";
 export const routes = [
   //dashboard
 
+<<<<<<< HEAD
   {
     path: `/dashboard/slider`,
     Component: <Slidersection />,
@@ -228,6 +229,36 @@ export const routes = [
     path: `${process.env.PUBLIC_URL}/page-layout/footer-dark`,
     Component: <FooterDark />,
   },
+=======
+        //widgets
+        { path: `${process.env.PUBLIC_URL}/widgets/general`, Component: <General /> },
+        { path: `${process.env.PUBLIC_URL}/widgets/chart`, Component: <Chart /> },
+
+        //page-layout
+        { path: `${process.env.PUBLIC_URL}/page-layout/footer-light`, Component: <FooterLight /> },
+        { path: `${process.env.PUBLIC_URL}/page-layout/footer-fixed`, Component: <FooterFixed /> },
+        { path: `${process.env.PUBLIC_URL}/page-layout/footer-dark`, Component: <FooterDark /> },
+
+        //ui-kits
+        { path: `${process.env.PUBLIC_URL}/ui-kits/typography` , Component: <Typography /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/avatars` , Component: <Avatars /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/helper-classes` , Component: <HelperClasses /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/grid` , Component: <Grid /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/tag-pills` , Component: <TagAndPills /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/progress` , Component: <Progressbars /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/modal` , Component: <Modals /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/alert` , Component: <Alert /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/popover` , Component: <Popover /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/tooltip` , Component: <Tooltips /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/spinners` , Component: <Spinners /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/dropdown` , Component: <Dropdowns /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/accordion` , Component: <Accordian /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/tab-bootstrap` , Component: <TabBootstrap /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/line-tabs` , Component: <TabLine /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/navs` , Component: <Navs /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/shadow` , Component: <Shadow /> },
+        { path: `${process.env.PUBLIC_URL}/ui-kits/lists` , Component: <List /> },
+>>>>>>> 81581c676f97fd27d665bab7ede3cdf76545563f
 
   // //ui-kits
   {

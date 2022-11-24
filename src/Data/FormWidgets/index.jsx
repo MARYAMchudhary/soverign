@@ -38,38 +38,33 @@ export const Switchcolor = [
 ];
 
 export const BasicSwitchData = [
+    
     {
-        id: 1,
-        title: 'Default Switch',
-        mediaclass: 'text-end'
-    },
-    {
-        id: 2,
-        title: 'Unhecked Switch',
-        mediaclass: 'text-end'
-    },
-    {
-        id: 3,
-        title: 'With Icon',
+        id: 4,
+        title: 'Hold that BEP20.',
         mediaclass: 'text-end icon-state'
     },
     {
         id: 4,
-        title: 'Unhecked With Icon',
+        title: 'Hold that ERC20.',
         mediaclass: 'text-end icon-state'
     },
     {
-        id: 5,
-        title: 'Disabled State',
-        mediaclass: 'text-end',
-        disabled: true
+        id: 4,
+        title: 'Hold that ERC 721 contract.',
+        mediaclass: 'text-end icon-state'
     },
     {
-        id: 6,
-        title: 'Disabled With Icon',
-        mediaclass: 'text-end icon-state',
-        disabled: true
-    }
+        id: 4,
+        title: 'Twitter follow verification.',
+        mediaclass: 'text-end icon-state'
+    },
+    {
+        id: 4,
+        title: 'Must have .005 eth in wallet.',
+        mediaclass: 'text-end icon-state'
+    },
+    
 ];
 
 export const Switchwithcolor = [
