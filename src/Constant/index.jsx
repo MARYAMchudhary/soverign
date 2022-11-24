@@ -1,3 +1,16 @@
+// !HOME PAGE TITILE HEADING
+export const Homepage='Add heading';
+export const Addtext='Add text';
+export const PriorityData='Priority Number';
+export const BtnText='Btn  Text';
+export const BtnUrl='Btn  Url';
+export const UploadFiles = "Upload file";
+export const SliderHeading = "Slider List";
+
+
+
+
+
 export const Dashboard = 'Dashboard';
 export const Widgets = 'Widgets';
 export const Summary = 'Summary';
