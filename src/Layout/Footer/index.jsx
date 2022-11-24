@@ -12,7 +12,7 @@ const FooterClass = () => {
         <Container fluid={true}>
           <Row>
             <Col md="6" className="footer-copyright">
-              <P attrPara={{ className: 'mb-0' }} >{'Copyright 2021-22 © viho All rights reserved.'}</P>
+              <P attrPara={{ className: 'mb-0' }} >{'Copyright 2021-22 © Sovereign All rights reserved.'}</P>
             </Col>
             <Col md="6">
               <P attrPara={{ className: 'pull-right mb-0' }} >Hand crafted & made with <i className="fa fa-heart font-secondary"></i></P>
