@@ -3,6 +3,12 @@ import Slidersection from "../Components/Application/Homepage/Slidersection";
 import SliderList from "../Components/Application/Homepage/SliderList/SliderList";
 import Default from "../Components/Dashboard/Default";
 import Ecommerce from "../Components/Dashboard/Ecommerce";
+import Addlogo from "../Components/Application/BasicSetting/Addlogo";
+import AddSocial_Links from "../Components/Application/BasicSetting/AddSocial_Links";
+import AddwebsiteTitle from "../Components/Application/BasicSetting/AddwebsiteTitle";
+import AddFavicon from "../Components/Application/BasicSetting/AddFavicon";
+import AboutUs_page from "../Components/Application/AboutUsPage/AboutUs_page";
+import AddCrew from "../Components/Application/AboutUsPage/Add Crew";
 
 //widgets
 import Chart from "../Components/Widgets/Chart";
@@ -189,6 +195,8 @@ import FormSwitchContain from "../Components/Forms/FormWidget/FormSwitch";
 import FormTouchspinContain from "../Components/Forms/FormWidget/FormTouchspin";
 import FormClipboardContain from "../Components/Forms/FormWidget/FormClipboard";
 import FAQContent from "../Components/FAQ";
+import CrewList from "../Components/Application/AboutUsPage/CrewList/CrewList";
+
 
 //Admin Pages
 import WelcomeMessage from '../Components/AdminPages/WelcomeMessage';
@@ -211,6 +219,16 @@ export const routes = [
     path: `/dashboard/sliderlist`,
     Component: <SliderList />,
   },
+  {
+    path: `/dashboard/add-logo`,
+    Component: <Addlogo />,
+  },
+  { path: `/dashboard/add-social-links`, Component: <AddSocial_Links /> },
+  { path: `/dashboard/add-web-title`, Component: <AddwebsiteTitle /> },
+  { path: `/dashboard/add-fav-icon`, Component: <AddFavicon /> },
+  { path: `/dashboard/aboutus-data`, Component: <AboutUs_page /> },
+  { path: `/dashboard/addcrew`, Component: <AddCrew /> },
+  { path: `/dashboard/crewlist`, Component: <CrewList /> },
 
   {
     path: `${process.env.PUBLIC_URL}/dashboard/default`,
@@ -238,34 +256,6 @@ export const routes = [
     path: `${process.env.PUBLIC_URL}/page-layout/footer-dark`,
     Component: <FooterDark />,
   },
-  //widgets
-  { path: `${process.env.PUBLIC_URL}/widgets/general`, Component: <General /> },
-  { path: `${process.env.PUBLIC_URL}/widgets/chart`, Component: <Chart /> },
-
-  //page-layout
-  { path: `${process.env.PUBLIC_URL}/page-layout/footer-light`, Component: <FooterLight /> },
-  { path: `${process.env.PUBLIC_URL}/page-layout/footer-fixed`, Component: <FooterFixed /> },
-  { path: `${process.env.PUBLIC_URL}/page-layout/footer-dark`, Component: <FooterDark /> },
-
-  //ui-kits
-  { path: `${process.env.PUBLIC_URL}/ui-kits/typography`, Component: <Typography /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/avatars`, Component: <Avatars /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/helper-classes`, Component: <HelperClasses /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/grid`, Component: <Grid /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/tag-pills`, Component: <TagAndPills /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/progress`, Component: <Progressbars /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/modal`, Component: <Modals /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/alert`, Component: <Alert /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/popover`, Component: <Popover /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/tooltip`, Component: <Tooltips /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/spinners`, Component: <Spinners /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/dropdown`, Component: <Dropdowns /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/accordion`, Component: <Accordian /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/tab-bootstrap`, Component: <TabBootstrap /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/line-tabs`, Component: <TabLine /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/navs`, Component: <Navs /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/shadow`, Component: <Shadow /> },
-  { path: `${process.env.PUBLIC_URL}/ui-kits/lists`, Component: <List /> },
 
   // //ui-kits
   {

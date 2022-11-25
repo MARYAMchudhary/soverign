@@ -6,7 +6,22 @@ export const BtnText='Btn  Text';
 export const BtnUrl='Btn  Url';
 export const UploadFiles = "Upload file";
 export const SliderHeading = "Slider List";
+//!Basic Setting
 
+export const Facebookheading = "Facebook Link";
+export const Instagramheading = "Instagram Link";
+export const Discordheading = "Discord Link";
+export const Twitterheading = "Twitter Link";
+export const Telegramheading = "Telegram Link";
+export const Whatsappheading = "Whatsapp Link";
+export const Githubheading = " Github Link";
+export const WebHeading = "Add Website Title";
+export const AboutUsText = "Add About Us Heading";
+export const AboutUsEditor = "Add About Us Text";
+export const AddMeetName = "Add Meet Crew Name";
+export const AddMeetTitle = "Add Meet Crew Title ";
+export const AddMeetTwitter = "Add Meet Crew Twitter";
+export const AboutUsImage = "Add Meet Crew Image";
 
 
 

@@ -1,5 +1,5 @@
 import Btn from './CommonElements/Button';
-import H1 from './CommonElements/Headings/H1Element';
+import H1  from './CommonElements/Headings/H1Element';
 import H2 from './CommonElements/Headings/H2Element';
 import H3 from './CommonElements/Headings/H3Element';
 import H4 from './CommonElements/Headings/H4Element';
