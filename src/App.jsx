@@ -23,6 +23,8 @@ import FaqProvider from './_helper/Faq/FaqProvider';
 import AnimationThemeProvider from './_helper/AnimationTheme/AnimationThemeProvider';
 import CustomizerProvider from './_helper/Customizer/CustomizerProvider';
 
+global.backendUrl = 'https://sovereignbackend.unialsolutions.com'
+
 const App = () => (
   <div className="App">
     <CustomizerProvider>

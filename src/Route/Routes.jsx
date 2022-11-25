@@ -198,7 +198,15 @@ import FAQContent from "../Components/FAQ";
 import CrewList from "../Components/Application/AboutUsPage/CrewList/CrewList";
 
 
+//Book mark
+import WelcomeMessage from '../Components/AdminPages/WelcomeMessage';
+
 export const routes = [
+  // welcome-message
+  { path: `${process.env.PUBLIC_URL}/admin-pages/welcome-message`, Component: <WelcomeMessage /> },
+  //dashboard
+  { path: `${process.env.PUBLIC_URL}/dashboard/default`, Component: <Default /> },
+  { path: `${process.env.PUBLIC_URL}/dashboard/ecommerce`, Component: <Ecommerce /> },
   //dashboard
 
   {
