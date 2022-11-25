@@ -9,8 +9,7 @@ function AddwebHeading({ register, errors }) {
         <Col>
           <FormGroup>
             <Label>{WebHeading}</Label>
-                      <input
-                          
+            <input
               className="form-control"
               type="text"
               name="title"

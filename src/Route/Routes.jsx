@@ -9,7 +9,11 @@ import AddwebsiteTitle from "../Components/Application/BasicSetting/AddwebsiteTi
 import AddFavicon from "../Components/Application/BasicSetting/AddFavicon";
 import AboutUs_page from "../Components/Application/AboutUsPage/AboutUs_page";
 import AddCrew from "../Components/Application/AboutUsPage/Add Crew";
-
+import Daoform from "../Components/Application/Dao/Daoform";
+import Faq from "../Components/Application/FrequentlyAskedQ/Faq";
+import FaqList from "../Components/Application/FrequentlyAskedQ/FaqList";
+import AddCrmForm from "../Components/Application/CRM/AddCrmForm";
+import CrmList from "../Components/Application/CRM/CrmList";
 //widgets
 import Chart from "../Components/Widgets/Chart";
 import General from "../Components/Widgets/General";
@@ -200,14 +204,29 @@ import CrewList from "../Components/Application/AboutUsPage/CrewList/CrewList";
 
 //Book mark
 import WelcomeMessage from '../Components/AdminPages/WelcomeMessage';
+import MakeGroups from "../Components/Application/CRM/MakeGroup/MakeGroups";
+import AssignEmailToGroups from "../Components/Application/CRM/MakeGroup/AssignEmailGroups/AssignEmailToGroups";
+import ViewEmails from "../Components/Application/CRM/ViewEmails/ViewEmails";
+import RunCompagins from "../Components/Application/CRM/RunCompagins/RunCompagins";
+import LogScreen from "../Components/Application/CRM/LogScreen/LogScreen";
+
+
 
 export const routes = [
   // welcome-message
-  { path: `${process.env.PUBLIC_URL}/admin-pages/welcome-message`, Component: <WelcomeMessage /> },
+  {
+    path: `${process.env.PUBLIC_URL}/admin-pages/welcome-message`,
+    Component: <WelcomeMessage />,
+  },
   //dashboard
-  { path: `${process.env.PUBLIC_URL}/dashboard/default`, Component: <Default /> },
-  { path: `${process.env.PUBLIC_URL}/dashboard/ecommerce`, Component: <Ecommerce /> },
-  //dashboard
+  {
+    path: `${process.env.PUBLIC_URL}/dashboard/default`,
+    Component: <Default />,
+  },
+  {
+    path: `${process.env.PUBLIC_URL}/dashboard/ecommerce`,
+    Component: <Ecommerce />,
+  },
 
   {
     path: `/dashboard/slider`,
@@ -227,15 +246,16 @@ export const routes = [
   { path: `/dashboard/aboutus-data`, Component: <AboutUs_page /> },
   { path: `/dashboard/addcrew`, Component: <AddCrew /> },
   { path: `/dashboard/crewlist`, Component: <CrewList /> },
-
-  {
-    path: `${process.env.PUBLIC_URL}/dashboard/default`,
-    Component: <Default />,
-  },
-  {
-    path: `${process.env.PUBLIC_URL}/dashboard/ecommerce`,
-    Component: <Ecommerce />,
-  },
+  { path: `/dashboard/deoform`, Component: <Daoform /> },
+  { path: `/dashboard/faq`, Component: <Faq /> },
+  { path: `/dashboard/faqlist`, Component: <FaqList /> },
+  { path: `/dashboard/crm-form`, Component: <AddCrmForm /> },
+  { path: `/dashboard/crm-list`, Component: <CrmList /> },
+  { path: `/dashboard/make-group`, Component: <MakeGroups /> },
+  { path: `/dashboard/assign-email`, Component: <AssignEmailToGroups /> },
+  { path: `/dashboard/view-email`, Component: <ViewEmails /> },
+  { path: `/dashboard/run-compagin`, Component: <RunCompagins /> },
+  { path: `/dashboard/log-screen`, Component: <LogScreen /> },
 
   // //widgets
   { path: `${process.env.PUBLIC_URL}/widgets/general`, Component: <General /> },
