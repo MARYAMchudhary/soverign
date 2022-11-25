@@ -33,13 +33,15 @@ import {
     File,
     Layers,
     UserCheck,
+    Clipboard
 } from "react-feather";
 
 export const MENUITEMS = [
     {
         menutitle: 'Admin Pages',
         Items: [
-            { path: `${process.env.PUBLIC_URL}/admin-pages/welcome-message`, icon: Heart, type: 'link', title: 'Welcome Message' },
+            { path: `${process.env.PUBLIC_URL}/admin-pages/welcome-message`, icon: Clipboard, type: 'link', title: 'Welcome Message' },
+            { path: `${process.env.PUBLIC_URL}/admin-pages/email-credentials`, icon: Mail, type: 'link', title: 'Email Credentials' },
         ]
     },
     {

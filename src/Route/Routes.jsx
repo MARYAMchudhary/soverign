@@ -190,12 +190,14 @@ import FormTouchspinContain from "../Components/Forms/FormWidget/FormTouchspin";
 import FormClipboardContain from "../Components/Forms/FormWidget/FormClipboard";
 import FAQContent from "../Components/FAQ";
 
-//Book mark
+//Admin Pages
 import WelcomeMessage from '../Components/AdminPages/WelcomeMessage';
+import EmailCredentials from '../Components/AdminPages/EmailCredentials';
 
 export const routes = [
   // welcome-message
   { path: `${process.env.PUBLIC_URL}/admin-pages/welcome-message`, Component: <WelcomeMessage /> },
+  { path: `${process.env.PUBLIC_URL}/admin-pages/email-credentials`, Component: <EmailCredentials /> },
   //dashboard
   { path: `${process.env.PUBLIC_URL}/dashboard/default`, Component: <Default /> },
   { path: `${process.env.PUBLIC_URL}/dashboard/ecommerce`, Component: <Ecommerce /> },
