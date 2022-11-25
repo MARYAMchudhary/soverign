@@ -50,8 +50,48 @@ export const MENUITEMS = [
           { path: `/dashboard/sliderlist`, title: "Slider List", type: "link" },
         ],
       },
-      
+      //Basic setting
+      {
+        title: "Basic Setting",
+        icon: Home,
+        type: "sub",
+        active: false,
+        children: [
+          { path: `/dashboard/add-logo`, title: "Add Logo", type: "link" },
+          {
+            path: `/dashboard/add-social-links`,
+            title: "Add SocialLinks",
+            type: "link",
+          },
+          {
+            path: `/dashboard/add-web-title`,
+            title: "Add WebsiteTitle",
+            type: "link",
+          },
+          {
+            path: `/dashboard/add-fav-icon`,
+            title: "Add FavIcon",
+            type: "link",
+          },
+        ],
+      },
 
+      //Aboout us
+      {
+        title: "About Us",
+        icon: Home,
+        type: "sub",
+        active: false,
+        children: [
+          {
+            path: `/dashboard/aboutus-data`,
+            title: "About Us Text",
+            type: "link",
+          },
+          { path: `/dashboard/addcrew`, title: "Add Crew", type: "link" },
+          { path: `/dashboard/crewlist`, title: " Crew List", type: "link" },
+        ],
+      },
       {
         title: "Dashboard",
         icon: Home,
@@ -1125,229 +1165,4 @@ export const MENUITEMS = [
       },
     ],
   },
-                ]
-            },
-            {
-                title: 'Crieteria', icon: BarChart, type: 'sub', active: false, children: [
-                    { path: `${process.env.PUBLIC_URL}/form-widget/switch`, type: 'link', title: 'Signup Crieteria' },
-                    { path: `${process.env.PUBLIC_URL}/form-widget/switch`, type: 'link', title: 'Add ETH Amount' }
-                ]
-            },
-        ]
-    },
-    {
-        menutitle: 'Forms',
-        Items: [
-            {
-                title: ' Form Controls ', icon: Sliders, type: 'sub', children: [
-                    { title: 'Form Validation', type: 'link', path: `${process.env.PUBLIC_URL}/forms/formValidation` },
-                    { title: 'Basic Input', type: 'link', path: `${process.env.PUBLIC_URL}/forms/baseInput` },
-                    { title: 'Checkbox & Radio', type: 'link', path: `${process.env.PUBLIC_URL}/forms/radio-checkbox` },
-                    { title: 'Input Groups', type: 'link', path: `${process.env.PUBLIC_URL}/forms/inputGroup` },
-                    { title: 'Mega Option', type: 'link', path: `${process.env.PUBLIC_URL}/forms/megaOptions` },
-
-                ]
-            },
-            {
-                title: 'Form Widgets', icon: Package, type: 'sub', children: [
-                    { title: 'Datepicker', type: 'link', path: `${process.env.PUBLIC_URL}/form-widget/datepicker` },
-                    { title: 'Timepicker', type: 'link', path: `${process.env.PUBLIC_URL}/form-widget/timepicker` },
-                    { title: 'Typeahead', type: 'link', path: `${process.env.PUBLIC_URL}/form-widget/typeahead` },
-                    { title: 'Date Time Picker', type: 'link', path: `${process.env.PUBLIC_URL}/form-widget/datetimepicker` },
-                    { title: 'Date Rangepicker', type: 'link', path: `${process.env.PUBLIC_URL}/form-widget/rangepicker` },
-                    { title: 'TouchSpin', type: 'link', path: `${process.env.PUBLIC_URL}/form-widget/touchspin` },
-                    { title: 'Select 2', type: 'link', path: `${process.env.PUBLIC_URL}/form-widget/select2` },
-                    { title: 'Switch', type: 'link', path: `${process.env.PUBLIC_URL}/form-widget/switch` },
-                    { title: 'ClipBoard', type: 'link', path: `${process.env.PUBLIC_URL}/form-widget/clipBoard` },
-                ]
-            },
-            {
-                title: 'Form Layout', icon: Layout, type: 'sub', children: [
-                    { path: `${process.env.PUBLIC_URL}/form-layout/formDefault`, title: 'Form Default', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/form-layout/formWizard`, title: 'Form Wizard', type: 'link' }
-                ]
-            },
-        ]
-    },
-    {
-        menutitle: 'Table',
-        Items: [
-            {
-                title: 'Bootstrap Table ', icon: Server, type: 'sub', children: [
-                    { title: 'Basic Table', type: 'link', path: `${process.env.PUBLIC_URL}/table/basic` },
-                    { title: 'Sizing Table', type: 'link', path: `${process.env.PUBLIC_URL}/table/sizing` },
-                    { title: 'Border Table', type: 'link', path: `${process.env.PUBLIC_URL}/table/border` },
-                    { title: 'Styling Table', type: 'link', path: `${process.env.PUBLIC_URL}/table/styling` },
-                ]
-            },
-            {
-                title: 'Data Tables', icon: Database, type: 'link', path: `${process.env.PUBLIC_URL}/table/data-table`
-            },
-        ]
-    },
-    {
-        menutitle: 'Applications',
-        Items: [
-            {
-                title: 'Project', icon: Box, type: 'sub', active: false, children: [
-                    { path: `${process.env.PUBLIC_URL}/app/project/project-list`, type: 'link', title: 'Project List' },
-                    { path: `${process.env.PUBLIC_URL}/app/project/new-project`, type: 'link', title: 'Create New' }
-                ]
-            },
-            {
-                title: 'Ecommerce', icon: ShoppingBag, type: 'sub', active: false, children: [
-                    { path: `${process.env.PUBLIC_URL}/app/ecommerce/product`, title: 'Product', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/ecommerce/product-page/1`, title: 'Product Page', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/ecommerce/product-list`, title: 'Product List', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/ecommerce/payment-details`, title: 'Payment Detail', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/ecommerce/orderhistory`, title: 'Order History', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/ecommerce/pricing`, title: 'Pricing', type: 'link' },
-                ]
-            },
-            {
-                title: 'Users', icon: Users, path: `${process.env.PUBLIC_URL}/app/users/userProfile`, type: 'sub', bookmark: true, active: false, children: [
-                    { path: `${process.env.PUBLIC_URL}/app/users/userProfile`, type: 'link', title: 'Users Profile ' },
-                    { path: `${process.env.PUBLIC_URL}/app/users/userEdit`, type: 'link', title: 'Users Edit' },
-                    { path: `${process.env.PUBLIC_URL}/app/users/userCards`, type: 'link', title: 'Users Cards' },
-                ]
-            },
-            {
-                title: 'Calender', icon: Calendar, type: 'sub', active: false, children: [
-                    { path: `${process.env.PUBLIC_URL}/app/calendar/basic-calendar`, bookmark: true, type: 'link', title: 'Calender' },
-                    { path: `${process.env.PUBLIC_URL}/app/calendar/draggable-calendar`, type: 'link', title: 'Draggable' },
-                ]
-            },
-            {
-                icon: List, type: 'sub', title: 'Contacts', children: [
-                    { path: `${process.env.PUBLIC_URL}/app/contact-firebase`, type: 'link', title: 'Contact with Firebase' },
-                    { path: `${process.env.PUBLIC_URL}/app/contact`, type: 'link', title: 'Contact' }
-                ]
-            },
-            {
-                bookmark: true, icon: MessageCircle, title: 'Chat', type: 'sub', children: [
-                    { path: `${process.env.PUBLIC_URL}/app/chat-app`, type: 'link', title: 'Chat-app' },
-                    { path: `${process.env.PUBLIC_URL}/app/chat-video-app`, type: 'link', title: 'Chat-video-app' }
-                ]
-            },
-            {
-                icon: Mail, title: 'Email-app', type: 'sub', children: [
-                    { path: `${process.env.PUBLIC_URL}/app/email/mailbox`, type: 'link', title: 'Mail Box' },
-                    { path: `${process.env.PUBLIC_URL}/app/email/readmail`, type: 'link', title: 'Read Mail' },
-                    { path: `${process.env.PUBLIC_URL}/app/email/compose`, type: 'link', title: 'Compose' },
-                ]
-            },
-            { path: `${process.env.PUBLIC_URL}/app/file-manager`, icon: GitPullRequest, title: 'File Manager', type: 'link' },
-            { path: `${process.env.PUBLIC_URL}/app/kanban-board`, icon: Monitor, badge: 'badge badge-info text-light mb-0', badgetxt: 'latest', title: 'Kanban Board', type: 'link' },
-            { path: `${process.env.PUBLIC_URL}/app/bookmark`, icon: Heart, type: 'link', title: 'Bookmark' },
-            { path: `${process.env.PUBLIC_URL}/app/task`, icon: CheckSquare, type: 'link', title: 'Task' },
-            { path: `${process.env.PUBLIC_URL}/app/social-app`, bookmark: true, icon: Zap, type: 'link', title: 'Social App' },
-            { path: `${process.env.PUBLIC_URL}/app/todo`, icon: Clock, type: 'link', title: 'To-Do' },
-            { path: `${process.env.PUBLIC_URL}/app/todo-firebase`, icon: Clock, type: 'link', title: 'To-Do-Firebase' },
-            { path: `${process.env.PUBLIC_URL}/app/search-result`, icon: Search, type: 'link', title: 'Seach Result' },
-
-        ]
-    },
-    {
-        menutitle: 'Pages',
-        Items: [
-            {
-                title: 'Sample Page', icon: File, type: 'link', path: `${process.env.PUBLIC_URL}/pages/sample-page`
-            },
-            {
-                title: 'Others', icon: Layers, type: 'sub', children: [
-                    {
-                        title: 'Error Pages', type: 'sub', children: [
-                            { title: 'Error Page 1', type: 'link', path: `${process.env.PUBLIC_URL}/pages/error/error-page1` },
-                            { title: 'Error Page 2', type: 'link', path: `${process.env.PUBLIC_URL}/pages/error/error-page2` },
-                            { title: 'Error Page 3', type: 'link', path: `${process.env.PUBLIC_URL}/pages/error/error-page3` },
-                            { title: 'Error Page 4', type: 'link', path: `${process.env.PUBLIC_URL}/pages/error/error-page4` }
-                        ]
-                    },
-                    {
-                        title: 'Authentication', type: 'sub', children: [
-                            { title: 'Login Simple', type: 'link', path: `${process.env.PUBLIC_URL}/pages/authentication/login-simple` },
-                            { title: 'Login with bg image', type: 'link', path: `${process.env.PUBLIC_URL}/pages/authentication/login-bg-img` },
-                            { title: 'Login with image two', type: 'link', path: `${process.env.PUBLIC_URL}/pages/authentication/login-img` },
-                            { title: 'Login with validation', type: 'link', path: `${process.env.PUBLIC_URL}/pages/authentication/login-validation` },
-                            { title: 'Login with tooltip', type: 'link', path: `${process.env.PUBLIC_URL}/pages/authentication/login-tooltip` },
-                            { title: 'Login with sweetalert', type: 'link', path: `${process.env.PUBLIC_URL}/pages/authentication/login-sweetalert` },
-                            { title: 'Register Simple', type: 'link', path: `${process.env.PUBLIC_URL}/pages/authentication/register-simple` },
-                            { title: 'Register with Bg Image', type: 'link', path: `${process.env.PUBLIC_URL}/pages/authentication/register-bg-img` },
-                            { title: 'Register with Bg Video', type: 'link', path: `${process.env.PUBLIC_URL}/pages/authentication/register-video` },
-                            { title: 'Unloack User', type: 'link', path: `${process.env.PUBLIC_URL}/pages/authentication/unlock-user` },
-                            { title: 'Forget Password', type: 'link', path: `${process.env.PUBLIC_URL}/pages/authentication/forget-pwd` },
-                            { title: 'Creat Password', type: 'link', path: `${process.env.PUBLIC_URL}/pages/authentication/create-pwd` },
-                            { title: 'Maintenance', type: 'link', path: `${process.env.PUBLIC_URL}/pages/authentication/maintenance` },
-
-                        ]
-                    },
-                    {
-                        title: 'Coming Soon', type: 'sub', children: [
-                            { title: 'Coming Simple', type: 'link', path: `${process.env.PUBLIC_URL}/pages/coming/coming-simple` },
-                            { title: 'Coming with Bg Video', type: 'link', path: `${process.env.PUBLIC_URL}/pages/coming/coming-bg-video` },
-                            { title: 'Coming with bg Image', type: 'link', path: `${process.env.PUBLIC_URL}/pages/coming/coming-bg-img` },
-                        ]
-                    }
-                ]
-            },
-        ]
-    },
-    {
-        menutitle: 'Miscellaneous',
-        Items: [
-            {
-                title: 'Gallery', icon: Image, type: 'sub', active: false, children: [
-                    { path: `${process.env.PUBLIC_URL}/app/gallery/imageGallery`, title: 'Gallery Grid ', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/gallery/imageWithDesc`, title: 'Gallery Grid  Desc ', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/gallery/mesonryGallery`, title: 'Masonry Gallery', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/gallery/mesonryDesc`, title: 'Masonry With Desc', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/gallery/imageHover`, title: 'Hover Effect', type: 'link' }
-                ]
-            },
-            {
-                title: 'Blog', icon: Edit, type: 'sub', active: false, children: [
-                    { path: `${process.env.PUBLIC_URL}/app/blog/blogDetail`, title: 'Blog Details', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/blog/blogSingle`, title: 'Blog Single', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/blog/blogPost`, title: 'Add Post', type: 'link' },
-                ]
-            },
-            {
-                title: 'Job Search', icon: UserCheck, type: 'sub', active: false, children: [
-                    { path: `${process.env.PUBLIC_URL}/app/jobSearch/cardView`, title: 'Cards View', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/jobSearch/job-list`, title: 'List View', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/jobSearch/job-detail`, title: 'Job Details', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/jobSearch/job-apply`, title: 'Apply', type: 'link' }
-                ]
-            },
-            {
-                title: 'Learning', icon: Radio, type: 'sub', active: false, children: [
-                    { path: `${process.env.PUBLIC_URL}/app/learning/learning-list`, title: 'Learning List', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/learning/learning-detail`, title: 'Detailed Course', type: 'link' },
-                ]
-            },
-            {
-                title: 'Maps', icon: Map, type: 'sub', active: false, children: [
-                    { path: `${process.env.PUBLIC_URL}/app/map/googleMap`, type: 'link', title: 'Google Maps ' },
-                    { path: `${process.env.PUBLIC_URL}/app/map/leaflet-map`, type: 'link', title: 'Leaflet Maps' },
-                ]
-            },
-            {
-                title: 'Editor', icon: Edit, type: 'sub', active: false, children: [
-                    { path: `${process.env.PUBLIC_URL}/editor/ckEditor`, type: 'link', title: 'CK  Editor' },
-                    { path: `${process.env.PUBLIC_URL}/editor/mdeEditor`, type: 'link', title: 'MDE Editor' },
-                    { path: `${process.env.PUBLIC_URL}/editor/ace-code-editor`, type: 'link', title: 'ACE code Editor ' },
-                ]
-            },
-
-            { path: `${process.env.PUBLIC_URL}/app/faq`, icon: HelpCircle, type: 'link', active: false, title: 'FAQ' },
-            {
-                icon: Sunrise, type: 'sub', active: false, title: 'Knowledgebase', children: [
-                    { path: `${process.env.PUBLIC_URL}/app/knowledgebase`, title: 'Knowledgebase', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/knowledgebase-category`, title: 'Knowledgebase Category', type: 'link' },
-                    { path: `${process.env.PUBLIC_URL}/app/knowledgebase-detail`, title: 'Knowledgebase Detail', type: 'link' }
-                ]
-            },
-            { path: `${process.env.PUBLIC_URL}/app/support-ticket`, icon: Users, type: 'link', active: false, title: 'Support Ticket' },
-        ]
-    },
 ];
