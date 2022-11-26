@@ -1,15 +1,13 @@
 import { Link } from "react-router-dom";
-import { Btn, H6, Image } from "../../../../AbstractElements";
-import product1 from "../../../../assets/images/ecommerce/product-table-1.png";
+import { Btn, H6, Image } from "../../../AbstractElements";
 
 const style = {
   width: 40,
   height: 40,
 };
 const style2 = { width: 60, fontSize: 14, padding: 4 };
-export const CrewData = [
+export const CRMData = [
   {
-    image: <Image attrImage={{ src: product1, style: style, alt: "" }} />,
     Name: (
       <div>
         <H6>Red Lipstick</H6>
@@ -18,8 +16,7 @@ export const CrewData = [
         </span>
       </div>
     ),
-    Ttile: "$10",
-
+    Massage: <div className="font-success">In Stock</div>,
     action: (
       <div>
         <span>
@@ -35,7 +32,7 @@ export const CrewData = [
         </span>{" "}
         &nbsp;&nbsp;
         <span>
-          <Link to={"/dashboard/addcrew"}>
+          <Link to={"/dashboard/crm-form"}>
             <Btn
               attrBtn={{
                 style: style2,
@@ -51,23 +48,17 @@ export const CrewData = [
     ),
   },
 ];
-export const crewColumns = [
-  {
-    name: "Image",
-    selector: (row) => row.image,
-    sortable: true,
-    center: true,
-  },
+export const CRMColumns = [
   {
     name: "Name",
-    selector: (row) => row.Details,
+    selector: (row) => row.Name,
     sortable: true,
     center: true,
     wrap: true,
   },
   {
-    name: "Ttile",
-    selector: (row) => row.amount,
+    name: "Massage",
+    selector: (row) => row.Massage,
     sortable: true,
     center: true,
   },

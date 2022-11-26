@@ -100,6 +100,87 @@ export const MENUITEMS = [
           { path: `/dashboard/crewlist`, title: " Crew List", type: "link" },
         ],
       },
+      //Dao Form
+      {
+        title: "Dao",
+        icon: Home,
+        type: "sub",
+        active: false,
+        children: [
+          {
+            path: `/dashboard/deoform`,
+            title: "Dao",
+            type: "link",
+          },
+
+        ],
+      },
+       //FAQ
+      {
+        title: "FAQ",
+        icon: Home,
+        type: "sub",
+        active: false,
+        children: [
+          {
+            path: `/dashboard/faq`,
+            title: "FAQ",
+            type: "link",
+          },
+                 {
+            path: `/dashboard/faqlist`,
+            title: "FAQList",
+            type: "link",
+          },
+
+        ],
+      },
+          //CRM
+      {
+        title: "CRM",
+        icon: Home,
+        type: "sub",
+        active: false,
+        children: [
+          {
+            path: `/dashboard/crm-form`,
+            title: "Add Campaigns",
+            type: "link",
+          },
+                 {
+            path: `/dashboard/crm-list`,
+            title: "CRM List",
+            type: "link",
+          },
+                   {
+            path: `/dashboard/make-group`,
+            title: "Make Groups",
+            type: "link",
+          },
+                   {
+            path: `/dashboard/assign-email`,
+            title: "Assign Email",
+            type: "link",
+          },
+                   {
+            path: `/dashboard/view-email`,
+            title: "View Email",
+            type: "link",
+          },
+                   {
+            path: `/dashboard/run-compagin`,
+            title: "Run Compagins",
+            type: "link",
+          },
+                   {
+            path: `/dashboard/log-screen`,
+            title: "Log Screen",
+            type: "link",
+          },
+
+
+        ],
+      },
       {
         title: "Dashboard",
         icon: Home,
