@@ -42,8 +42,9 @@ const pool = new Pool({
 
 })
 
-require('./src/apis_1')(app, pool, upload, uploadImages, nodemailer);
-require('./src/apis_2')(app, pool, upload, uploadImages, nodemailer);
+require('./src/sliders')(app, db, upload, uploadImages, nodemailer);
+require('./src/basic_settings')(app, db, upload, uploadImages, nodemailer);
+
 
 app.get("/postgres", (req, res) => {
     pool.connect(function (err) {
