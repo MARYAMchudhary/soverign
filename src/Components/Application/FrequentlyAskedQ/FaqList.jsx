@@ -17,8 +17,8 @@ function FaqList() {
           <Col sm="12">
             <Card>
               <CardHeader className="pb-0">
-                <H5>{SliderHeading}</H5>
-                <span>{ProductListDesc}</span>
+                <H5>{"FAQ List"}</H5>
+              
               </CardHeader>
               <CardBody>
                 <div className="table-responsive product-table">

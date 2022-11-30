@@ -7,15 +7,20 @@ import {
   CardBody,
   Form,
   FormGroup,
+  Label
 } from "reactstrap";
 import ProjectContext from "../../../_helper/Project";
 import { Breadcrumbs, Btn } from "../../../AbstractElements";
 import { useNavigate, Link } from "react-router-dom";
-import { Add, Cancel } from "../../../Constant";
-import AddCrewHeadings from "./AddCrewHeadings";
-import Uploadfile from "../Homepage/Uploadfile";
+import {
+  Add,
+  Cancel,
+  AddMeetName,
+  AddMeetTitle,
+  AddMeetTwitter,
+  AboutUsImage} from "../../../Constant";
 import { useForm } from "react-hook-form";
-
+import Dropzone from "react-dropzone-uploader";
 function AddCrew() {
   const history = useNavigate();
   const project = useContext(ProjectContext);
@@ -33,6 +38,12 @@ function AddCrew() {
       errors.showMessages();
     }
   };
+      const getUploadParams = ({ meta }) => {
+        return {
+          url: "https://httpbin.org/post",
+        };
+      };
+      const handleChangeStatus = ({ meta, file }, status) => {};
   return (
     <Fragment>
       <Breadcrumbs
@@ -49,7 +60,76 @@ function AddCrew() {
                   className="theme-form"
                   onSubmit={handleSubmit(AddProject)}
                 >
-                  <AddCrewHeadings register={register} errors={errors} />
+                  <Row>
+                    <Col>
+                      <FormGroup>
+                        <Label>{AddMeetName}</Label>
+                        <input
+                          className="form-control"
+                          type="text"
+                          name="title"
+                          placeholder="Add heading *"
+                          {...register("title", { required: true })}
+                        />
+                        <span style={{ color: "red" }}>
+                          {errors.title && "Title is required"}
+                        </span>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FormGroup>
+                        <Label>{AddMeetTitle}</Label>
+                        <input
+                          className="form-control"
+                          type="text"
+                          name="title"
+                          placeholder="Add heading *"
+                          {...register("title", { required: true })}
+                        />
+                        <span style={{ color: "red" }}>
+                          {errors.title && "Title is required"}
+                        </span>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FormGroup>
+                        <Label>{AddMeetTwitter}</Label>
+                        <input
+                          className="form-control"
+                          type="text"
+                          name="title"
+                          placeholder="Add heading *"
+                          {...register("title", { required: true })}
+                        />
+                        <span style={{ color: "red" }}>
+                          {errors.title && "Title is required"}
+                        </span>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FormGroup>
+                        <Label>{AboutUsImage}</Label>
+                        <Dropzone
+                          getUploadParams={getUploadParams}
+                          onChangeStatus={handleChangeStatus}
+                          maxFiles={1}
+                          multiple={false}
+                          canCancel={false}
+                          inputContent="Drop A File"
+                          styles={{
+                            dropzone: { width: "100%", height: 50 },
+                            dropzoneActive: { borderColor: "green" },
+                          }}
+                        />
+                      </FormGroup>
+                    </Col>
+                  </Row>
 
                   <Row>
                     <Col>

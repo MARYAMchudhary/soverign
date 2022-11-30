@@ -7,13 +7,12 @@ import {
   CardBody,
   Form,
   FormGroup,
+  Label
 } from "reactstrap";
 import ProjectContext from "../../../_helper/Project";
 import { Breadcrumbs, Btn } from "../../../AbstractElements";
 import { useNavigate, Link } from "react-router-dom";
-import { Add, Cancel } from "../../../Constant";
-import FaqHeadings from "./FaqHeadings";
-
+import { Add, Cancel, FaqQuestion, FaqAnswer } from "../../../Constant";
 import { useForm } from "react-hook-form";
 function Faq() {
  const history = useNavigate();
@@ -41,7 +40,40 @@ function Faq() {
            <Card>
              <CardBody>
                <Form className="theme-form" onSubmit={handleSubmit(AddProject)}>
-                 <FaqHeadings register={register} errors={errors} />
+                 <Row>
+                   <Col>
+                     <FormGroup>
+                       <Label>{FaqQuestion}</Label>
+                       <input
+                         className="form-control"
+                         type="text"
+                         name="title"
+                         placeholder="Add heading *"
+                         {...register("title", { required: true })}
+                       />
+                       <span style={{ color: "red" }}>
+                         {errors.title && "Title is required"}
+                       </span>
+                     </FormGroup>
+                   </Col>
+                 </Row>
+                 <Row>
+                   <Col>
+                     <FormGroup>
+                       <Label>{FaqAnswer}</Label>
+                       <input
+                         className="form-control"
+                         type="text"
+                         name="title"
+                         placeholder="Add heading *"
+                         {...register("title", { required: true })}
+                       />
+                       <span style={{ color: "red" }}>
+                         {errors.title && "Title is required"}
+                       </span>
+                     </FormGroup>
+                   </Col>
+                 </Row>
 
                  <Row>
                    <Col>

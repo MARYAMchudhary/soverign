@@ -1,12 +1,13 @@
-import React, { Fragment, useState } from "react";
-import { Col, Container, Row, Card, CardBody, Media } from "reactstrap";
-import { Breadcrumbs, H6, LI, P, UL } from "../../../../AbstractElements";
-// import ComposeMessage from "./ComposeMessage";
-import { Link } from "react-router-dom";
-import LogTableData from "./LogTableData";
+import React, { Fragment, useState, useContext } from "react";
+import { Col, Container, Row, Card, CardBody,CardHeader,Table, Media } from "reactstrap";
 
+import { Link } from "react-router-dom";
+import { Breadcrumbs, H5, H6, LI, P, UL } from "../../../../AbstractElements";
+import { BasicTable } from "../../../../Constant";
+import TableContext from "../../../../_helper/Table";
 function LogScreen() {
   const [IsOpen, setIsOpen] = useState(false);
+   const { data } = useContext(TableContext);
   const OnHandelClick = () => {
     setIsOpen(!IsOpen);
   };
@@ -160,7 +161,41 @@ function LogScreen() {
               </div>
             </Col>
             <Col xl="9" md="12" className="xl-70 box-col-8">
-              <LogTableData />
+              <Container fluid={true}>
+                <Row>
+                  {" "}
+                  <Col sm="12">
+                    <Card>
+                      <CardHeader>
+                        <H5>Log Data</H5>
+                        <span></span>
+                      </CardHeader>
+                      <div className="table-responsive">
+                        <Table>
+                          <thead>
+                            <tr>
+                              <th scope="col">{"#"}</th>
+                              <th scope="col">{"User"}</th>
+                              <th scope="col">{"Occurred"}</th>
+                              <th scope="col">{"Data"}</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {data.map((item) => (
+                              <tr key={item.id}>
+                                <th scope="row">{item.id}</th>
+                                <td>{item.first_name}</td>
+                                <td>{item.last_name}</td>
+                                <td>{item.user_name}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </Table>
+                      </div>
+                    </Card>
+                  </Col>
+                </Row>
+              </Container>
             </Col>
           </Row>
         </div>

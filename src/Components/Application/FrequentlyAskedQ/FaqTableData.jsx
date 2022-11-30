@@ -10,9 +10,9 @@ export const FaqData = [
   {
     Questions: (
       <div>
-        <H6>Red Lipstick</H6>
+     
         <span>
-          Interchargebla lens Digital Camera with APS-C-X Trans CMOS Sens
+          Interchargebla lens Digital
         </span>
       </div>
     ),

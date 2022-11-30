@@ -7,14 +7,15 @@ import {
   CardBody,
   Form,
   FormGroup,
+  Label,
 } from "reactstrap";
 import ProjectContext from "../../../../_helper/Project";
 import { Breadcrumbs, Btn } from "../../../../AbstractElements";
 import { useNavigate, Link } from "react-router-dom";
 import { Add, Cancel } from "../../../../Constant";
 import { useForm } from "react-hook-form";
-import MakeGroupsFields from "./MakeGroupsFields";
 
+import { CrmName, CrmMessage } from "../../../../Constant";
 function MakeGroups() {
   const history = useNavigate();
   const project = useContext(ProjectContext);
@@ -44,12 +45,28 @@ function MakeGroups() {
                   className="theme-form"
                   onSubmit={handleSubmit(AddProject)}
                 >
-                  <MakeGroupsFields register={register} errors={errors} />
+                  <Row>
+                    <Col>
+                      <FormGroup>
+                        <Label>{CrmName}</Label>
+                        <input
+                          className="form-control"
+                          type="text"
+                          name="title"
+                          placeholder="Add heading *"
+                          {...register("title", { required: true })}
+                        />
+                        <span style={{ color: "red" }}>
+                          {errors.title && "Title is required"}
+                        </span>
+                      </FormGroup>
+                    </Col>
+                  </Row>
 
                   <Row>
                     <Col>
                       <FormGroup className="mb-0">
-                        <Link to={"/dashboard/crm-list"}>
+                        <Link to={"/dashboard/make-group-list"}>
                           <Btn
                             attrBtn={{ color: "success", className: "me-3" }}
                           >

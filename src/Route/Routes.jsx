@@ -14,6 +14,7 @@ import Faq from "../Components/Application/FrequentlyAskedQ/Faq";
 import FaqList from "../Components/Application/FrequentlyAskedQ/FaqList";
 import AddCrmForm from "../Components/Application/CRM/AddCrmForm";
 import CrmList from "../Components/Application/CRM/CrmList";
+import GroupList from "../Components/Application/CRM/MakeGroup/GroupList";
 //widgets
 import Chart from "../Components/Widgets/Chart";
 import General from "../Components/Widgets/General";
@@ -201,16 +202,16 @@ import FormClipboardContain from "../Components/Forms/FormWidget/FormClipboard";
 import FAQContent from "../Components/FAQ";
 import CrewList from "../Components/Application/AboutUsPage/CrewList/CrewList";
 
-
 //Admin Pages
-import WelcomeMessage from '../Components/AdminPages/WelcomeMessage';
-import EmailCredentials from '../Components/AdminPages/EmailCredentials';
+import WelcomeMessage from "../Components/AdminPages/WelcomeMessage";
+import EmailCredentials from "../Components/AdminPages/EmailCredentials";
 
 import MakeGroups from "../Components/Application/CRM/MakeGroup/MakeGroups";
 import AssignEmailToGroups from "../Components/Application/CRM/MakeGroup/AssignEmailGroups/AssignEmailToGroups";
 import ViewEmails from "../Components/Application/CRM/ViewEmails/ViewEmails";
 import RunCompagins from "../Components/Application/CRM/RunCompagins/RunCompagins";
 import LogScreen from "../Components/Application/CRM/LogScreen/LogScreen";
+
 export const routes = [
   // welcome-message
   {
@@ -251,6 +252,8 @@ export const routes = [
   { path: `/dashboard/crm-form`, Component: <AddCrmForm /> },
   { path: `/dashboard/crm-list`, Component: <CrmList /> },
   { path: `/dashboard/make-group`, Component: <MakeGroups /> },
+  { path: `/dashboard/make-group-list`, Component: <GroupList /> },
+
   { path: `/dashboard/assign-email`, Component: <AssignEmailToGroups /> },
   { path: `/dashboard/view-email`, Component: <ViewEmails /> },
   { path: `/dashboard/run-compagin`, Component: <RunCompagins /> },

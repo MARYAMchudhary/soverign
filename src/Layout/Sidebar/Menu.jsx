@@ -38,11 +38,21 @@ import {
 
 export const MENUITEMS = [
   {
-    menutitle: 'Admin Pages',
+    menutitle: "Admin Pages",
     Items: [
-      { path: `${process.env.PUBLIC_URL}/admin-pages/welcome-message`, icon: Clipboard, type: 'link', title: 'Welcome Message' },
-      { path: `${process.env.PUBLIC_URL}/admin-pages/email-credentials`, icon: Mail, type: 'link', title: 'Email Credentials' },
-    ]
+      {
+        path: `${process.env.PUBLIC_URL}/admin-pages/welcome-message`,
+        icon: Clipboard,
+        type: "link",
+        title: "Welcome Message",
+      },
+      {
+        path: `${process.env.PUBLIC_URL}/admin-pages/email-credentials`,
+        icon: Mail,
+        type: "link",
+        title: "Email Credentials",
+      },
+    ],
   },
   {
     menutitle: "General",
@@ -112,10 +122,9 @@ export const MENUITEMS = [
             title: "Dao",
             type: "link",
           },
-
         ],
       },
-       //FAQ
+      //FAQ
       {
         title: "FAQ",
         icon: Home,
@@ -127,15 +136,14 @@ export const MENUITEMS = [
             title: "FAQ",
             type: "link",
           },
-                 {
+          {
             path: `/dashboard/faqlist`,
             title: "FAQList",
             type: "link",
           },
-
         ],
       },
-          //CRM
+      //CRM
       {
         title: "CRM",
         icon: Home,
@@ -147,38 +155,41 @@ export const MENUITEMS = [
             title: "Add Campaigns",
             type: "link",
           },
-                 {
+          {
             path: `/dashboard/crm-list`,
             title: "CRM List",
             type: "link",
           },
-                   {
+          {
             path: `/dashboard/make-group`,
             title: "Make Groups",
             type: "link",
           },
-                   {
+          {
+            path: `/dashboard/make-group-list`,
+            title: "Make Groups List",
+            type: "link",
+          },
+          {
             path: `/dashboard/assign-email`,
             title: "Assign Email",
             type: "link",
           },
-                   {
+          {
             path: `/dashboard/view-email`,
             title: "View Email",
             type: "link",
           },
-                   {
+          {
             path: `/dashboard/run-compagin`,
             title: "Run Compagins",
             type: "link",
           },
-                   {
+          {
             path: `/dashboard/log-screen`,
             title: "Log Screen",
             type: "link",
           },
-
-
         ],
       },
       {
@@ -1254,4 +1265,4 @@ export const MENUITEMS = [
       },
     ],
   },
-]
+];

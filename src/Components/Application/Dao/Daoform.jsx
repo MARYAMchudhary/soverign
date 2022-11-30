@@ -8,13 +8,15 @@ import {
   CardBody,
   Form,
   FormGroup,
+  Label
 } from "reactstrap";
 import ProjectContext from "../../../_helper/Project";
 import { Breadcrumbs, Btn } from "../../../AbstractElements";
-import Daofields from "./Daofields";
+
 import { useForm } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
-import { Add, Cancel } from "../../../Constant";
+import { Add, Cancel, DeoHeading, DeoText } from "../../../Constant";
+
 function Daoform() {
   const history = useNavigate();
   const project = useContext(ProjectContext);
@@ -44,7 +46,40 @@ function Daoform() {
                   className="theme-form"
                   onSubmit={handleSubmit(AddProject)}
                 >
-                  <Daofields register={register} errors={errors} />
+                  <Row>
+                    <Col>
+                      <FormGroup>
+                        <Label>{DeoHeading}</Label>
+                        <input
+                          className="form-control"
+                          type="text"
+                          name="title"
+                          placeholder="Add heading *"
+                          {...register("title", { required: true })}
+                        />
+                        <span style={{ color: "red" }}>
+                          {errors.title && "Title is required"}
+                        </span>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FormGroup>
+                        <Label>{DeoText}</Label>
+                        <input
+                          className="form-control"
+                          type="text"
+                          name="title"
+                          placeholder="Add heading *"
+                          {...register("title", { required: true })}
+                        />
+                        <span style={{ color: "red" }}>
+                          {errors.title && "Title is required"}
+                        </span>
+                      </FormGroup>
+                    </Col>
+                  </Row>
 
                   <Row>
                     <Col>

@@ -1,20 +1,51 @@
 import React, { Fragment, useState } from "react";
-import { Card, CardBody, CardHeader, Col, Container, Row } from "reactstrap";
+import {
+  Card,
+  CardBody,
+  CardHeader,
+  Col,
+  Container,
+  Row,
+  Button,
+} from "reactstrap";
 import { SelectSingleImageUpload } from "../../../Constant";
 import { Breadcrumbs, Btn, Image } from "../../../AbstractElements";
+import { NavLink, useParams, useHistory } from "react-router-dom";
 import Files from "react-files";
+import axios from "axios";
 function Addlogo() {
-  const [files, setFiles] = useState([]);
+  const [file, setFile] = useState();
+  const [showData, setshowData] = useState({});
 
-  function deleteFile(e) {
-    setFiles([]);
-    return files;
-  }
-  const onFilesChange = (files) => {
-    setFiles(files);
+  const saveFile = (e) => {
+    setFile(e.target.files[0]);
   };
-  const onFilesError = (error, file) => {
-    setFiles(file);
+  //Get data
+
+  const getUserData = async () => {
+    const res = await axios.get("/getuser", {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    setshowData(res.data);
+    // if (res.data.status === 201) {
+
+    // console.log(showData);
+    // } else {
+    //   console.log("error");
+    // }
+  };
+
+  const uploadFile = async (e) => {
+    const formData = new FormData();
+    formData.append("photo", file);
+    try {
+      const res = await axios.post("/upload_logo", formData);
+      console.log(res);
+    } catch (ex) {
+      console.log(ex);
+    }
   };
   return (
     <Fragment>
@@ -31,72 +62,22 @@ function Addlogo() {
                 <h5>{SelectSingleImageUpload}</h5>
               </CardHeader>
               <CardBody className="fileUploader">
-                <Files
-                  className="files-dropzone fileContainer"
-                  onChange={onFilesChange}
-                  onError={onFilesError}
-                  accepts={["image/*"]}
-                  multiple={false}
-                  maxFileSize={10000000}
-                  minFileSize={0}
-                  clickable
-                >
-                  {files.length > 0 ? (
-                    <div className="files-gallery">
-                      {files.map((file, index) => (
-                        <div key={index}>
-                          <Image
-                            attrImage={{
-                              className: "files-gallery-item",
-                              alt: "img",
-                              src: `${file.preview.url}`,
-                            }}
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="d-flex justify-content-center">
-                      <Btn
-                        attrBtn={{
-                          className: "mt-2",
-                          type: "button",
-                          color: "primary",
-                        }}
-                      >
-                        Upload Image
-                      </Btn>
-                    </div>
-                  )}
-                </Files>
-                {files.length > 0 ? (
-                  <>
-                    <div className="d-flex justify-content-center">
-                      <Btn
-                        attrBtn={{
-                          className: "mt-2",
-                          color: "primary",
-                          type: "button",
-                          onClick: () => deleteFile(files),
-                        }}
-                      >
-                        Delete
-                      </Btn>
-                      <Btn
-                        attrBtn={{
-                          className: "btn btn-danger mt-2 ",
-                          type: "button",
-                          onClick: () => deleteFile(files),
-                        }}
-                      >
-                        Edit
-                      </Btn>
-                    </div>
-                    {/* <div className="d-flex"></div> */}
-                  </>
-                ) : (
-                  ""
-                )}
+                <div className="files-gallery">
+                  <img
+                    src={"../../../../adminpanel_backend/nodeassets/16679309263511650530062.jpg"}
+                    alt=""
+                  />      
+                </div>
+      
+                <div className="d-flex justify-content-center">
+                  <input
+                    type="file"
+                    className="file-input"
+                    name="photo"
+                    onChange={saveFile}
+                  />
+                  <Button onClick={uploadFile}>Upload</Button>
+                </div>
               </CardBody>
             </Card>
           </Col>

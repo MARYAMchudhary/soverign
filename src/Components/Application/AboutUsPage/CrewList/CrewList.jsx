@@ -2,7 +2,10 @@ import React, { Fragment } from "react";
 import { Breadcrumbs, H5 } from "../../../../AbstractElements";
 import { ProductListDesc, SliderHeading } from "../../../../Constant";
 import { Card, CardBody, CardHeader, Col, Container, Row } from "reactstrap";
-import CrewTableData from "./CrewTableData";
+
+import { CrewData, crewColumns } from "./CrewData";
+
+import DataTable from "react-data-table-component";
 function CrewList() {
   return (
     <Fragment>
@@ -16,11 +19,19 @@ function CrewList() {
           <Col sm="12">
             <Card>
               <CardHeader className="pb-0">
-                <H5>{SliderHeading}</H5>
-                <span>{ProductListDesc}</span>
+                <H5>{"Crew List"}</H5>
+         
               </CardHeader>
               <CardBody>
-                <CrewTableData />
+                <div className="table-responsive product-table">
+                  <DataTable
+                    noHeader
+                    pagination
+                    paginationServer
+                    columns={crewColumns}
+                    data={CrewData}
+                  />
+                </div>
               </CardBody>
             </Card>
           </Col>

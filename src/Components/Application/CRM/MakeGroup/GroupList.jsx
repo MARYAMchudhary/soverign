@@ -1,10 +1,11 @@
 import React, { Fragment } from "react";
-import { Breadcrumbs, H5 } from "../../../AbstractElements";
-import { ProductListDesc, SliderHeading } from "../../../Constant";
+import { Breadcrumbs, H5 } from "../../../../AbstractElements";
+import { ProductListDesc, SliderHeading } from "../../../../Constant";
 import { Card, CardBody, CardHeader, Col, Container, Row } from "reactstrap";
 import DataTable from "react-data-table-component";
-import { CRMColumns,CRMData } from "./CrmTableData";
-function CrmList() {
+import { GroupColumns, GroupData } from "./GroupListData";
+
+function GroupList() {
   return (
     <Fragment>
       <Breadcrumbs parent="CRM" title="CRM List" mainTitle="CRM List" />
@@ -13,8 +14,8 @@ function CrmList() {
           <Col sm="12">
             <Card>
               <CardHeader className="pb-0">
-                <H5>{"CRM List "}</H5>
-      
+                <H5>{"Group List"}</H5>
+           
               </CardHeader>
               <CardBody>
                 <div className="table-responsive product-table">
@@ -22,8 +23,8 @@ function CrmList() {
                     noHeader
                     pagination
                     paginationServer
-                    columns={CRMColumns}
-                    data={CRMData}
+                    columns={GroupColumns}
+                    data={GroupData}
                   />
                 </div>
               </CardBody>
@@ -35,4 +36,4 @@ function CrmList() {
   );
 }
 
-export default CrmList
+export default GroupList;

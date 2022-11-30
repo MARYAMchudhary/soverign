@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import {
   Container,
   Row,
@@ -7,13 +7,15 @@ import {
   CardBody,
   Form,
   FormGroup,
+  Label,
+  Button,
 } from "reactstrap";
 import ProjectContext from "../../../_helper/Project";
 import { Breadcrumbs, Btn } from "../../../AbstractElements";
 import { useNavigate, Link } from "react-router-dom";
 import { Add, Cancel } from "../../../Constant";
-import AddwebHeading from "./AddwebHeading";
 import { useForm } from "react-hook-form";
+import { WebHeading } from "../../../Constant";
 function AddwebsiteTitle() {
   const history = useNavigate();
   const project = useContext(ProjectContext);
@@ -22,6 +24,46 @@ function AddwebsiteTitle() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [inpval, setINP] = useState({
+    webTitle: "",
+  });
+  const setdata = (e) => {
+    // console.log(e.target.value);
+    const { name, value } = e.target;
+    setINP((preval) => {
+      return {
+        ...preval,
+        [name]: value,
+      };
+    });
+  };
+  const addinpdata = async (e) => {
+    e.preventDefault();
+
+    const { webTitle } = inpval;
+
+    const res = await fetch("/add_webtitle", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        webTitle,
+      }),
+    });
+
+    const data = await res.json();
+    console.log(data);
+
+    if (res.status === 422 || !data) {
+      console.log("error ");
+      alert("error");
+    } else {
+      // history.push("/");
+      // setUdata(data);
+      console.log("data added");
+    }
+  };
 
   const AddProject = (data) => {
     if (data !== "") {
@@ -47,21 +89,36 @@ function AddwebsiteTitle() {
                   className="theme-form"
                   onSubmit={handleSubmit(AddProject)}
                 >
-                  <AddwebHeading register={register} errors={errors} />
+                  <Row>
+                    <Col>
+                      <FormGroup>
+                        <Label>{WebHeading}</Label>
+                        <input
+                          className="form-control"
+                          type="text"
+                          name="webTitle"
+                          placeholder="Add heading"
+                          value={inpval.webTitle}
+                          onChange={(e) => setdata(e)}
+                          // {...register("title", { required: true })}
+                        />
+                        {/* <span style={{ color: "red" }}>
+              {errors.title && "Title is required"}
+            </span> */}
+                      </FormGroup>
+                    </Col>
+                  </Row>
 
                   <Row>
                     <Col>
                       <FormGroup className="mb-0">
-                        {/* <Link to={"/dashboard/sliderlist"}> */}
-                        <Btn attrBtn={{ color: "success", className: "me-3" }}>
-                          {Add}
-                        </Btn>
+                        {" "}
+                        <Button onClick={(e) => addinpdata(e)}>{Add}</Button>
                         {/* </Link> */}
-
                         {/* <Link
                           to={`${process.env.PUBLIC_URL}/app/project/project-list`}
                         > */}
-                        <Btn attrBtn={{ color: "danger" }}>{Cancel}</Btn>
+                        {/* <Btn attrBtn={{ color: "danger" }}>{Cancel}</Btn> */}
                         {/* </Link> */}
                       </FormGroup>
                     </Col>

@@ -11,7 +11,9 @@ function Uploadfile() {
       };
 
       // called every time a file's `status` changes
-      const handleChangeStatus = ({ meta, file }, status) => {};
+        const handleChangeStatus = ({ meta, file }, status) => {
+          console.log(status, meta, file);
+        };
   return (
     <Fragment>
       <Row>

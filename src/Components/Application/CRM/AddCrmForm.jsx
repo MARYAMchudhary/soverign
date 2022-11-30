@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useState } from "react";
 import {
   Container,
   Row,
@@ -7,15 +7,24 @@ import {
   CardBody,
   Form,
   FormGroup,
+  Label
 } from "reactstrap";
 import ProjectContext from "../../../_helper/Project";
 import { Breadcrumbs, Btn } from "../../../AbstractElements";
 import { useNavigate, Link } from "react-router-dom";
 import { Add, Cancel } from "../../../Constant";
-import CRMfields from "./CRMfields";
+
 import { useForm } from "react-hook-form";
 
+
+import { CrmName, CrmMessage } from "../../../Constant";
+import CKEditors from "react-ckeditor-component";
 function AddCrmForm() {
+      const [content, setContent] = useState("content");
+      const onChange = (evt) => {
+        const newContent = evt.editor.getData();
+        setContent(newContent);
+      };
   const history = useNavigate();
   const project = useContext(ProjectContext);
   const {
@@ -44,8 +53,41 @@ function AddCrmForm() {
                   className="theme-form"
                   onSubmit={handleSubmit(AddProject)}
                 >
-                  <CRMfields register={register} errors={errors} />
-
+                  {" "}
+                  <Row>
+                    <Col>
+                      <FormGroup>
+                        <Label>{CrmName}</Label>
+                        <input
+                          className="form-control"
+                          type="text"
+                          name="title"
+                          placeholder="Add heading *"
+                          {...register("title", { required: true })}
+                        />
+                        <span style={{ color: "red" }}>
+                          {errors.title && "Title is required"}
+                        </span>
+                      </FormGroup>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col>
+                      <FormGroup>
+                        <Label>{CrmMessage}</Label>
+                        <CKEditors
+                          activeclassName="p10"
+                          content={content}
+                          events={{
+                            change: onChange,
+                          }}
+                        />
+                        <span style={{ color: "red" }}>
+                          {errors.title && "Title is required"}
+                        </span>
+                      </FormGroup>
+                    </Col>
+                  </Row>
                   <Row>
                     <Col>
                       <FormGroup className="mb-0">
