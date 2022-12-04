@@ -1,0 +1,187 @@
+.signin-container {
+  width: 100%;
+  height: 89vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.signin-container-rainbow{
+  width: 100%;
+  display: flex;
+  gap: 5%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signin-form {
+  width: 35%;
+  height: 60vh;
+  background: rgba(29, 29, 29, 0.5);
+  border-radius: 16px;
+  backdrop-filter: blur(17.5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 3%;
+  .signupLink {
+    text-decoration: none;
+    color: #fff;
+  }
+}
+.signin-heading {
+  color: white;
+}
+.email-input-container {
+  width: 80%;
+  height: auto;
+  margin-bottom: 2%;
+}
+.signin-inputs-title h5 {
+  font-size: 16px;
+  color: white;
+}
+.email-input-container input {
+  width: 100%;
+  background: #282828;
+  border-radius: 12px;
+  border: none;
+  padding: 10px 12px;
+  display: flex;
+  color: white;
+
+  &:focus {
+    background: #000000;
+    border: 2px solid rgba(47, 128, 237, 0.3);
+    outline: none;
+    height: 44px;
+  }
+}
+.password-input-container {
+  width: 80%;
+  height: auto;
+}
+.password-input-container h5 {
+  font-size: 16px;
+  color: white;
+}
+.password-input-container input {
+  width: 100%;
+  background: #282828;
+  border-radius: 12px;
+  border: none;
+  padding: 10px 12px;
+  display: flex;
+  color: white;
+
+  &:focus {
+    background: #000000;
+    border: 2px solid rgba(47, 128, 237, 0.3);
+    outline: none;
+    height: 44px;
+  }
+}
+.signin-error {
+  width: 80%;
+  text-align: left;
+  align-items: flex-start;
+  p {
+    color: rgb(236, 0, 0) !important;
+    font-weight: 700;
+  }
+}
+.continue-button {
+  width: 80%;
+  height: 6vh;
+  border-radius: 0.7rem;
+  border: none;
+  margin-top: 2%;
+}
+.forgot {
+  color: white;
+}
+.signin-container p {
+  color: white;
+}
+
+@media screen and (max-width: 1370px) {
+  .signin-form {
+    width: 50%;
+    height: 70vh;
+    background: rgba(29, 29, 29, 0.5);
+    border-radius: 16px;
+    backdrop-filter: blur(17.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3%;
+  }
+}
+
+@media screen and (max-width: 946px) {
+  .signin-form {
+    width: 60%;
+    height: 70vh;
+    background: rgba(29, 29, 29, 0.5);
+    border-radius: 16px;
+    backdrop-filter: blur(17.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3%;
+  }
+}
+
+@media screen and (max-width: 762px) {
+  .signin-form {
+    width: 70%;
+    height: 70vh;
+    background: rgba(29, 29, 29, 0.5);
+    border-radius: 16px;
+    backdrop-filter: blur(17.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .signin-form {
+    width: 80%;
+    height: 70vh;
+    background: rgba(29, 29, 29, 0.5);
+    border-radius: 16px;
+    backdrop-filter: blur(17.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .signin-form {
+    width: 90%;
+    height: 70vh;
+    background: rgba(29, 29, 29, 0.5);
+    border-radius: 16px;
+    backdrop-filter: blur(17.5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .signin-container p {
+    color: white;
+    text-align: center;
+  }
+}

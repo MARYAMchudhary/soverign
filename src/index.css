@@ -1,0 +1,54 @@
+@font-face {
+  font-family: "pangram";
+  src: local("pangram"), url("./assets/fonts/Pangram-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "pangram";
+  src: local("pangram"), url("./assets/fonts/Pangram-Light.otf") format("opentype");
+  font-weight: lighter;
+  font-style: lighter;
+}
+@font-face {
+  font-family: "pangram";
+  src: local("pangram"), url("./assets/fonts/Pangram-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: bold;
+}
+/* @font-face {
+  font-family: "pangram";
+  src: local("pangram"), url("./assets/fonts/Pangram-ExtraBold.otf") format("opentype");
+  font-weight: bolder;
+  font-style: bolder;
+} */
+
+
+@font-face {
+  font-family: "Montserrat-Alt1";
+  font-weight: 400;
+  font-style: normal;
+  src: url("./assets/fonts/Montserrat-Alt1-main/Montserrat-Alt1-main/fonts/webfonts/MontserratAlt1-Regular.woff2") format("woff2"),
+       url("./assets/fonts/Montserrat-Alt1-main/Montserrat-Alt1-main/fonts/webfonts/MontserratAlt1-Regular.woff") format("woff");
+}
+body {
+  margin: 0;
+  
+    font-family: 'pangram';
+    
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace, pangram;
+}
+
+*{
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}

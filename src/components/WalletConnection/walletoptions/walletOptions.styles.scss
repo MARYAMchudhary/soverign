@@ -1,0 +1,224 @@
+.wallets-container {
+  width: 100%;
+  // height: 80vh;
+  display: flex;
+  gap: 5%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // padding-top: 40vh;
+  // position: absolute;
+}
+.wallets-list {
+  width: 35%;
+  min-height: 38vh;
+  background: rgba(29, 29, 29, 0.7);
+  backdrop-filter: blur(2.5px);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+.heading {
+  color: white;
+  font-family: "pangram";
+  font-size: xx-large;
+  font-weight: lighter;
+}
+.connection-btn {
+  background-color: black;
+  color: white;
+  width: 35%;
+  height: 7vh;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.6rem;
+  font-size: 1.3rem;
+  font-family: "pangram";
+  font-weight: lighter;
+}
+.connection-btn:hover {
+  background-color: #161313;
+  transition: all 0.2s ease-in-out;
+}
+.list-item {
+  width: 42%;
+  height: 12vh;
+  background-color: #282828;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3%;
+  border-radius: 0.8rem;
+  cursor: pointer;
+
+  &:focus {
+    border: 1px solid white;
+  }
+}
+.list-item span {
+  color: white;
+  cursor: pointer;
+  font-family: "pangram";
+}
+.list-item:hover {
+  background-color: #161313;
+  transition: all 0.2s ease-in-out;
+}
+.add-border {
+  border: 2px solid lawngreen;
+}
+
+@media screen and (max-width: 1400px) {
+  .wallets-list {
+    width: 40%;
+    min-height: 38vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+
+  .connection-btn {
+    background-color: black;
+    color: white;
+    width: 40%;
+    height: 7vh;
+    border: none;
+    border-radius: 0.6rem;
+    font-size: 1.3rem;
+    font-family: "pangram";
+    font-weight: lighter;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .wallets-list {
+    width: 50%;
+    min-height: 38vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  .connection-btn {
+    background-color: black;
+    color: white;
+    width: 50%;
+    height: 7vh;
+    border: none;
+    border-radius: 0.6rem;
+    font-size: 1.3rem;
+    font-family: "pangram";
+    font-weight: lighter;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .wallets-list {
+    width: 60%;
+    min-height: 38vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  .connection-btn {
+    background-color: black;
+    color: white;
+    width: 60%;
+    height: 7vh;
+    border: none;
+    border-radius: 0.6rem;
+    font-size: 1.3rem;
+    font-family: "pangram";
+    font-weight: lighter;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .wallets-list {
+    width: 70%;
+    min-height: 38vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+  }
+  .connection-btn {
+    background-color: black;
+    color: white;
+    width: 70%;
+    height: 7vh;
+    border: none;
+    border-radius: 0.6rem;
+    font-size: 1.3rem;
+    font-family: "pangram";
+    font-weight: lighter;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .wallets-list {
+    width: 70%;
+    min-height: 38vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 5%;
+    padding-top: 1%;
+    padding-bottom: 5%;
+  }
+  .connection-btn {
+    background-color: black;
+    color: white;
+    width: 70%;
+    height: 7vh;
+    border: none;
+    border-radius: 0.6rem;
+    font-size: 1.3rem;
+    font-family: "pangram";
+    font-weight: lighter;
+  }
+  .list-item {
+    width: 70%;
+    height: 12vh;
+    background-color: #282828;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+    border-radius: 0.8rem;
+    cursor: pointer;
+  }
+  .space-y {
+    margin-top: 6%;
+  }
+}

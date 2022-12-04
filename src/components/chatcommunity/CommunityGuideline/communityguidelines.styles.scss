@@ -1,0 +1,72 @@
+.community_guidelines_container {
+  min-height: 89vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.community_guidelines_body {
+  width: 50%;
+  min-height: 80%;
+  background: rgba(179, 179, 179, 0.5);
+  backdrop-filter: blur(15px);
+  /* Note: backdrop-filter has minimal browser support */
+
+  border-radius: 0px 0px 15px 15px;
+}
+
+.community_guideline_title {
+  h3 {
+    font-weight: 600;
+    font-size: 24px;
+
+    text-align: center;
+
+    /* On Light/On Light-01 */
+
+    color: rgba(0, 0, 0, 0.88);
+  }
+}
+
+.community_guideline_description {
+  p {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 23px;
+    /* or 153% */
+
+    text-align: center;
+    color: black;
+  }
+}
+
+.community_guidelines_points {
+  width: 90%;
+  margin: 0 auto;
+  .points {
+    background: #454444;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    img {
+      margin-right: 20px;
+    }
+    p {
+      margin: 0;
+      color: white;
+
+      font-size: 14px;
+      font-weight: 600;
+    }
+  }
+}
+
+.close_community_guidelines {
+  display: flex;
+  justify-content: center;
+  img {
+    margin: 10px 0;
+  }
+}

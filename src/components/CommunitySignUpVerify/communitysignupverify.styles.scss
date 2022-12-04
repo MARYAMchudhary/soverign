@@ -1,0 +1,140 @@
+.community-signup-verify-container {
+  height: 89vh;
+  display: flex;
+  justify-content: center;
+
+  .community-signup-verify-body {
+    width: 750px;
+
+    height: 60vh;
+    background: rgba(29, 29, 29, 0.5);
+    backdrop-filter: blur(17.5px);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+
+    h3 {
+      font-size: 32px;
+      font-weight: lighter;
+      line-height: 53px;
+      margin: 20px 0;
+    }
+
+    .community-signup-verify-upper-sec,
+    .community-signup-verify-lower-sec {
+      width: 80%;
+      height: 20%;
+
+      .community-signup-verify-twitter {
+        display: flex;
+        justify-content: space-between;
+
+        .twitter-verify {
+          display: flex;
+          align-items: center;
+
+          h6 {
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 28px;
+            margin: 0 0 0 20px;
+          }
+        }
+
+        div:last-child {
+          button {
+            background: #ffffff;
+            border: none;
+            border-radius: 8px;
+            height: 38px;
+            width: 139.76px;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #464646;
+          }
+        }
+      }
+      .twitter-verify-input {
+        margin-top: 10px;
+        input {
+          background: #aaaaaa;
+          border-radius: 6px;
+          width: 100%;
+          border: none;
+          height: 40px;
+
+          text-indent: 20px;
+
+          &::placeholder {
+            font-weight: 400;
+            font-size: 11px;
+
+            line-height: 16px;
+            color: #464646;
+          }
+        }
+      }
+    }
+
+    .hr-line {
+      width: 80%;
+      height: 2px;
+      background-color: #e5e7eb;
+      margin: 20px 0;
+    }
+
+    .community-signup-verify-btn {
+      margin: 20px 0;
+      button {
+        font-weight: 400;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        height: 40px;
+        width: 270px;
+        line-height: 24px;
+        background: #ffffff;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .community-signup-verify-container {
+    .community-signup-verify-body {
+      width: 95%;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .community-signup-verify-container {
+    .community-signup-verify-body {
+      width: 95%;
+      h3 {
+        font-size: 24px;
+      }
+
+      .community-signup-verify-lower-sec,
+      .community-signup-verify-upper-sec {
+        .community-signup-verify-twitter {
+          div:last-child {
+            button {
+              width: 100px;
+            }
+          }
+        }
+      }
+
+      .community-signup-verify-btn {
+        width: 80%;
+        button {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

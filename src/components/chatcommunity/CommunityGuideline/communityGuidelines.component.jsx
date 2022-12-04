@@ -1,0 +1,61 @@
+import "./communityguidelines.styles.scss";
+
+import CrossIconSquare from "../../../assets/Icons/CrossIconSquare.png";
+import CrossCircleTransparent from "../../../assets/Icons/CrossCircleTransparent.svg";
+
+const CommunityGuidelines = () => {
+  return (
+    <div className="community_guidelines_container">
+      <div className="community_guidelines_body">
+        <div className="community_guideline_title">
+          <h3>Community Guidelines</h3>
+        </div>
+        <div className="community_guideline_description">
+          <p>
+            Help us keep the community strong. Our community is home for <br />{" "}
+            many different people from all walks of life. Please be respectful
+            and <br />
+            courteous of other people at all times.
+          </p>
+        </div>
+        <div className="community_guidelines_points">
+          <div className="points">
+            <img src={CrossIconSquare} alt="" />
+            <p>Be respectful to other members of the community</p>
+          </div>
+          <div className="points">
+            <img src={CrossIconSquare} alt="" />
+            <p>No Racial Slurs, Homophobia, Xenophobia</p>
+          </div>
+          <div className="points">
+            <img src={CrossIconSquare} alt="" />
+            <p>No Unsolicited Advertising</p>
+          </div>
+          <div className="points">
+            <img src={CrossIconSquare} alt="" />
+            <p>No Trolling for nefarious reasons</p>
+          </div>
+          <div className="points">
+            <img src={CrossIconSquare} alt="" />
+            <p>Do not post links</p>
+          </div>
+          <div className="points">
+            <img src={CrossIconSquare} alt="" />
+            <p>Foster meaningful and genuine interactions</p>
+          </div>
+          <div className="points">
+            <img src={CrossIconSquare} alt="" />
+            <p>
+              Do not make other users uncomfortable by sharing NSFW content.
+            </p>
+          </div>
+        </div>
+        <div className="close_community_guidelines">
+          <img src={CrossCircleTransparent} alt="" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CommunityGuidelines;

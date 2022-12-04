@@ -1,0 +1,148 @@
+.graph-container{
+    width: 78%;
+    min-height: 25vh;
+    // background-color: pink;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+}
+.graph-childs{
+    width: 30%;
+    height: 100%;
+    // background-color: purple;
+    background: rgba(29,29,29,0.25);
+    backdrop-filter: blur(2.5px);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+.chart-cont{
+    width: 99%;
+    height: 12vh;
+}
+.graph-childs h3{
+    font-weight: 100;
+    font-size: 24px;
+    line-height: 26px;
+}
+.graph-childs span{
+    // font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #828282;
+}
+.top-text{
+    width: 100%;
+    padding-top: 8%;
+    padding-left: 8%;
+    // background-color: blue;
+}
+
+
+@media screen and (max-width:1300px){
+    .graph-container{
+    width: 85%;
+    min-height: 25vh;
+}
+.chart-cont{
+    width: 99%;
+    height: 11vh;
+}
+}
+
+@media screen and (max-width:1120px){
+    .graph-container{
+    width: 90%;
+    min-height: 25vh;
+}
+}
+
+@media screen and (max-width:1034px){
+    .graph-container{
+    width: 100%;
+    min-height: 25vh;
+    // justify-content: flex-start;
+}
+}
+
+@media screen and (max-width:986px){
+    .graph-container{
+    width: 95%;
+    min-height: 25vh;
+    justify-content: flex-start;
+}
+}
+
+@media screen and (max-width:955px){
+    .graph-container{
+    width: 95%;
+    min-height: 25vh;
+}
+}
+
+@media screen and (max-width:870px){
+    .graph-container{
+    width: 100%;
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+}
+.chart-cont{
+    width: 99%;
+    height: 15vh;
+}
+.graph-childs{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+}
+
+@media screen and (max-width:760px){
+
+.graph-childs{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+}
+
+@media screen and (max-width:625px){
+
+.graph-childs{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+}
+
+@media screen and (max-width:470px){
+
+.graph-childs{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+}
+
+@media screen and (max-width:400px){
+
+.graph-childs{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+}

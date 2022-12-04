@@ -1,0 +1,341 @@
+.other_users_profile_main_container {
+  height: 89vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .other_users_profile_container {
+    border-color: #282828;
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+
+    backdrop-filter: blur(2px);
+    border-radius: 12px 12px 12px 12px;
+    background: rgba(29, 29, 29, 0.5);
+    width: 650px;
+    margin: 0 auto;
+
+    .transparent_head {
+      background: rgba(40, 40, 40, 0.7);
+      border-bottom: 1px solid #1d1d1d;
+      border-radius: 12px 12px 0px 0px;
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h4 {
+        text-indent: 20px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #e0e0e0;
+      }
+      .edit_profile_btn {
+        background: #1d1d1d;
+        color: #e0e0e0;
+        border: 2px solid #282828;
+        border-radius: 12px;
+        font-weight: 400;
+        font-size: 16px;
+        height: 43px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 10px;
+      }
+    }
+    .user_profile_info {
+      width: 100%;
+      height: 150px;
+
+      color: #828282;
+
+      .user_profile_img_container {
+        width: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 150px;
+        img {
+          border-radius: 15px !important;
+        }
+      }
+
+      .user_profile_followers_container {
+        h3 {
+          color: #e0e0e0;
+          font-weight: 600;
+          display: flex;
+          align-items: flex-end;
+          height: 40%;
+          font-size: 20px;
+        }
+
+        button {
+          background: #1d1d1d;
+          color: #e0e0e0;
+          padding: 7px 20px;
+          border: 2px solid #282828;
+          border-radius: 12px;
+        }
+
+        p:first-child {
+          font-size: 16px;
+          font-weight: bold;
+        }
+        p:last-child {
+          font-size: 14px;
+        }
+      }
+    }
+
+    .user_interests_container {
+      width: 100%;
+      padding: 0;
+      height: 230px;
+      margin-left: auto;
+      color: #e0e0e0;
+      .interests_name_block {
+        height: 40%;
+        display: flex;
+        align-items: center;
+
+        h4 {
+          font-weight: 400;
+          font-size: 20px;
+        }
+      }
+      .user_interests {
+        .user_interests_items {
+          display: flex;
+          flex-wrap: wrap;
+          width: 95%;
+          margin: 0 auto;
+          //   justify-content: space-around;
+          div {
+            cursor: pointer;
+            display: flex;
+            background: #282828;
+            border-radius: 12px;
+            height: 45px;
+            align-items: center;
+            padding: 10px 10px;
+            width: 21%;
+
+            h6 {
+              margin: 0 0 0 5px;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 22px;
+            }
+          }
+
+          .selected {
+            border: 1px solid white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .other_users_profile_main_container {
+    .other_users_profile_container {
+      width: 95%;
+
+      .transparent_head {
+      }
+      .user_profile_info {
+        .user_profile_img_container {
+        }
+
+        .user_profile_followers_container {
+          h3 {
+          }
+
+          button {
+          }
+
+          p:first-child {
+          }
+          p:last-child {
+          }
+        }
+      }
+
+      .user_interests_container {
+        height: 270px;
+        .interests_name_block {
+          h4 {
+          }
+        }
+        .user_interests {
+          .user_interests_items {
+            div {
+              width: 30%;
+              h6 {
+              }
+            }
+
+            .selected {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .other_users_profile_main_container {
+    .other_users_profile_container {
+      width: 95%;
+
+      .transparent_head {
+      }
+      .user_profile_info {
+        .user_profile_img_container {
+        }
+
+        .user_profile_followers_container {
+          h3 {
+          }
+
+          button {
+          }
+
+          p:first-child {
+          }
+          p:last-child {
+          }
+        }
+      }
+
+      .user_interests_container {
+        height: auto;
+        .interests_name_block {
+          height: 100px;
+          h4 {
+          }
+        }
+        .user_interests {
+          .user_interests_items {
+            div {
+              width: 45%;
+              h6 {
+              }
+            }
+
+            .selected {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .other_users_profile_main_container {
+    .other_users_profile_container {
+      .transparent_head {
+      }
+      .user_profile_info {
+        .user_profile_img_container {
+          width: 120px;
+          img {
+            width: 80px;
+          }
+        }
+
+        .user_profile_followers_container {
+          h3 {
+          }
+
+          button {
+            padding: 7px 13px;
+          }
+
+          p:first-child {
+            font-size: 14px;
+          }
+          p:last-child {
+            font-size: 12px;
+          }
+        }
+      }
+
+      .user_interests_container {
+        .interests_name_block {
+          h4 {
+          }
+        }
+        .user_interests {
+          .user_interests_items {
+            div {
+              h6 {
+              }
+            }
+
+            .selected {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .other_users_profile_main_container {
+    .other_users_profile_container {
+      .transparent_head {
+      }
+      .user_profile_info {
+        .user_profile_img_container {
+          width: 100px;
+          img {
+            width: 70px;
+          }
+        }
+
+        .user_profile_followers_container {
+          h3 {
+          }
+
+          button {
+            padding: 7px 10px;
+            font-size: 12px;
+          }
+
+          p:first-child {
+            font-size: 12px;
+          }
+          p:last-child {
+            font-size: 10px;
+          }
+        }
+      }
+
+      .user_interests_container {
+        .interests_name_block {
+          h4 {
+          }
+        }
+        .user_interests {
+          .user_interests_items {
+            div {
+              width: 100%;
+              h6 {
+              }
+            }
+
+            .selected {
+            }
+          }
+        }
+      }
+    }
+  }
+}

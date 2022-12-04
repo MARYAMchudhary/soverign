@@ -1,0 +1,219 @@
+.stake-parent-contain{
+    width: 73%;
+    min-height: 40vh;
+    // background-color: black;
+    background: rgba(29,29,29,0.25);
+    border-radius: 16px;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.top-child-Stake{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    // background-color: yellow;
+}
+.second-child-stake{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+.stake-title{
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 22px;
+}
+.second-child-stake span:nth-child(1){
+    color: white;
+    font-family: 'Montserrat';
+}
+.second-child-stake span:nth-child(2){
+    color: #828282;
+    font-family: 'Montserrat';
+}
+.buttons-container{
+    width: 100%;
+    height: fit-content;
+    // background-color: blue;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5%;
+}
+.buttons-container button{
+    background: #1B1B1B;
+    border: 1px solid rgba(29, 29, 29, 0.25);
+    border-radius: 0.3rem;
+    color: white;
+    width: 25%;
+    height: 5vh;
+    font-size: 14px;
+    // font-family: 'Montserrat';
+}
+.buttons-container button:focus{
+    border: 1px solid white;
+    background: transparent;
+}
+.stake-parent-contain hr{
+    width: 100%;
+    height: 1px;
+    color: #414141;
+}
+.hr-line{
+    width: 100%;
+    height: 0.5px;
+    background-color: white;
+}
+.input-with-labels{
+    width: 100%;
+    min-height: 10vh;
+    // background-color: pink;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3%;
+}
+.stake_inp{
+    width: 100%;
+    min-height: 6vh;
+    background: #282828;
+    border: none;
+    border-radius: 12px;
+    padding-left: 2%;
+}
+input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        display: none;
+      }
+.stake_inp:focus{
+    border: none;
+    background-color: black;
+    color: white;
+    outline: none;
+}
+.inp-childs{
+    width: 32%;
+    height: auto;
+    // background-color: green;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.inp-childs span{
+    color: white;
+}
+.inp_btns{
+    width: 100%;
+    min-height: 6vh;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    border: 1px solid white;
+}
+.inp_btns:focus{
+    background-color: white;
+    color: black;
+}
+
+
+@media screen and (max-width:1300px){
+    .stake-parent-contain{
+    width: 80%;
+    min-height: 40vh;
+}
+}
+
+@media screen and (max-width:1120px){
+    .stake-parent-contain{
+    width: 85%;
+    min-height: 40vh;
+}
+}
+
+@media screen and (max-width:1034px){
+    .stake-parent-contain{
+    width: 95%;
+    min-height: 40vh;
+    // justify-content: flex-start;
+}
+}
+
+@media screen and (max-width:986px){
+    .stake-parent-contain{
+    width: 80%;
+    min-height: 40vh;
+    display: flex;
+    align-items: flex-start;
+}
+}
+
+@media screen and (max-width:640px){
+    .stake-parent-contain{
+    width: 95%;
+    min-height: 115vh;
+}
+.buttons-container{
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.input-with-labels{
+    width: 100%;
+    min-height: 10vh;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.6rem;
+}
+.inp-childs{
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.buttons-container button{
+    border-radius: 0.5rem;
+    width: 50%;
+    height: 7vh;
+}
+}
+
+@media screen and (max-width:450px){
+
+.inp-childs{
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.buttons-container button{
+    border-radius: 0.5rem;
+    width: 70%;
+    height: 7vh;
+}
+}
+
+@media screen and (max-width:350px){
+
+.inp-childs{
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.buttons-container button{
+    border-radius: 0.5rem;
+    width: 90%;
+    height: 7vh;
+}
+}
+

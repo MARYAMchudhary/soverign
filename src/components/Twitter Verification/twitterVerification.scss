@@ -1,0 +1,255 @@
+.container1 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-2 {
+  width: 70%;
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(29, 29, 29, 0.5);
+  border-radius: 16px;
+  backdrop-filter: blur(17.5px);
+  // background-color: pink;
+
+  padding-bottom: 2%;
+}
+.container-2 h2 {
+  font-weight: 400;
+  font-size: 32px;
+  color: #fcfcfc;
+
+  padding-bottom: 3%;
+}
+.twitter-info {
+  width: 55%;
+  min-height: 13vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.first-section {
+  width: 100%;
+  // height: 100vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.twt {
+  width: 35%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 20%;
+}
+.twt span {
+  color: white;
+}
+.first-section button {
+  width: 30%;
+  height: 6vh;
+  background: #ffffff;
+  border: 2px solid #464646;
+  border-radius: 8px;
+  color: #464646;
+}
+.first-section .verified {
+  color: #34c759 !important;
+  font-size: 16px;
+  font-weight: 600;
+}
+.second-section {
+  width: 100%;
+  height: 5vh;
+  background: #aaaaaa;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding-left: 3%;
+  font-weight: 400;
+  font-size: 13px;
+  color: #464646;
+}
+hr {
+  color: white;
+  height: 1rem;
+}
+.paragraph-section p {
+  // font-size: small;
+}
+.paragraph-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  height: fit-content;
+  margin-top: 1%;
+}
+.signup-button {
+  width: 30%;
+  height: 6vh;
+  border: none;
+  background: #ffffff;
+  border-radius: 8px;
+  margin-top: 3%;
+}
+
+@media screen and (max-width: 1200px) {
+  .signup-button {
+    width: 40%;
+    height: 6vh;
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 3%;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .container-2 {
+    width: 80%;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(40px);
+    // background-color: pink;
+    border-radius: 0.9rem;
+    padding-bottom: 2%;
+  }
+  .signup-button {
+    width: 40%;
+    height: 6vh;
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 3%;
+  }
+}
+
+@media screen and (max-width: 915px) {
+  .container-2 {
+    width: 85%;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(40px);
+    // background-color: pink;
+    border-radius: 0.9rem;
+    padding-bottom: 2%;
+  }
+  .signup-button {
+    width: 45%;
+    height: 6vh;
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 3%;
+  }
+  .twitter-info {
+    width: 65%;
+    min-height: 13vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .container-2 {
+    width: 85%;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(40px);
+    // background-color: pink;
+    border-radius: 0.9rem;
+    padding-bottom: 2%;
+  }
+  .signup-button {
+    width: 45%;
+    height: 6vh;
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 3%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .twitter-info {
+    width: 75%;
+    min-height: 13vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .signup-button {
+    width: 55%;
+    height: 6vh;
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 3%;
+  }
+}
+
+@media screen and (max-width: 638px) {
+  .twitter-info {
+    width: 80%;
+    min-height: 13vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 595px) {
+  .twitter-info {
+    width: 90%;
+    min-height: 13vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .signup-button {
+    width: 90%;
+    display: flex;
+    height: 6vh;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    margin-top: 3%;
+  }
+}
+
+@media screen and (max-width: 476px) {
+  .container-2 {
+    width: 95%;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(40px);
+    // background-color: pink;
+    border-radius: 0.9rem;
+    padding-bottom: 2%;
+  }
+  .twitter-info {
+    width: 90%;
+    min-height: 13vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

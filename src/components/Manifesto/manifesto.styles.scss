@@ -1,0 +1,661 @@
+.manifesto_container {
+  height: 89vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .manifesto_body {
+    overflow-y: scroll;
+    width: 90%;
+
+    height: 100%;
+    display: flex;
+    /* width */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: transparent;
+    }
+
+    .manifesto_sidebar {
+      width: 260px;
+      align-self: flex-start;
+      max-height: 80vh;
+      position: -webkit-sticky; /* for Safari */
+      position: sticky;
+      top: 0;
+      overflow: auto;
+      &::-webkit-scrollbar {
+        width: 5px;
+        margin-left: 10px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: rgb(82, 82, 82);
+        border-radius: 10px;
+      }
+
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: white;
+      }
+    }
+    .manifesto-title-container {
+      color: white;
+      background: none;
+      border: none;
+      background: #1d1d1d;
+      border-radius: 5px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+
+      padding-left: 15px;
+
+      border: 1px solid #333333;
+      h3 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+      }
+
+      .selected {
+        border: 1px solid rgb(34, 236, 34);
+      }
+    }
+
+    .manifest_section {
+      margin: 10px 0;
+      height: fit-content;
+      background: none;
+      border: none;
+
+      .accordion-header {
+        display: flex;
+        justify-content: flex-end;
+        span {
+          width: 75%;
+          display: flex;
+          padding-left: 20px;
+          padding-right: 2px;
+          align-items: center;
+          text-align: start;
+
+          height: 46px;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 22px;
+          color: #ffffff;
+          background: #333333;
+          border-radius: 5px;
+        }
+      }
+
+      .manifesto_subsection {
+        padding: 0;
+        margin-top: 10px;
+        .card-body {
+          background: none;
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+          width: 100%;
+          padding: 0;
+          margin-top: 10px;
+          border: none;
+          button {
+            width: fit-content;
+            background: #4d4d4d;
+            border-radius: 5px;
+            height: 40px;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 22px;
+            color: white;
+            border: none;
+          }
+        }
+      }
+    }
+
+    // .manifesto_table_of_content {
+    //   width: 25%;
+
+    //   height: 100%;
+
+    //   .manifest_section {
+    //     margin: 10px 0;
+    //     height: fit-content;
+    //     p {
+    //       button {
+    //         width: 100%;
+    //         text-align: start;
+    //         height: 40px;
+    //         border: 1px solid #333333;
+    //         font-weight: 600;
+    //         font-size: 16px;
+    //         line-height: 22px;
+    //         color: #ffffff;
+    //         background: #1d1d1d;
+    //         border-radius: 5px;
+    //       }
+    //     }
+
+    //     .manifesto_subsection {
+    //       .card-body {
+    //         background: none;
+    //         display: flex;
+    //         align-items: flex-end;
+    //         justify-content: end;
+    //         width: 100%;
+    //         padding: 0;
+    //         border: none;
+    //         button {
+    //           width: fit-content;
+    //           background: #333333;
+    //           border-radius: 5px;
+    //           height: 40px;
+    //           font-weight: 500;
+    //           font-size: 14px;
+    //           line-height: 22px;
+    //           color: white;
+    //           border: none;
+    //           width: 50%;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+
+    .mobile_select_sections {
+      display: none;
+    }
+    .manifesto_content {
+      width: 75%;
+      color: white;
+      margin-left: 30px;
+
+      .manifesto_content_sec {
+        margin-top: 10px;
+
+        h3 {
+          font-size: 32px;
+          line-height: 35px;
+        }
+        p {
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 25px;
+          color: #bdbdbd;
+        }
+        ul {
+          color: #bdbdbd;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .manifesto_container {
+    .manifesto_body {
+      .manifesto_sidebar {
+      }
+      .manifesto-title-container {
+        h3 {
+          font-size: 15px;
+        }
+
+        .selected {
+        }
+      }
+
+      .manifest_section {
+        .accordion-header {
+          span {
+            width: 90%;
+            font-size: 15px;
+            height: 43px;
+          }
+        }
+
+        .manifesto_subsection {
+          .card-body {
+            button {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+
+      .manifesto_content {
+        .manifesto_content_sec {
+          h3 {
+          }
+          p {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 980px) {
+  .manifesto_container {
+    .manifesto_body {
+      .manifesto_sidebar {
+      }
+      .manifesto-title-container {
+        height: 44px;
+
+        h3 {
+          font-size: 13.5px;
+          line-height: normal;
+        }
+
+        .selected {
+        }
+      }
+
+      .manifest_section {
+        .accordion-header {
+          span {
+            width: 100%;
+            font-size: 14px;
+            height: 41px;
+            line-height: normal;
+          }
+        }
+
+        .manifesto_subsection {
+          .card-body {
+            button {
+              height: 45px;
+              font-size: 9.5px;
+            }
+          }
+        }
+      }
+
+      .manifesto_content {
+        .manifesto_content_sec {
+          h3 {
+          }
+          p {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .manifesto_container {
+    .manifesto_body {
+      flex-direction: column;
+      .manifesto_sidebar {
+        display: none;
+      }
+      .manifesto-title-container {
+        h3 {
+          font-size: 15px;
+        }
+
+        .selected {
+        }
+      }
+
+      .manifest_section {
+        .accordion-header {
+          span {
+            width: 90%;
+            font-size: 15px;
+            height: 43px;
+          }
+        }
+
+        .manifesto_subsection {
+          .card-body {
+            button {
+              font-size: 11px;
+            }
+          }
+        }
+      }
+
+      .mobile_select_sections {
+        display: block;
+        width: inherit;
+        margin: 0 auto;
+        position: sticky;
+        top: 0;
+
+        .accordion-item {
+        }
+      }
+
+      .manifesto_content {
+        width: inherit;
+        .manifesto_content_sec {
+          h3 {
+          }
+          p {
+          }
+        }
+      }
+    }
+  }
+}
+
+// @media screen and (max-width: 480px) {
+//   .manifesto_container {
+//     .manifesto_body {
+//       .manifesto_table_of_content {
+//         .manifest_section {
+//           p {
+//             button {
+//             }
+//           }
+
+//           .manifesto_subsection {
+//             .card-body {
+//               button {
+//                 width: 100%;
+//               }
+//             }
+//           }
+//         }
+//       }
+
+//       .manifesto_content {
+//         .manifesto_content_sec {
+//           h3 {
+//           }
+//           p {
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.dropdown {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 35%;
+  background-color: white;
+  position: absolute;
+  align-self: center;
+  margin-top: 22%;
+  border-radius: 0.5rem;
+  z-index: 20;
+}
+
+.dropdown li {
+  position: relative;
+}
+
+.dropdown li {
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.dropdown li ul {
+  position: absolute;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  top: 93%;
+  width: 100%;
+  margin-left: -3%;
+  padding: 0;
+  list-style: none;
+  display: none;
+  line-height: normal;
+  background-color: #333;
+  z-index: 10;
+}
+
+.dropdown li ul li {
+  text-align: left;
+  color: #cccccc;
+  font-size: 14px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+.hide-content {
+  display: none !important;
+}
+.show-content {
+  display: block !important;
+}
+.hide-content-main{
+  display: none !important;
+}
+.show-content-main{
+  display: block !important;
+}
+
+.dropdown li ul li ul {
+  // left: 100%;
+  // top: 0;
+  position: static;
+  margin-top: 12%;
+  margin-left: -92%;
+}
+
+ul li:hover > ul {
+  display: block;
+}
+.dropdown-icon {
+  width: 6%;
+  height: auto;
+}
+
+@media screen and (min-width: 1100px) {
+  .drop-down-menu {
+    display: none;
+  }
+  .dropdown {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .manifesto_sidebar {
+    display: none;
+  }
+  .manifesto_content {
+    padding-top: 5%;
+  }
+  .dropdown {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 40%;
+    background-color: white;
+    position: absolute;
+    align-self: center;
+    margin-top: 10%;
+    border-radius: 0.5rem;
+  }
+  .manifesto_container {
+    padding-top: 10%;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .dropdown {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 40%;
+    background-color: white;
+    position: absolute;
+    align-self: center;
+    margin-top: 12%;
+    border-radius: 0.5rem;
+  }
+  .manifesto_container {
+    padding-top: 12%;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .accordion-item {
+    display: none;
+  }
+  .dropdown {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 40%;
+    background-color: white;
+    position: absolute;
+    align-self: center;
+    margin-top: 14%;
+    border-radius: 0.5rem;
+  }
+  .manifesto_container {
+    padding-top: 16%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .dropdown {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 40%;
+    background-color: white;
+    position: absolute;
+    align-self: center;
+    margin-top: 14%;
+    border-radius: 0.5rem;
+  }
+  .manifesto_container {
+    padding-top: 16%;
+  }
+}
+
+@media screen and (max-width: 567px) {
+  .dropdown {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 50%;
+    background-color: white;
+    position: absolute;
+    align-self: center;
+    margin-top: 15%;
+    border-radius: 0.5rem;
+  }
+  .manifesto_container {
+    padding-top: 15%;
+  }
+}
+
+// @media screen and (max-width: 539px) {
+
+// }
+
+// @media screen and (max-width: 539px) {
+
+// }
+
+@media screen and (max-width: 466px) {
+  .dropdown {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 60%;
+    background-color: white;
+    position: absolute;
+    align-self: center;
+    margin-top: 23%;
+    border-radius: 0.5rem;
+  }
+  .manifesto_container {
+    padding-top: 18%;
+  }
+}
+
+@media screen and (max-width: 397px) {
+  .dropdown {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 60%;
+    background-color: white;
+    position: absolute;
+    align-self: center;
+    margin-top: 22%;
+    border-radius: 0.5rem;
+  }
+  .manifesto_container {
+    padding-top: 23%;
+  }
+}
+
+@media screen and (max-width: 339px) {
+  .dropdown {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 70%;
+    background-color: white;
+    position: absolute;
+    align-self: center;
+    margin-top: 22%;
+    border-radius: 0.5rem;
+  }
+}
+
+// @media screen and (max-width: 365px) {
+
+// }
+
+@media screen and (max-width: 342px) {
+  .dropdown {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 70%;
+    background-color: white;
+    position: absolute;
+    align-self: center;
+    margin-top: 22%;
+    border-radius: 0.5rem;
+  }
+}
