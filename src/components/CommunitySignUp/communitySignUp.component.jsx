@@ -17,7 +17,7 @@ import axios from "axios";
 import ImageCrop from "./ImageCrop";
 import ReactCrop from "react-image-crop";
 
-const CommunitySignUp = () => {
+const CommunitySignUp = ({ DarkMood }) => {
   const navigate = useNavigate();
   const [userId, setUserId] = useState("");
   const [username, setUsername] = useState("");
@@ -91,7 +91,7 @@ const CommunitySignUp = () => {
 
     let imageObj1 = new Image();
     imageObj1.src = imagef;
-    imageObj1.onload = function () {
+    imageObj1.onload = function() {
       context.drawImage(
         imageObj1,
         imgCroppedArea.x,
@@ -107,7 +107,6 @@ const CommunitySignUp = () => {
       // if (dataURL) {
       setImgAfterCrop(dataURL);
       setCurrentPage("img-cropped");
-
     };
   };
   useEffect(() => {
@@ -172,14 +171,14 @@ const CommunitySignUp = () => {
   }
 
   function updateUser() {
-    console.log(selectItem)
+    console.log(selectItem);
     let interests_array = [];
-    selectItem.forEach(element => {
+    selectItem.forEach((element) => {
       if (element.selected === true) {
-        interests_array.push(element.name)
+        interests_array.push(element.name);
       }
     });
-    console.log(interests_array)
+    console.log(interests_array);
     // return
     if (username == "") {
       return;
@@ -214,27 +213,28 @@ const CommunitySignUp = () => {
           // console.log(responseUser);
           // console.log(responseUser.data[0].user_wallet_address);
           // setWalletAddress(responseUser.data[0].user_wallet_address);
-          sessionStorage.setItem('walletAddress', responseUser.data[0].user_wallet_address);
-          sessionStorage.setItem('user', JSON.stringify(responseUser.data[0]));
+          sessionStorage.setItem(
+            "walletAddress",
+            responseUser.data[0].user_wallet_address
+          );
+          sessionStorage.setItem("user", JSON.stringify(responseUser.data[0]));
           axios
             .get(`${global.backendUrl}/getWelcome`)
-            .then(responseWelcome => {
-              console.log(responseWelcome)
+            .then((responseWelcome) => {
+              console.log(responseWelcome);
               let formData = {
                 toEmail: emailAddress,
-                welcomeMessage: responseWelcome.data[0].welcome_message_text
+                welcomeMessage: responseWelcome.data[0].welcome_message_text,
               };
               axios
                 .post(`${global.backendUrl}/sendEmail`, formData)
                 .then((responseEmailSend) => {
-                  console.log(responseEmailSend)
+                  console.log(responseEmailSend);
                 });
-
             })
-            .catch(err => console.log(err))
+            .catch((err) => console.log(err));
           navigate("/welcome-page/");
         });
-
     });
   }
   return (
@@ -245,8 +245,12 @@ const CommunitySignUp = () => {
         <div className="community-signup-leftside ms-3 my-4">
           <div className="username-input-container">
             <div className="community-signup-inputs-title">
-              <h5>Username</h5>
-              <span>Allowed Characters: A - Z, 0-9</span>
+              <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
+                Username
+              </h5>
+              <span style={{ color: DarkMood === true ? "#fff" : "#000" }}>
+                Allowed Characters: A - Z, 0-9
+              </span>
             </div>
             <div className="username-input-div">
               <input
@@ -289,7 +293,9 @@ const CommunitySignUp = () => {
           </div>
           <div className="community-email-input-container">
             <div className="community-signup-inputs-title">
-              <h5>Email Address</h5>
+              <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
+                Email Address
+              </h5>
             </div>
             <input
               type="email"
@@ -302,7 +308,9 @@ const CommunitySignUp = () => {
           </div>
           <div className="wallet-input-container">
             <div className="community-signup-inputs-title">
-              <h5>Wallet Address</h5>
+              <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
+                Wallet Address
+              </h5>
             </div>
             <input
               disabled
@@ -316,7 +324,9 @@ const CommunitySignUp = () => {
           </div>
           <div className="community-password-input-container">
             <div className="community-signup-inputs-title">
-              <h5>Password</h5>
+              <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
+                Password
+              </h5>
             </div>
             <input
               type="password"
@@ -329,7 +339,9 @@ const CommunitySignUp = () => {
           </div>
           <div className="confirm-password-container">
             <div className="community-signup-inputs-title">
-              <h5>Confirm Password</h5>
+              <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
+                Confirm Password
+              </h5>
             </div>
             <input
               type="password"
@@ -352,9 +364,16 @@ const CommunitySignUp = () => {
         {/* RIGHT SIDE CONTAINER STARTS */}
         <div className="community-signup-rightside ms-3 my-4">
           <div className="community-signup-pofile-image">
-            <h5> Profile Image</h5>
-            <p>Click to upload or drag and drop SVG, PNG, JPG or GIF </p>
-            <p>Max size - 1000px x 1000px</p>
+            <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
+              {" "}
+              Profile Image
+            </h5>
+            <p style={{ color: DarkMood === true ? "#fff" : "#000" }}>
+              Click to upload or drag and drop SVG, PNG, JPG or GIF{" "}
+            </p>
+            <p style={{ color: DarkMood === true ? "#fff" : "#000" }}>
+              Max size - 1000px x 1000px
+            </p>
             <div
               className={`profile-image ${"position-relative"} my-2 d-flex justify-content-center justify-content-sm-start`}
             >
@@ -395,7 +414,9 @@ const CommunitySignUp = () => {
             </div>
           </div>
           <div className="community-signup-interests">
-            <h5>Select your interests</h5>
+            <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
+              Select your interests
+            </h5>
             <div className="community-signup-interests-items">
               {selectItem.map((item) => {
                 return (
@@ -428,7 +449,10 @@ const CommunitySignUp = () => {
                   setTerms(e.target.checked);
                 }}
               />
-              <p className="m-0 me-2">
+              <p
+                className="m-0 me-2"
+                style={{ color: DarkMood === true ? "#fff" : "#000" }}
+              >
                 I agree to receive updates and announcements from Sovereign.
               </p>
             </div>
@@ -437,10 +461,11 @@ const CommunitySignUp = () => {
               onClick={(e) => {
                 updateUser();
               }}
-              className={`community-signup-continue ${terms == true && isAvailable == "true"
-                ? ""
-                : "community-signup-continue-disabled"
-                }`}
+              className={`community-signup-continue ${
+                terms == true && isAvailable == "true"
+                  ? ""
+                  : "community-signup-continue-disabled"
+              }`}
             >
               Continue
             </Link>

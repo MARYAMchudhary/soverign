@@ -15,7 +15,7 @@ import AddIconWhite from "../../assets/Icons/AddIconWhite.svg";
 import TickIcon from "../../assets/Icons/DoubleTick.svg";
 import CircleClose from "../../assets/Icons/CloseCircle.svg";
 
-const ProfileSetting = () => {
+const ProfileSetting = ({ DarkMood }) => {
   const [showProfileInformation, setShowProfileInformation] = useState(true);
   const [showChangePassword, setShowChangePassword] = useState(false);
   const [showUploadPicture, setShowUploadPic] = useState(false);
@@ -169,7 +169,9 @@ const ProfileSetting = () => {
                 </div>
                 <div className="profile_username_container">
                   <div className="profile-setting-inputs-title mb-3 mt-4">
-                    <h5>Username</h5>
+                    <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
+                      Username
+                    </h5>
                     <span>Allowed Characters: A - Z, 0-9</span>
                   </div>
                   <div className="profile_setting_username-input_container">
@@ -185,7 +187,9 @@ const ProfileSetting = () => {
                 </div>
                 <div className="profile_email_container">
                   <div className="profile-setting-email-title mb-3 mt-4">
-                    <h5>Email Address</h5>
+                    <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
+                      Email Address
+                    </h5>
                   </div>
                   <input
                     type="email"
@@ -207,8 +211,21 @@ const ProfileSetting = () => {
                       src={require("../../assets/Icons/WhiteBlock.png")}
                       className="me-3"
                       alt=""
+                      style={{
+                        cursor: "pointer",
+                        filter:
+                          DarkMood === false
+                            ? "brightness(142%) invert(183%) sepia(918%) hue-rotate(200deg) saturate(277%)"
+                            : "",
+                        // color: DarkMood === true ? "#fff" : "#000",
+                      }}
                     />
-                    <h4 className="m-0">My Interests</h4>
+                    <h4
+                      className="m-0"
+                      style={{ color: DarkMood === true ? "#fff" : "#000" }}
+                    >
+                      My Interests
+                    </h4>
                   </div>
                   <div className="user_interests">
                     <div className="user_interests_items ms-0">
@@ -276,7 +293,11 @@ const ProfileSetting = () => {
               <>
                 <div className="change_pass_field_containers">
                   <div className="profile-setting-inputs-title my-2">
-                    <h5 style={{ color: "#BDBDBD" }}>Old Password</h5>
+                    <h5
+                      style={{ color: DarkMood === false ? "#000" : "#BDBDBD" }}
+                    >
+                      Old Password
+                    </h5>
                   </div>
                   <input
                     type="password"
@@ -286,7 +307,11 @@ const ProfileSetting = () => {
                 </div>
                 <div className="change_pass_field_containers">
                   <div className="profile-setting-inputs-title my-2">
-                    <h5 style={{ color: "#BDBDBD" }}>New Password</h5>
+                    <h5
+                      style={{ color: DarkMood === false ? "#000" : "#BDBDBD" }}
+                    >
+                      New Password
+                    </h5>
                   </div>
                   <input
                     type="password"
@@ -296,7 +321,11 @@ const ProfileSetting = () => {
                 </div>
                 <div className="change_pass_field_containers">
                   <div className="profile-setting-inputs-title my-2">
-                    <h5 style={{ color: "#BDBDBD" }}>Confirm Password</h5>
+                    <h5
+                      style={{ color: DarkMood === false ? "#000" : "#BDBDBD" }}
+                    >
+                      Confirm Password
+                    </h5>
                   </div>
                   <input
                     type="password"

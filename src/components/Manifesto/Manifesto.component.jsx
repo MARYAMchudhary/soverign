@@ -29,11 +29,11 @@ const getdata = () => {
   });
 };
 
-const Manifesto = () => {
+const Manifesto = ({ DarkMood }) => {
   const [visibleSection, setVisibleSection] = useState();
-  const [ mainheading, setmainheading ] = useState( "Foreword" );
-  const [ dropdownDisplay, setdropdownDisplay ] = useState( "hide-content" );
-  const [ isOpen, setisOpen ] = useState( false );
+  const [mainheading, setmainheading] = useState("Foreword");
+  const [dropdownDisplay, setdropdownDisplay] = useState("hide-content");
+  const [isOpen, setisOpen] = useState(false);
   const headerRef = useRef(null);
   const [selectedOne, setselectedOne] = useState({
     num1: false,
@@ -63,8 +63,7 @@ const Manifesto = () => {
   const sovereignGrantRef = useRef(null);
   const decentralizedSocialPlatformRef = useRef(null);
   const decentralizedNewsNetworkRef = useRef(null);
-  const conclusionRef = useRef( null );
-  
+  const conclusionRef = useRef(null);
 
   const menuRef = useRef();
 
@@ -94,11 +93,11 @@ const Manifesto = () => {
     { section: "conclusion", ref: conclusionRef },
   ];
 
-  useEffect( () => {
-    document.addEventListener( 'mouseover', () => {
-      setisOpen( false );
-    })
-  })
+  useEffect(() => {
+    document.addEventListener("mouseover", () => {
+      setisOpen(false);
+    });
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -228,7 +227,7 @@ const Manifesto = () => {
                   aria-controls="collapseThree"
                   type="button"
                 >
-                  <h3 class="accordion-header" id="headingThree">
+                  <h3 class="accordion-header" id="headingThree" >
                     Behind The Curtain - The Art
                   </h3>
                 </div>
@@ -385,7 +384,7 @@ const Manifesto = () => {
                     data-bs-parent="#accordionExample"
                   >
                     <div class="accordion-body p-0">
-                      <div  class="accordion-item manifest_section">
+                      <div class="accordion-item manifest_section">
                         <h3 class="accordion-header" id="flush-headingThree">
                           <span
                             type="button"
@@ -641,8 +640,10 @@ const Manifesto = () => {
               id="foreword"
               ref={forewordRef}
             >
-              <h3>Foreword</h3>
-              <p>
+              <h3 style={{ color: DarkMood === false ? "#000" : "" }}>
+                Foreword
+              </h3>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Blockchain technology is changing the landscape of cyberspace,
                 and it’s causing shifts and rebalances of power across the graph
                 of entities connected by our internet, whether they be
@@ -655,7 +656,7 @@ const Manifesto = () => {
                 little more than conceptual regurgitation enshrouded within a
                 dizzying cacophony of hype.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 But Value is artificial; it’s a construct of our collective
                 imagination, and regardless of how public opinion may ebb or
                 flow, it doesn’t change something’s inherent usefulness. We’ve
@@ -666,7 +667,7 @@ const Manifesto = () => {
                 day being able to run around as them in some game world. We can
                 do better.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Our simulations are progressing quickly, and the divide between
                 what’s real and what’s digital is dissolving fast. We can see
                 all the freedom and promise virtuality has to offer, but we’re
@@ -700,7 +701,7 @@ const Manifesto = () => {
                 Sovereign plans to do.
               </p>
 
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 As one of the world’s first decentralized organizations,
                 Anonymous spans the entire globe. Despite how they may have been
                 portrayed, Anonymous is not some hacker organization; they are a
@@ -722,7 +723,7 @@ const Manifesto = () => {
                 Happiness shouldn’t be done in a system where the goal is put at
                 the end of an ever-hastening treadmill.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Before we continue, we’d first like to thank you - and
                 congratulate you - for making it at least this far. We know it’s
                 taking a lot of mental effort to ignore the notifications
@@ -730,7 +731,7 @@ const Manifesto = () => {
                 to say, we’re impressed and glad to have you still with us.
               </p>
 
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 It is our intention that this whitepaper elucidates our vision
                 as clearly as we see it and as well as we can. Though letters on
                 a page can only communicate so much, we hope that with your
@@ -746,8 +747,10 @@ const Manifesto = () => {
               id="theVision"
               ref={theVisionRef}
             >
-              <h3>The Vision</h3>
-              <p>
+              <h3 style={{ color: DarkMood === false ? "#000" : "" }}>
+                The Vision
+              </h3>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Sadly, capital is one very powerful way to make things happen in
                 the world, and Anonymous doesn’t take entering the NFT space
                 lightly. It’s easy for NFTs to have left you with a bad taste in
@@ -767,7 +770,7 @@ const Manifesto = () => {
                 on a two-pronged approach.
               </p>
 
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Human beings have been collaboratively reshaping the world since
                 before written history, and now, in our modern Information Age,
                 where everything is becoming computerized and metricized, group
@@ -781,7 +784,7 @@ const Manifesto = () => {
                 the internet. This DAO is named, “SovereignDAO.”
               </p>
 
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 The second segment of our endeavor is to educate people through
                 something we’re calling the “Sovereign Academy,” a new model for
                 online education. We believe education equips us with the
@@ -808,10 +811,12 @@ const Manifesto = () => {
               id="noStoryJustReality"
               ref={noStoryJustRealityRef}
             >
-              <h3>Behind The Curtain</h3>
-              <h4 style={{marginTop:20}}>The Art</h4>
-              <h5>No Story, Just Reality</h5>
-              <p>
+              <h3 style={{ color: DarkMood === false ? "#000" : "" }}>
+                Behind The Curtain
+              </h3>
+              <h4 style={{ marginTop: 20 ,color: DarkMood === false ? "#000" : "" }}>The Art</h4>
+              <h5 style={{ color: DarkMood === false ? "#000" : "" }} >No Story, Just Reality</h5>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 With so many projects centered on developing the characters of
                 their own fictional universes, we wanted to focus on the
                 characters in this universe, you and the rest of us. With our
@@ -831,7 +836,7 @@ const Manifesto = () => {
                 This art is intended to serve as a reminder of all the victories
                 that have yet to be won for humanity.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 We did the best we could in the time we had to touch upon a wide
                 array of human issues. If you believe you or a subset of people
                 are underrepresented or misrepresented by the imagery in Behind
@@ -840,10 +845,10 @@ const Manifesto = () => {
                 the team may undertake.
               </p>
 
-              <h4 id="designRarity" ref={designRarityRef}>
+              <h4 id="designRarity" ref={designRarityRef} style={{ color: DarkMood === false ? "#000" : "" }}>
                 Design and Rarity
               </h4>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 When we started this project, we knew we had to stand out from
                 what is now an extremely large herd (herd indeed). Obviously, it
                 had crossed our minds to do a humanoid bust wearing the iconic
@@ -865,7 +870,7 @@ const Manifesto = () => {
                 and textural to produce Behind The Curtain’s unique visual
                 style.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 An immense amount of thought was put into both the art and
                 underlying algorithms that generate each unique Behind The
                 Curtain NFT, and the team invested a ton of time into generating
@@ -876,7 +881,7 @@ const Manifesto = () => {
                 refer to as “Symbols,” and they make up the lifeblood of the
                 project.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Each piece contains somewhere between two to five symbols, and
                 our favorite aspect of the art stems from the mental and
                 conceptual relationships that form when looking at any
@@ -893,7 +898,7 @@ const Manifesto = () => {
                 relate to - pieces depicting movements and perspectives you may
                 support or can philosophically get behind.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Many generative collections either toggle or swap out pieces of
                 statically placed art, but graffiti, like our messy physical
                 world, is unpredictable; we wanted a system where components
@@ -905,14 +910,14 @@ const Manifesto = () => {
                 may share a certain attribute yet display it in wildly different
                 locations.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 In addition to Symbols, we have “Icons,” small, contained images
                 used to augment or add a bit of conceptual coloring to the
                 pieces as a whole. Like Symbols, Icons can exist in a wide array
                 of locations and a spread of different colors, giving them a
                 whole other axis along which to define their rarity.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 The central and most obvious attribute is the mask.
                 Intentionally fractured, yet always present, an outline of the
                 iconic Guy Fawkes mask encapsulates evocative colors and
@@ -921,7 +926,7 @@ const Manifesto = () => {
                 characterize the biological human organism that exists behind
                 every mask, the underlying attribute we all share.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 The world is a complex and messy place, and as physically
                 limited organisms, it’s currently impossible to escape the
                 microcosmic experience of our own subjectivity. In order to gain
@@ -937,14 +942,14 @@ const Manifesto = () => {
                 chance of reconstructing the archeological skeleton of history
                 and empathizing with the present body of lived human experience.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 This project is designed with this in mind. Symbols and graphics
                 can overlap or be positioned in a way where part of them is
                 obscured. It is our intention for you to cross-reference and
                 check multiple NFTs to ensure you’ve seen the whole picture and
                 all the details.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 As with any good game design, one player’s fun does not balance
                 out with another player’s frustration. The game’s systems should
                 be built in a way that allow all players to be having fun,
@@ -960,7 +965,7 @@ const Manifesto = () => {
                 of Icon color, there is a widened opportunity for pieces to
                 contain something definitively very rare.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Besides systematically defined rarity, there are a couple
                 ancillary attributes we are deliberately not adding to the
                 metadata. Art shouldn’t always be seen through the lens of
@@ -968,7 +973,7 @@ const Manifesto = () => {
                 simply because you like them, not because the system tells you
                 you should want them.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Finally, and arguably the most important aspect of the whole
                 thing, is to not let a rigid framework defined in computer code
                 tell you how you should value something; instead, let yourself
@@ -979,31 +984,31 @@ const Manifesto = () => {
                 street outside your window fighting for what your piece
                 represents. Who’s to say your piece isn’t worth more then?
               </p>
-              <h4 id="BTCNFTLicense" ref={BTCNFTLicenseRef}>
+              <h4 id="BTCNFTLicense" ref={BTCNFTLicenseRef} style={{ color: DarkMood === false ? "#000" : "" }}>
                 Behind The Curtain NFT License
               </h4>
-              <h5>Attribution 4.0 International (CC BY 4.0)</h5>
-              <p>
+              <h5 style={{ color: DarkMood === false ? "#000" : "" }}>Attribution 4.0 International (CC BY 4.0)</h5>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Behind The Curtain utilizes the Creative Commons 4.0 License.
                 More information can be found here:
                 https://creativecommons.org/licenses/by/4.0/
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 You are free to:
                 <ul>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     Share
                     <ul>
-                      <li>
+                      <li style={{ color: DarkMood === false ? "#000" : "" }}>
                         Copy and redistribute the material in any medium or
                         format.
                       </li>
                     </ul>
                   </li>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     Adapt
                     <ul>
-                      <li>
+                      <li style={{ color: DarkMood === false ? "#000" : "" }}>
                         Remix, transform, and build upon the material for any
                         purpose, even commercially.
                       </li>
@@ -1011,18 +1016,20 @@ const Manifesto = () => {
                   </li>
                 </ul>
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 The licensor cannot revoke these freedoms as long as you follow
                 the license terms.
               </p>
-              <span>
-                <strong>License Terms</strong>
+              <span style={{ color: DarkMood === false ? "#000" : "" }}>
+                <strong style={{ color: DarkMood === false ? "#000" : "" }}>
+                  License Terms
+                </strong>
               </span>
               <ul>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   Attribution
                   <ul>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       You must give appropriate credit, provide a link to the
                       license, and indicate if changes were made. You may do so
                       in any reasonable manner, but not in any way that suggests
@@ -1030,10 +1037,10 @@ const Manifesto = () => {
                     </li>
                   </ul>
                 </li>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   No Hate or Prejudice
                   <ul>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       You may NOT remix or add imagery that celebrates hate or
                       the marginalization of a certain demographic. This
                       includes, but is not limited to, the celebration of things
@@ -1042,10 +1049,10 @@ const Manifesto = () => {
                     </li>
                   </ul>
                 </li>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   No Additional Restrictions
                   <ul>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       You may not apply legal terms or technological measures
                       that legally restrict others from doing anything the
                       license permits.
@@ -1056,10 +1063,14 @@ const Manifesto = () => {
             </div>
 
             <div className="manifesto_content_sec" id="theDAO" ref={theDAORef}>
-              <h3>Sovereign</h3>
-              <h4>The DAO</h4>
+              <h3 style={{ color: DarkMood === false ? "#000" : "" }}>
+                Sovereign
+              </h3>
+              <h4 style={{ color: DarkMood === false ? "#000" : "" }}>
+                The DAO
+              </h4>
 
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Law and order are how we’ve managed to civilize the human
                 animal. And although the news maintains an ever-streaming flow
                 of war, murder, and plight, we are actually living in the most
@@ -1090,7 +1101,7 @@ const Manifesto = () => {
                 influence policymakers or get involved in their local
                 government?
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 We are stuck in a ship whose course is set by few while we’re
                 relegated to the engine room. This is why unqualified egoists
                 have made it into the highest seats of power and why civil
@@ -1104,7 +1115,7 @@ const Manifesto = () => {
                 like a depressing denouement. It’s time to do something about
                 it.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 In actuality, it’s been time to do something about it for a
                 while now, but only recently have digital tools become available
                 that make internet transparency and group decision making as
@@ -1120,17 +1131,17 @@ const Manifesto = () => {
                 the real world, influencing our experienced lives and local
                 governments in ways we can actually feel.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Access to SovereignDAO can be gained by owning Sovereign tokens
                 or a Behind The Curtain NFT. This isn’t intended to be an
                 exclusive club; we want the voices of everyone, not just the
                 affluent, to shape the decisions Sovereign makes. The world
                 needs improvement, and we can’t do it without you.
               </p>
-              <h4 id="DAOPlatformInterface" ref={DAOPlatformInterfaceRef}>
+              <h4 id="DAOPlatformInterface" ref={DAOPlatformInterfaceRef} style={{ color: DarkMood === false ? "#000" : "" }}>
                 DAO Platform and Interface
               </h4>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 As stated, earnings from this project will go towards funding a
                 custom interface and application that attempts to clearly
                 organize and streamline group efforts done by Sovereign.
@@ -1147,7 +1158,7 @@ const Manifesto = () => {
                 from a wide assortment of people and backgrounds, it’s easy to
                 see why the output of so many DAO’s feel random.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 The application we’re building is by no means a final
                 destination for DAO interfaces, but we do believe this project
                 can play an important, evolutionary step in showcasing how a
@@ -1155,10 +1166,10 @@ const Manifesto = () => {
                 This part of the paper will provide an overview of the lifecycle
                 of proposals within SovereignDAO.
               </p>
-              <h4 id="ideas" ref={ideasRef}>
+              <h4 id="ideas" ref={ideasRef} style={{ color: DarkMood === false ? "#000" : "" }}>
                 Ideas
               </h4>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Anything that’s ever been built has started as an idea in
                 someone’s head, and there is no set process for how best to
                 translate something from the world of our imagination to
@@ -1173,15 +1184,15 @@ const Manifesto = () => {
                 Ideas, which, after gaining traction within the community, have
                 the opportunity to become Proposals.
               </p>
-              <ul>
-                <li>
+              <ul style={{ color: DarkMood === false ? "#000" : "" }}>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   Idea Formulation
-                  <ul>
-                    <li>
+                  <ul style={{ color: DarkMood === false ? "#000" : "" }}>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       Much like a post on modern social platforms, users create
                       and put forth an “Idea.”
                     </li>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       Technically, Ideas could be anything. It could be the idea
                       to create a YouTube video that attempts to end hate or
                       change the public’s opinion on something. It could be the
@@ -1191,9 +1202,9 @@ const Manifesto = () => {
                     </li>
                   </ul>
                 </li>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   Intention
-                  <p>
+                  <p style={{ color: DarkMood === false ? "#000" : "" }}>
                     As a means to maintain a sense of direction and purpose for
                     SovereignDAO, all Ideas must be given what we call an
                     ‘Intention.’ This is really just a way of categorizing the
@@ -1204,16 +1215,16 @@ const Manifesto = () => {
                     try to accomplish.
                   </p>
                   <ul>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       World Impact
                       <ul>
-                        <li>
+                        <li style={{ color: DarkMood === false ? "#000" : "" }}>
                           Can this effort actually help people? There is still a
                           ton of suffering in the world. Can this make life a
                           little bit better for someone out there? How about a
                           community? A nation?
                         </li>
-                        <li>
+                        <li style={{ color: DarkMood === false ? "#000" : "" }}>
                           Technically, Ideas could be anything. It could be the
                           idea to create a YouTube video that attempts to end
                           hate or change the public’s opinion on something. It
@@ -1225,30 +1236,30 @@ const Manifesto = () => {
                       </ul>
                     </li>
 
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       DAO App Improvement
                       <ul>
-                        <li>
+                        <li style={{ color: DarkMood === false ? "#000" : "" }}>
                           Digital interfaces are never perfect. How are you
                           proposing we improve Sovereign’s user experience?
                         </li>
                       </ul>
                     </li>
 
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       Governance
                       <ul>
-                        <li>
+                        <li style={{ color: DarkMood === false ? "#000" : "" }}>
                           It’s hard enough getting people to agree, let alone
                           govern themselves. Will this change the rules and
                           systems by which Sovereign operates?
                         </li>
                       </ul>
                     </li>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       DAO Court
                       <ul>
-                        <li>
+                        <li style={{ color: DarkMood === false ? "#000" : "" }}>
                           Court proposals are meant to handle primarily human
                           issues. Is there a social problem within Sovereign
                           that needs to be remedied? Have you or someone from
@@ -1259,10 +1270,10 @@ const Manifesto = () => {
                       </ul>
                     </li>
 
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       Markets
                       <ul>
-                        <li>
+                        <li style={{ color: DarkMood === false ? "#000" : "" }}>
                           Are you suggesting Sovereign either buy or trade
                           certain assets out there in the world? Cows? Water?
                           NFTs?
@@ -1270,10 +1281,10 @@ const Manifesto = () => {
                       </ul>
                     </li>
 
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       Allied Project
                       <ul>
-                        <li>
+                        <li style={{ color: DarkMood === false ? "#000" : "" }}>
                           Do you have a separate product, service, or effort
                           that can also elevate Sovereign? Does your project
                           expand on the capacity of Sovereign’s ecosystem and
@@ -1282,21 +1293,21 @@ const Manifesto = () => {
                       </ul>
                     </li>
                   </ul>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     Validation
                     <ul>
-                      <li>
+                      <li style={{ color: DarkMood === false ? "#000" : "" }}>
                         Members of the community review and substantiate your
                         Idea, allowing it to metamorphose into a more formal
                         Proposal.
                       </li>
-                      <li>
+                      <li style={{ color: DarkMood === false ? "#000" : "" }}>
                         Although anyone from the community can leave comments
                         and feedback on your Idea, a number of randomly selected
                         members of Sovereign will be chosen to either validate
                         or invalidate it.
                       </li>
-                      <li>
+                      <li style={{ color: DarkMood === false ? "#000" : "" }}>
                         Feedback is provided much like comments on other social
                         platforms.
                       </li>
@@ -1304,15 +1315,15 @@ const Manifesto = () => {
                   </li>
                 </li>
               </ul>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 If more than half of the randomly chosen validators validate
                 your idea, the interface will present you with the option to
                 turn your Idea into a formal Proposal.
               </p>
-              <h4 id="proposals" ref={proposalsRef}>
+              <h4 id="proposals" ref={proposalsRef} style={{ color: DarkMood === false ? "#000" : "" }}>
                 Proposals
               </h4>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Good work. They say, “ideas are a dime a dozen,” but yours is
                 definitely worth at least a quarter. You’ve managed to help
                 members of the community comprehend the value of your vision,
@@ -1324,7 +1335,7 @@ const Manifesto = () => {
                 additional information on the specifics of how your Idea gets
                 actualized.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 You will find various input fields into which you’ll enter the
                 details and technicalities of the effort you’re proposing.
                 You’ll enter obvious things like a title and short description,
@@ -1332,10 +1343,10 @@ const Manifesto = () => {
                 out. These sections are as follows:
               </p>
               <ul>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   Scope
                   <ul>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       Arguably the most important part, this is where you will
                       define the specifics of what exactly needs to get done to
                       accomplish the task. There is no correct way to fill out
@@ -1344,13 +1355,13 @@ const Manifesto = () => {
                       components of producing a marketing video. Each project
                       will likely require a unique breakdown.
                     </li>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       This is where you need to put on your Project Manager cap
                       and break the problem down into granular, bite-sized
                       pieces of actionable things a person or a group of people
                       can feasibly accomplish.
                     </li>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       Do what feels right, and don’t let yourself get too bogged
                       down by this section. If you’re building an application or
                       3D experience, it’s too early to tell what models and
@@ -1366,16 +1377,16 @@ const Manifesto = () => {
               </ul>
 
               <ul>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   Team
                   <ul>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       In this section you’ll list all the individuals
                       contributing to the project and in what capacity. Are they
                       the team leader? Are they an artist, designer, or
                       engineer? What kind of prior experience do they have?
                     </li>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       This is where you can demonstrate that the project has the
                       right people working on it.
                     </li>
@@ -1384,10 +1395,10 @@ const Manifesto = () => {
               </ul>
 
               <ul>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   Technical Specification
                   <ul>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       Here you should delineate the technical details of your
                       project. Does it require the use of software that already
                       exists? Are you building software or hardware? What kind
@@ -1399,10 +1410,10 @@ const Manifesto = () => {
               </ul>
 
               <ul>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   Required Funds
                   <ul>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       Unfortunately, the majority of us are still living in a
                       system which requires capital for us to simply exist; rent
                       knocks on the door every month, and nutrients, like
@@ -1411,7 +1422,7 @@ const Manifesto = () => {
                       people and pay for any services required to accomplish
                       this task?
                     </li>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       This is meant to provide a high-level cost analysis, and,
                       if your project has Milestones, which we’ll get into in
                       the next section, you’ll be able to provide a more
@@ -1422,10 +1433,10 @@ const Manifesto = () => {
               </ul>
 
               <ul>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   Milestones
                   <ul>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       The physical world is a complex and unpredictable place,
                       and the longer a project goes on, the more opportunities
                       there will be for something to get in the way of its
@@ -1433,14 +1444,14 @@ const Manifesto = () => {
                       Sovereign’s conviction in a project and delegate the
                       required funds at each step along the way
                     </li>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       Projects can also vary in size and scope. Some projects
                       can be accomplished in a day or a week, while others can
                       take months or years. It would be a little irresponsible
                       for Sovereign to provide all the required funding for
                       complex projects up front.
                     </li>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       You will utilize Milestones to segment your project into
                       what is functionally a series of goal posts. If you’re
                       building an application, the first Milestone may be a
@@ -1450,18 +1461,18 @@ const Manifesto = () => {
                       prototype. If you’re making video content, the first
                       Milestone could be a rough storyboard. It’s up to you.
                     </li>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       Adequately breaking an endeavor into a sensible amount of
                       Milestones will not only make the DAO members feel more
                       involved in the development process, it will allow for you
                       and your team to experience positive reinforcement as you
                       move from Milestone to Milestone.
                     </li>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       Each Milestone will allow you and your team to specify how
                       the required funds get divided.
                     </li>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       Milestones will also allow their teams to enter Key
                       Performance Indicators or “KPIs.” These are considered
                       important metrics that can be used to determine how
@@ -1471,7 +1482,7 @@ const Manifesto = () => {
                       through five scale. If the project is moving into being a
                       live service, a KPI could be the number of users.
                     </li>
-                    <li>
+                    <li style={{ color: DarkMood === false ? "#000" : "" }}>
                       When a team believes they have completed a milestone, they
                       can submit a Milestone Review Request. This will trigger
                       the associated Proposal to appear for review during the
@@ -1481,7 +1492,7 @@ const Manifesto = () => {
                   </ul>
                 </li>
               </ul>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 After submitting your Proposal, the community will be able to
                 engage with it in a variety of ways; they’ll be able to leave
                 comments and discuss its various components, hopefully helping
@@ -1496,10 +1507,10 @@ const Manifesto = () => {
                 say.
               </p>
 
-              <h4 id="governanceSchedule" ref={governanceScheduleRef}>
+              <h4 id="governanceSchedule" ref={governanceScheduleRef} style={{ color: DarkMood === false ? "#000" : "" }}>
                 Governance Schedule
               </h4>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Now that you have an overview of how Proposals work within
                 Sovereign, we’d like to elucidate the high-level governance
                 schedule for how we envision this DAO operating and processing
@@ -1511,15 +1522,17 @@ const Manifesto = () => {
                 every two weeks:
               </p>
               <ul>
-                <li>Review</li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                  Review
+                </li>
                 <ul>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     Sovereign moderators ensure all new Ideas and Proposals
                     provide a sufficient amount of information and hit a
                     publicly shared standard of quality for what the author aims
                     to accomplish.
                   </li>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     If an author submits an Idea for a fund-raising event but
                     forgets to include how funds will actually be raised, more
                     information may be requested through the interface before
@@ -1530,22 +1543,24 @@ const Manifesto = () => {
                 </ul>
               </ul>
               <ul>
-                <li>Proposal Voting</li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                  Proposal Voting
+                </li>
                 <ul>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     Any Proposals that have passed Review are considered active,
                     and, over the course of seven days, members of Sovereign
                     will be allowed to readover, provide their own comments, and
                     vote in-favor of or against the Proposal in question
                   </li>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     Voting uses a unique sybil-resistant voting mechanism
                     designed by the Sovereign team allowing voters to
                     communicate how “strongly” they feel about their vote. The
                     details of this system will be outlined in a technical
                     document currently being written.
                   </li>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     We know everyone has their own lives and schedules, and it’s
                     easy to get swept up by the day-to-day, but we hope that by
                     maintaining a predictable window for voting we make it much
@@ -1557,9 +1572,11 @@ const Manifesto = () => {
                 </ul>
               </ul>
               <ul>
-                <li>Proposal Execution</li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                  Proposal Execution
+                </li>
                 <ul>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     Any Proposals that have been communally approved will have
                     their first Milestone funds released to the wallet address
                     or addresses contained in the proposal.
@@ -1567,9 +1584,11 @@ const Manifesto = () => {
                 </ul>
               </ul>
               <ul>
-                <li>Milestone Checks</li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                  Milestone Checks
+                </li>
                 <ul>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     Similar to the Review phase, Sovereign moderators will look
                     over all Proposals requesting to move on to their next
                     Milestone. If moderators and the community believe the
@@ -1580,9 +1599,11 @@ const Manifesto = () => {
                 </ul>
               </ul>
               <ul>
-                <li>Platform Maintenance</li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                  Platform Maintenance
+                </li>
                 <ul>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     As the worlds of both software and hardware continue to
                     evolve, it’s important for the technical team to confirm
                     everything with the Sovereign platform is operating as
@@ -1594,9 +1615,11 @@ const Manifesto = () => {
                 </ul>
               </ul>
               <ul>
-                <li>Update Funding Cycle</li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                  Update Funding Cycle
+                </li>
                 <ul>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     During this final phase, Sovereign moderators ensure the
                     DAO's multisig wallets are secure and functioning as
                     intended by checking for problems and reporting them. As
@@ -1605,10 +1628,10 @@ const Manifesto = () => {
                   </li>
                 </ul>
               </ul>
-              <h4 id="DAOModeration" ref={DAOModerationRef}>
+              <h4 id="DAOModeration" ref={DAOModerationRef} style={{ color: DarkMood === false ? "#000" : "" }}>
                 DAO Moderation
               </h4>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 To ensure that every Idea and Proposal has a fair shot at being
                 actualized, Sovereign moderators and a group of randomly
                 selected Sovereign members will review the item in question to
@@ -1619,23 +1642,23 @@ const Manifesto = () => {
                 or Proposal; we want to avoid as much guess and check and back
                 and forth as possible.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 If the combined majority of both the selected members and
                 moderators believe more information is required or that the
                 quality standards have not been met, the author will be notified
                 to submit a revised version of the Idea or Proposal.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Sovereign moderators will also be in charge of preventing toxic
                 behavior across the platform and they will work to assure that
                 Sovereign is a community where people feel welcome, accepted,
                 and safe. It is important to note this social moderation is done
                 collectively and not based on the whim of a single moderator.
               </p>
-              <h4 id="discussion" ref={discussionRef}>
+              <h4 id="discussion" ref={discussionRef} style={{ color: DarkMood === false ? "#000" : "" }}>
                 Discussion
               </h4>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 The design of the entire DAO platform is extremely intentional;
                 it is not designed for people to share photos of what they ate
                 for lunch or where they were hanging out during the weekend. The
@@ -1648,18 +1671,22 @@ const Manifesto = () => {
                 the initial ways by which members can interact:
               </p>
               <ul>
-                <li>Community Chat</li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                  Community Chat
+                </li>
                 <ul>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     Realtime chat for the entire community. Here you are free to
                     converse with the other members of Sovereign.
                   </li>
                 </ul>
               </ul>
               <ul>
-                <li>Idea Comments</li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                  Idea Comments
+                </li>
                 <ul>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     Sovereign moderators and community members can provide their
                     input on any Ideas just like a post or video on other social
                     platforms. Whether the Idea is Formulating or waiting for
@@ -1668,9 +1695,11 @@ const Manifesto = () => {
                 </ul>
               </ul>
               <ul>
-                <li>Proposal Comments</li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                  Proposal Comments
+                </li>
                 <ul>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     Just like Idea Comments, members will have the opportunity
                     to provide their feedback or insight on a Proposal or
                     Milestone regardless of what phase the Proposal is in.
@@ -1678,9 +1707,11 @@ const Manifesto = () => {
                 </ul>
               </ul>
               <ul>
-                <li>Team Chat</li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                  Team Chat
+                </li>
                 <ul>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     Of course teams are free to communicate using whatever
                     software or service works best for them, but, for any given
                     Proposal, all DAO member contributors will be given a
@@ -1688,10 +1719,10 @@ const Manifesto = () => {
                   </li>
                 </ul>
               </ul>
-              <h4 id="voting" ref={votingRef}>
+              <h4 id="voting" ref={votingRef} style={{ color: DarkMood === false ? "#000" : "" }}>
                 Voting
               </h4>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Modern Homo Sapiens have been around for approximately three
                 hundred thousand years, and, if we had to guess, tallying up
                 individual opinions to understand the general consensus has
@@ -1705,10 +1736,10 @@ const Manifesto = () => {
                 this DAO maintains balance and order and becomes a source of
                 good for many people across both cyberspace and physical space.
               </p>
-              <h4 id="executiveAction" ref={executiveActionRef}>
+              <h4 id="executiveAction" ref={executiveActionRef} style={{ color: DarkMood === false ? "#000" : "" }}>
                 Executive Action
               </h4>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Sovereign will encounter certain actions and activities it needs
                 to perform or complete in to function properly. These can
                 include the release of funds to teams, managing multisig wallets
@@ -1724,8 +1755,10 @@ const Manifesto = () => {
               id="sovereignDAO"
               ref={sovereignDAORef}
             >
-              <h3>Ecosystem and Utility</h3>
-              <p>
+              <h3 style={{ color: DarkMood === false ? "#000" : "" }}>
+                Ecosystem and Utility
+              </h3>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 As blockchain technology continues to mature and more
                 organizations discover its usefulness, a myriad of use cases and
                 applications will spark to life across the still widening
@@ -1741,7 +1774,7 @@ const Manifesto = () => {
                 invisible attributes are the most important ones you’ll ever
                 have. We want to help you self actualize.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 There are a ton of important topics from governance to finance
                 and politics that could equip people with the knowledge to
                 improve the world for both themselves and others, and we wish we
@@ -1765,14 +1798,16 @@ const Manifesto = () => {
                 implementation and its capacity to scale, we’ll expand our
                 course listing across as many realms of human thought as we can.
               </p>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 The following sections will outline the value and utility one
                 can expect to find from both the NFT as well as the ecosystem of
                 platforms and applications currently being planned and
                 developed.
               </p>
-              <h4>SovereignDAO</h4>
-              <p>
+              <h4 style={{ color: DarkMood === false ? "#000" : "" }}>
+                SovereignDAO
+              </h4>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 SovereignDAO is the platform we provided you with details on
                 above, and it’s our intention that it become a collection of
                 individuals dedicated to improving the status quo. Anyone who
@@ -1781,15 +1816,17 @@ const Manifesto = () => {
                 suggest ideas and proposals to the community at large.
               </p>
               <span>
-                <strong>Value</strong>
+                <strong style={{ color: DarkMood === false ? "#000" : "" }}>
+                  Value
+                </strong>
               </span>
               <ul>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   Interface directly and intuitively with a large audience to
                   see the materialization of your imagination and the
                   imagination of others.
                 </li>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   Earn income and define your own workday. If you have skills
                   and haven’t managed to find a fulfilling way to utilize them
                   or if you’re tired of the inane and monotonous work being
@@ -1797,30 +1834,32 @@ const Manifesto = () => {
                   project you believe in to showcase your skills and gain
                   experience with.
                 </li>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   Many NFT communities turn into waiting around for something to
                   be announced. Now you don’t have to wait for anything. “Be the
                   change you wish to see in the world.”
                 </li>
               </ul>
               <span>
-                <strong>NFT Utility</strong>
+                <strong style={{ color: DarkMood === false ? "#000" : "" }}>
+                  NFT Utility
+                </strong>
               </span>
               <ul>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   Owning a Behind The Curtain NFT imbues its containing wallet
                   with the capacity to engage in all the innerworkings of the
                   DAO as well as have the right to vote.
                 </li>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   Get a visual callout on your profile image on the DAO platform
                   for owning an NFT.
                 </li>
               </ul>
-              <h4 id="sovereignAcademy" ref={sovereignAcademyRef}>
+              <h4 id="sovereignAcademy" ref={sovereignAcademyRef} style={{ color: DarkMood === false ? "#000" : "" }}>
                 Sovereign Academy
               </h4>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 The Sovereign Academy will be an online, educational platform
                 that will attempt to change some of the rules around how virtual
                 courses and curriculums work. In order for our design to stay
@@ -1828,25 +1867,33 @@ const Manifesto = () => {
                 platform operates for a future time.
               </p>
               <span>
-                <strong>Value</strong>
+                <strong style={{ color: DarkMood === false ? "#000" : "" }}>
+                  Value
+                </strong>
               </span>
               <ul>
-                <li>Education</li>
-                <p>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                  Education
+                </li>
+                <p style={{ color: DarkMood === false ? "#000" : "" }}>
                   Unequivocally the most value you can extract from the academy
                   will be the skills and knowledge you acquire.
                 </p>
                 <ul>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     Gain proficiency in the internet’s most cutting-edge
                     technologies.
                   </li>
-                  <li>Rank up your invisible, real-world attribute points.</li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                    Rank up your invisible, real-world attribute points.
+                  </li>
                 </ul>
               </ul>
               <ul>
-                <li>Student Network</li>
-                <p>
+                <li style={{ color: DarkMood === false ? "#000" : "" }} >
+                  Student Network
+                </li>
+                <p style={{ color: DarkMood === false ? "#000" : "" }}>
                   Given the relative newness of blockchain development, initial
                   access to the academy and its interface will automatically
                   integrate you into a network of developers from a wide range
@@ -1859,15 +1906,15 @@ const Manifesto = () => {
                   you to be the instructor.
                 </p>
                 <ul>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     Communicate with other students, build relationships, and
                     facilitate partnerships.
                   </li>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     Direct access to instructors, allowing you to easily get
                     professional help and feedback.
                   </li>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     Garner career and portfolio crafting advice from people with
                     first-hand experience building software and leading
                     companies.
@@ -1875,29 +1922,41 @@ const Manifesto = () => {
                 </ul>
               </ul>
               <span>
-                <strong>NFT Utility</strong>
+                <strong style={{ color: DarkMood === false ? "#000" : "" }}>
+                  NFT Utility
+                </strong>
               </span>
               <ul>
-                <li>Free access to one course from the academy. </li>
-                <li>Discounted access to future courses.</li>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                  Free access to one course from the academy.{" "}
+                </li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                  Discounted access to future courses.
+                </li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   Learn to Earn - earn Sovereign tokens by completing courses
                   and programs offered by the academy.
                 </li>
-                <li>NFT Pass</li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                  NFT Pass
+                </li>
                 <ul>
-                  <li>Entry to live events.</li>
-                  <li>Priority access to physical goods.</li>
-                  <li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                    Entry to live events.
+                  </li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
+                    Priority access to physical goods.
+                  </li>
+                  <li style={{ color: DarkMood === false ? "#000" : "" }}>
                     We will continue to explore interesting ways to infuse value
                     into the NFTs.
                   </li>
                 </ul>
               </ul>
-              <h4 id="sovereignGrant" ref={sovereignGrantRef}>
+              <h4 id="sovereignGrant" ref={sovereignGrantRef} style={{ color: DarkMood === false ? "#000" : "" }}>
                 Sovereign Grant
               </h4>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Once per year, students of the Sovereign Academy will have the
                 opportunity to pitch a project to the entire Sovereign
                 community. The voting mechanisms under construction will allow
@@ -1905,15 +1964,15 @@ const Manifesto = () => {
                 the grant.
               </p>
               <ul>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   Being part of the academy will make receiving this grant a
                   possibility for you.
                 </li>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   You will have a say in kickstarting a project you believe in
                   with funds from the grant.
                 </li>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   The grant will be available to any Sovereign Academy student
                   or team to pitch a product or service that fits within the
                   purview of the academy’s offered courses and subject matter.
@@ -1921,7 +1980,7 @@ const Manifesto = () => {
                   will be expected that pitched projects fall under this
                   category.
                 </li>
-                <li>
+                <li style={{ color: DarkMood === false ? "#000" : "" }}>
                   It is our aim for any blockchain-centric grants to fund
                   applications that push the boundaries of blockchain
                   applications. NFT collection projects or simple coin and
@@ -1931,10 +1990,11 @@ const Manifesto = () => {
               <h4
                 id="decentralizedSocialPlatform"
                 ref={decentralizedSocialPlatformRef}
+                style={{ color: DarkMood === false ? "#000" : "" }}
               >
                 Decentralized Social Platform
               </h4>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Much of the functionality we’re building for the DAO is being
                 done in a way to make it extensible, allowing it expand and
                 catalyze a variety of blockchain-enabled social interaction. By
@@ -1946,10 +2006,11 @@ const Manifesto = () => {
               <h4
                 id="decentralizedNewsNetwork"
                 ref={decentralizedNewsNetworkRef}
+                style={{ color: DarkMood === false ? "#000" : "" }}
               >
                 Decentralized News Network
               </h4>
-              <p>
+              <p style={{ color: DarkMood === false ? "#000" : "" }}>
                 Also built on top of the Sovereign’s systems will be a way to
                 reward both breaking and accurate recounts of what’s happening
                 around the world. With the amount of misinformation poisoning
@@ -1964,8 +2025,10 @@ const Manifesto = () => {
                 id="conclusion"
                 ref={conclusionRef}
               >
-                <h3>Conclusion</h3>
-                <p>
+                <h3 style={{ color: DarkMood === false ? "#000" : "" }}>
+                  Conclusion
+                </h3>
+                <p style={{ color: DarkMood === false ? "#000" : "" }}>
                   Our society is poised precariously on the precipice of its
                   digital future, and we have a choice: we can either let the
                   corporations that have productized and hypnotized us with
@@ -1992,15 +2055,20 @@ const Manifesto = () => {
 
       {/* Drop-down menu */}
 
-      <ul ref={menuRef} id="drop-down-menu-11" onClick={ () => {
-        // if ( dropdownDisplay === 'hide-content' ) {
-        //   setdropdownDisplay('show-content' );
-        // }
-        // else if ( dropdownDisplay === 'show-content' ) {
-        //   setdropdownDisplay( 'hide-content' );
-        // }
-        setisOpen(!isOpen)
-      }} className="dropdown">
+      <ul
+        ref={menuRef}
+        id="drop-down-menu-11"
+        onClick={() => {
+          // if ( dropdownDisplay === 'hide-content' ) {
+          //   setdropdownDisplay('show-content' );
+          // }
+          // else if ( dropdownDisplay === 'show-content' ) {
+          //   setdropdownDisplay( 'hide-content' );
+          // }
+          setisOpen(!isOpen);
+        }}
+        className="dropdown"
+      >
         <li className="selected-option">
           {mainheading}
           <svg
@@ -2017,21 +2085,23 @@ const Manifesto = () => {
               d="M19.5 8.25l-7.5 7.5-7.5-7.5"
             />
           </svg>
-          <ul className={`${isOpen === true ? "show-content" : "hide-content"}`}>
+          <ul
+            className={`${isOpen === true ? "show-content" : "hide-content"}`}
+          >
             <li
               onClick={() => {
-                scrollTo( forewordRef.current );
-                setmainheading( 'Foreword' );
-                setisOpen( false );
+                scrollTo(forewordRef.current);
+                setmainheading("Foreword");
+                setisOpen(false);
               }}
             >
               Foreword
             </li>
             <li
               onClick={() => {
-                scrollTo( theVisionRef.current );
-                setmainheading( 'The Vision' );
-                setdropdownDisplay( 'hide-content' );
+                scrollTo(theVisionRef.current);
+                setmainheading("The Vision");
+                setdropdownDisplay("hide-content");
               }}
             >
               The Vision
@@ -2055,27 +2125,27 @@ const Manifesto = () => {
               <ul>
                 <li
                   onClick={() => {
-                    scrollTo( noStoryJustRealityRef.current );
-                    setmainheading( 'No Story, Just Reality' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(noStoryJustRealityRef.current);
+                    setmainheading("No Story, Just Reality");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   No Story, Just Reality
                 </li>
                 <li
                   onClick={() => {
-                    scrollTo( designRarityRef.current );
-                    setmainheading( 'Design and Rarity' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(designRarityRef.current);
+                    setmainheading("Design and Rarity");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   Design and Rarity
                 </li>
                 <li
                   onClick={() => {
-                    scrollTo( BTCNFTLicenseRef.current );
-                    setmainheading( 'Behind The Curtain NFT License' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(BTCNFTLicenseRef.current);
+                    setmainheading("Behind The Curtain NFT License");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   Behind The Curtain NFT License
@@ -2101,81 +2171,81 @@ const Manifesto = () => {
               <ul>
                 <li
                   onClick={() => {
-                    scrollTo( theDAORef.current );
-                    setmainheading( 'The DAO' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(theDAORef.current);
+                    setmainheading("The DAO");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   The DAO
                 </li>
                 <li
                   onClick={() => {
-                    scrollTo( DAOPlatformInterfaceRef.current );
-                    setmainheading( 'DAO Platform and Interface' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(DAOPlatformInterfaceRef.current);
+                    setmainheading("DAO Platform and Interface");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   DAO Platform and Interface
                 </li>
                 <li
                   onClick={() => {
-                    scrollTo( ideasRef.current );
-                    setmainheading( 'Ideas' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(ideasRef.current);
+                    setmainheading("Ideas");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   Ideas
                 </li>
                 <li
                   onClick={() => {
-                    scrollTo( proposalsRef.current );
-                    setmainheading( 'Proposals' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(proposalsRef.current);
+                    setmainheading("Proposals");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   Proposals
                 </li>
                 <li
                   onClick={() => {
-                    scrollTo( governanceScheduleRef.current );
-                    setmainheading( 'Governance Schedule' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(governanceScheduleRef.current);
+                    setmainheading("Governance Schedule");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   Governance Schedule
                 </li>
                 <li
                   onClick={() => {
-                    scrollTo( DAOModerationRef.current );
-                    setmainheading( 'DAO Moderation' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(DAOModerationRef.current);
+                    setmainheading("DAO Moderation");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   DAO Moderation
                 </li>
                 <li
                   onClick={() => {
-                    scrollTo( discussionRef.current );
-                    setmainheading( 'Discussion' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(discussionRef.current);
+                    setmainheading("Discussion");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   Discussion
                 </li>
                 <li
                   onClick={() => {
-                    scrollTo( votingRef.current );
-                    setmainheading( 'Voting' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(votingRef.current);
+                    setmainheading("Voting");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   Voting
                 </li>
                 <li
                   onClick={() => {
-                    scrollTo( executiveActionRef.current );
-                    setmainheading( 'Executive Action' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(executiveActionRef.current);
+                    setmainheading("Executive Action");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   Executive Action
@@ -2201,45 +2271,45 @@ const Manifesto = () => {
               <ul>
                 <li
                   onClick={() => {
-                    scrollTo( sovereignDAORef.current );
-                    setmainheading( 'Sovereign DAO' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(sovereignDAORef.current);
+                    setmainheading("Sovereign DAO");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   Sovereign DAO
                 </li>
                 <li
                   onClick={() => {
-                    scrollTo( sovereignAcademyRef.current );
-                    setmainheading( 'Sovereign Academy' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(sovereignAcademyRef.current);
+                    setmainheading("Sovereign Academy");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   Sovereign Academy
                 </li>
                 <li
                   onClick={() => {
-                    scrollTo( sovereignGrantRef.current );
-                    setmainheading( 'Sovereign Grant' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(sovereignGrantRef.current);
+                    setmainheading("Sovereign Grant");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   Sovereign Grant
                 </li>
                 <li
                   onClick={() => {
-                    scrollTo( decentralizedSocialPlatformRef.current );
-                    setmainheading( 'Decentralized Social Platform' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(decentralizedSocialPlatformRef.current);
+                    setmainheading("Decentralized Social Platform");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   Decentralized Social Platform
                 </li>
                 <li
                   onClick={() => {
-                    scrollTo( decentralizedNewsNetworkRef.current );
-                    setmainheading( 'Decentralized News Network' );
-                    setdropdownDisplay( 'hide-content' );
+                    scrollTo(decentralizedNewsNetworkRef.current);
+                    setmainheading("Decentralized News Network");
+                    setdropdownDisplay("hide-content");
                   }}
                 >
                   Decentralized News Network
@@ -2248,9 +2318,9 @@ const Manifesto = () => {
             </li>
             <li
               onClick={() => {
-                scrollTo( conclusionRef.current );
-                setmainheading( 'Conclusion' );
-                setdropdownDisplay( 'hide-content' );
+                scrollTo(conclusionRef.current);
+                setmainheading("Conclusion");
+                setdropdownDisplay("hide-content");
               }}
             >
               Conclusion

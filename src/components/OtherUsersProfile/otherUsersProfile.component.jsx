@@ -13,7 +13,7 @@ import UIUXIcon from "../../assets/Icons/UIUXIcon.svg";
 import ArtIcon from "../../assets/Icons/ArtIcon.svg";
 import LawIcon from "../../assets/Icons/LawIcon.svg";
 
-const OtherUserProfile = () => {
+const OtherUserProfile = ({ DarkMood }  ) => {
   //MULTIPLE INTEREST SELECTION STARTS
   const [selectItem, setSelectItem] = useState([
     { id: "1", name: "Investing", selected: false, svgFile: MoneyIcon },
@@ -55,18 +55,40 @@ const OtherUserProfile = () => {
               />
             </div>
             <div className="user_profile_followers_container">
-              <h3>lazymeercat616</h3>
+              <h3 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
+                lazymeercat616
+              </h3>
               <div className="d-flex">
                 <div className="me-3 me-sm-5">
                   <button>Follow</button>
                 </div>
                 <div className="me-4 me-sm-5">
-                  <p className="m-0">1295</p>
-                  <p className="m-0">Followers</p>
+                  <p
+                    className="m-0"
+                    style={{ color: DarkMood === true ? "#fff" : "#000" }}
+                  >
+                    1295
+                  </p>
+                  <p
+                    className="m-0"
+                    style={{ color: DarkMood === true ? "#fff" : "#000" }}
+                  >
+                    Followers
+                  </p>
                 </div>
                 <div className=" me-sm-5">
-                  <p className="m-0">857</p>
-                  <p className="m-0">Following</p>
+                  <p
+                    className="m-0"
+                    style={{ color: DarkMood === true ? "#fff" : "#000" }}
+                  >
+                    857
+                  </p>
+                  <p
+                    className="m-0"
+                    style={{ color: DarkMood === true ? "#fff" : "#000" }}
+                  >
+                    Following
+                  </p>
                 </div>
               </div>
             </div>
@@ -85,8 +107,21 @@ const OtherUserProfile = () => {
                 src={require("../../assets/Icons/WhiteBlock.png")}
                 className="ms-4 me-3"
                 alt=""
+                style={{
+                  cursor: "pointer",
+                  filter:
+                    DarkMood === false
+                      ? "brightness(142%) invert(183%) sepia(918%) hue-rotate(200deg) saturate(277%)"
+                      : "",
+                  // color: DarkMood === true ? "#fff" : "#000",
+                }}
               />
-              <h4 className="m-0">Interests</h4>
+              <h4
+                className="m-0"
+                style={{ color: DarkMood === true ? "#fff" : "#000" }}
+              >
+                Interests
+              </h4>
             </div>
             <div className="user_interests">
               <div className="user_interests_items">

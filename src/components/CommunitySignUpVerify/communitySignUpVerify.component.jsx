@@ -2,21 +2,38 @@ import "./communitysignupverify.styles.scss";
 import TwitterWhite from "../../assets/Social_Media_Icons/TwitterPureWhite.svg";
 import WalletWhite from "../../assets/Icons/WalletWhite.svg";
 
-const CommunitySignUpVerify = () => {
+const CommunitySignUpVerify = ({ DarkMood }) => {
   return (
     <div className="community-signup-verify-container">
       <div className="community-signup-verify-body mt-5">
-        <h3>COMMUNITY SIGN UP</h3>
+        <h3 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
+          COMMUNITY SIGN UP
+        </h3>
         <div className="community-signup-verify-upper-sec mb-3">
           <div className="community-signup-verify-twitter">
             <div className="twitter-verify">
               <div>
-                <img src={TwitterWhite} alt="" />
+                <img
+                  src={TwitterWhite}
+                  alt=""
+                  style={{
+                    cursor: "pointer",
+                    filter:
+                      DarkMood === false
+                        ? "brightness(142%) invert(183%) sepia(918%) hue-rotate(200deg) saturate(277%)"
+                        : "",
+                    // color: DarkMood === true ? "#fff" : "#000",
+                  }}
+                />
               </div>
-              <h6>Twitter</h6>
+              <h6 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
+                Twitter
+              </h6>
             </div>
             <div>
-              <button>Verify</button>
+              <button style={{ color: DarkMood === true ? "#000" : "#000" }}>
+                Verify
+              </button>
             </div>
           </div>
           <div className="twitter-verify-input">
@@ -28,12 +45,27 @@ const CommunitySignUpVerify = () => {
           <div className="community-signup-verify-twitter">
             <div className="twitter-verify">
               <div>
-                <img src={WalletWhite} alt="" />
+                <img
+                  src={WalletWhite}
+                  alt=""
+                  style={{
+                    cursor: "pointer",
+                    filter:
+                      DarkMood === false
+                        ? "brightness(142%) invert(183%) sepia(918%) hue-rotate(200deg) saturate(277%)"
+                        : "",
+                    // color: DarkMood === true ? "#fff" : "#000",
+                  }}
+                />
               </div>
-              <h6>Wallet</h6>
+              <h6 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
+                Wallet
+              </h6>
             </div>
             <div>
-              <button>Verify</button>
+              <button style={{ color: DarkMood === true ? "#000" : "#000" }}>
+                Verify
+              </button>
             </div>
           </div>
           <div className="twitter-verify-input">
@@ -46,7 +78,9 @@ const CommunitySignUpVerify = () => {
           </div>
         </div>
         <div className="community-signup-verify-btn">
-          <button>Complete Signup</button>
+          <button style={{ color: DarkMood === true ? "#000" : "#000" }}>
+            Complete Signup
+          </button>
         </div>
       </div>
     </div>

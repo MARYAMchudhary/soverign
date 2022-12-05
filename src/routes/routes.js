@@ -22,40 +22,81 @@ import MyProfile from "../components/MyProfile/myProfile.component";
 import ProfileSetting from "../components/ProfileSetting/profileSetting.component";
 import StakingDapp from "../components/Staking Dapp/stakingDapp";
 import CommunityGuidelines from "../components/chatcommunity/CommunityGuideline/communityGuidelines.component";
+import { useState } from "react";
 
 const Routing = () => {
+  const [DarkMood, setDarkMood] = useState(true);
   return (
     <>
       <Routes>
-        <Route path="/" element={<Header />}>
+        <Route
+          path="/"
+          element={<Header DarkMood={DarkMood} setDarkMood={setDarkMood} />}
+        >
           <Route index element={<HomePage />} />
-          <Route path="About" element={<About />} />
-          <Route path="DAO" element={<DAOPage />} />
-          <Route path="signup3" element={<SignUpPage3 />} />
-          <Route path="manifesto" element={<Manifesto />} />
-          <Route path="Connectwallet" element={<WalletConnect />} />
-          <Route path="CommunitySignUp" element={<CommunitySignUp />} />
+          <Route path="About" element={<About DarkMood={DarkMood} />} />
+          <Route path="DAO" element={<DAOPage DarkMood={DarkMood} />} />
+          <Route path="signup3" element={<SignUpPage3 DarkMood={DarkMood} />} />
+          <Route path="manifesto" element={<Manifesto DarkMood={DarkMood} />} />
+          <Route
+            path="Connectwallet"
+            element={<WalletConnect DarkMood={DarkMood} />}
+          />
+          <Route
+            path="CommunitySignUp"
+            element={<CommunitySignUp DarkMood={DarkMood} />}
+          />
           <Route path="CommunitySignUp/:id" element={<CommunitySignUp />} />
-          <Route path="signin" element={<SigninPage />} />
-          <Route path="verify-twitter" element={<TwitterVerification />} />
+          <Route path="signin" element={<SigninPage DarkMood={DarkMood} />} />
+          <Route
+            path="verify-twitter"
+            element={<TwitterVerification DarkMood={DarkMood} />}
+          />
           <Route path="verify-twitter/:id" element={<TwitterVerification />} />
-          <Route path="welcome-page" element={<WelcomePage />} />
-          <Route path="forgot-password" element={<ForgotPassword />} />
-          <Route path="reset-password" element={<ResetPassword />} />
-          <Route path="password-changed" element={<PasswordChanged />} />
+          <Route
+            path="welcome-page"
+            element={<WelcomePage DarkMood={DarkMood} />}
+          />
+          <Route
+            path="forgot-password"
+            element={<ForgotPassword DarkMood={DarkMood} />}
+          />
+          <Route
+            path="reset-password"
+            element={<ResetPassword DarkMood={DarkMood} />}
+          />
+          <Route
+            path="password-changed"
+            element={<PasswordChanged DarkMood={DarkMood} />}
+          />
           <Route path="chat" element={<ChatScreen />} />
-          <Route path="chatcommunity" element={<ChatCommunity />} />
+          <Route
+            path="chatcommunity"
+            element={<ChatCommunity DarkMood={DarkMood} />}
+          />
 
-          <Route path="mint-dapp" element={<MintDapp />} />
-          <Route path="staking-dapp" element={<StakingDapp />} />
+          <Route path="mint-dapp" element={<MintDapp DarkMood={DarkMood} />} />
+          <Route
+            path="staking-dapp"
+            element={<StakingDapp DarkMood={DarkMood} />}
+          />
           <Route
             path="Communitysignupverify"
-            element={<CommunitySignUpVerify />}
+            element={<CommunitySignUpVerify DarkMood={DarkMood} />}
           />
-          <Route path="userprofile" element={<OtherUserProfile />} />
-          <Route path="myprofile" element={<MyProfile />} />
-          <Route path="profilesetting" element={<ProfileSetting />} />
-          <Route path="CG" element={<CommunityGuidelines />} />
+          <Route
+            path="userprofile"
+            element={<OtherUserProfile DarkMood={DarkMood} />}
+          />
+          <Route path="myprofile" element={<MyProfile DarkMood={DarkMood} />} />
+          <Route
+            path="profilesetting"
+            element={<ProfileSetting DarkMood={DarkMood} />}
+          />
+          <Route
+            path="CG"
+            element={<CommunityGuidelines DarkMood={DarkMood} />}
+          />
         </Route>
       </Routes>
     </>

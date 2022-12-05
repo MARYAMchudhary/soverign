@@ -8,7 +8,7 @@ import twitterwhite from "../../assets/Social_Media_Icons/TwitterIconWhite.svg";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const About = () => {
+const About = ({ DarkMood }) => {
   // const [ widthDescription, setWidthDescription ] = useState(700);
   // useEffect(() => {
 
@@ -26,11 +26,13 @@ const About = () => {
       <div className="about-page-content">
         <div className="about_page_nested_container">
           <div className="about-page-heading mt-5">
-            <h3>ABOUT US</h3>
+            <h3 style={{ color: DarkMood === false ? "#000" : "" }}>
+              ABOUT US
+            </h3>
           </div>
           {/* style={{width: widthDescription}} */}
           <div id="description" className="about-page-description">
-            <p>
+            <p style={{ color: DarkMood === false ? "#000" : "" }}>
               Sovereign is designed to be a force of good in the world, and,
               during its early days, it will be a network state of creators,
               developers, entrepreneurs, and thinkers who pool their skills,
@@ -40,7 +42,7 @@ const About = () => {
               evolving digital landscape, we hope to kickstart systems and
               efforts whose ramifications people can feel.
             </p>
-            <p>
+            <p style={{ color: DarkMood === false ? "#000" : "" }}>
               More than a digital currency, Sovereign will serve as an evolving
               social platform to connect individuals and fund projects with the
               aim of improving the status quo. With an emphasis on
@@ -49,13 +51,15 @@ const About = () => {
               we’re all aware needs improvement: the socioeconomic rules we all
               live by.
             </p>
-            <p>
+            <p style={{ color: DarkMood === false ? "#000" : "" }}>
               It’s time to experience revolution. We’re just getting started.
             </p>
           </div>
           <div id="about-page-end" className="about-page-end ">
             <div className="about-page-end-heading mt-3">
-              <h3>MEET THE CREW</h3>
+              <h3 style={{ color: DarkMood === false ? "#000" : "" }}>
+                MEET THE CREW
+              </h3>
             </div>
             <div className="hexagon-container mt-4">
               <div className="hexagon">
@@ -66,12 +70,30 @@ const About = () => {
                       src={twitterwhite}
                       alt=""
                       className="position-absolute twitter_icon_about_page"
+                      style={{
+                        cursor: "pointer",
+                        filter:
+                          DarkMood === true
+                            ? ""
+                            : "brightness(142%) invert(183%) sepia(918%) hue-rotate(200deg) saturate(277%)",
+                        // color: DarkMood === true ? "#fff" : "#000",
+                      }}
                     />
                   </a>
                 </div>
                 <div className="d-flex flex-column align-items-center justify-content-center mt-3 hexagon_body_container">
-                  <span className="hexagon_text_head">NERO</span>
-                  <span className="hexagon_text_body">TECH LEAD</span>
+                  <span
+                    className="hexagon_text_head"
+                    style={{ color: DarkMood === false ? "#000" : "" }}
+                  >
+                    NERO
+                  </span>
+                  <span
+                    className="hexagon_text_body"
+                    style={{ color: DarkMood === false ? "#000" : "" }}
+                  >
+                    TECH LEAD
+                  </span>
                 </div>
               </div>
               <div className="hexagon">
@@ -82,12 +104,30 @@ const About = () => {
                       src={twitterwhite}
                       alt=""
                       className="position-absolute twitter_icon_about_page"
+                      style={{
+                        cursor: "pointer",
+                        filter:
+                          DarkMood === true
+                            ? ""
+                            : "brightness(142%) invert(183%) sepia(918%) hue-rotate(200deg) saturate(277%)",
+                        // color: DarkMood === true ? "#fff" : "#000",
+                      }}
                     />
                   </a>
                 </div>
                 <div className="d-flex flex-column align-items-center justify-content-center mt-3 hexagon_body_container">
-                  <span className="hexagon_text_head">TOPLAD</span>
-                  <span className="hexagon_text_body">ARCHITECT</span>
+                  <span
+                    className="hexagon_text_head"
+                    style={{ color: DarkMood === false ? "#000" : "" }}
+                  >
+                    TOPLAD
+                  </span>
+                  <span
+                    className="hexagon_text_body"
+                    style={{ color: DarkMood === false ? "#000" : "" }}
+                  >
+                    ARCHITECT
+                  </span>
                 </div>
               </div>
               <div className="hexagon">
@@ -98,12 +138,28 @@ const About = () => {
                       src={twitterwhite}
                       alt=""
                       className="position-absolute twitter_icon_about_page"
+                      style={{
+                        cursor: "pointer",
+                        filter:
+                          DarkMood === true
+                            ? ""
+                            : "brightness(142%) invert(183%) sepia(918%) hue-rotate(200deg) saturate(277%)",
+                        // color: DarkMood === true ? "#fff" : "#000",
+                      }}
                     />
                   </a>
                 </div>
                 <div className="d-flex flex-column align-items-center justify-content-center mt-3 hexagon_body_container">
-                  <span className="hexagon_text_head">DAVID</span>
-                  <span className="hexagon_text_body">
+                  <span
+                    className="hexagon_text_head"
+                    style={{ color: DarkMood === false ? "#000" : "" }}
+                  >
+                    DAVID
+                  </span>
+                  <span
+                    className="hexagon_text_body"
+                    style={{ color: DarkMood === false ? "#000" : "" }}
+                  >
                     CREATIVE DIRECTOR | ART DIRECTOR
                   </span>
                 </div>
@@ -116,12 +172,30 @@ const About = () => {
                       src={twitterwhite}
                       alt=""
                       className="position-absolute twitter_icon_about_page"
+                      style={{
+                        cursor: "pointer",
+                        filter:
+                          DarkMood === true
+                            ? ""
+                            : "brightness(142%) invert(183%) sepia(918%) hue-rotate(200deg) saturate(277%)",
+                        // color: DarkMood === true ? "#fff" : "#000",
+                      }}
                     />
                   </a>
                 </div>
                 <div className="d-flex flex-column align-items-center justify-content-center mt-3 hexagon_body_container">
-                  <span className="hexagon_text_head">THEVIRTUNAUT</span>
-                  <span className="hexagon_text_body">ART AND CODE</span>
+                  <span
+                    className="hexagon_text_head"
+                    style={{ color: DarkMood === false ? "#000" : "" }}
+                  >
+                    THEVIRTUNAUT
+                  </span>
+                  <span
+                    className="hexagon_text_body"
+                    style={{ color: DarkMood === false ? "#000" : "" }}
+                  >
+                    ART AND CODE
+                  </span>
                 </div>
               </div>
               <div className="hexagon">
@@ -132,12 +206,28 @@ const About = () => {
                       src={twitterwhite}
                       alt=""
                       className="position-absolute twitter_icon_about_page"
+                      style={{
+                        cursor: "pointer",
+                        filter:
+                          DarkMood === true
+                            ? ""
+                            : "brightness(142%) invert(183%) sepia(918%) hue-rotate(200deg) saturate(277%)",
+                        // color: DarkMood === true ? "#fff" : "#000",
+                      }}
                     />
                   </a>
                 </div>
                 <div className="d-flex flex-column align-items-center justify-content-center mt-3 hexagon_body_container">
-                  <span className="hexagon_text_head">WEIRDBAMBINO</span>
-                  <span className="hexagon_text_body">
+                  <span
+                    className="hexagon_text_head"
+                    style={{ color: DarkMood === false ? "#000" : "" }}
+                  >
+                    WEIRDBAMBINO
+                  </span>
+                  <span
+                    className="hexagon_text_body"
+                    style={{ color: DarkMood === false ? "#000" : "" }}
+                  >
                     COMMUNITY EXPERIENCE LEAD
                   </span>
                 </div>

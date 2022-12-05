@@ -133,7 +133,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
 //Socket.IO Connection with backend
 const socket = io.connect("https://sovereignchatserver.unialsolutions.com");
 
-function ChatCommunity() {
+function ChatCommunity({ DarkMood }) {
   const matches = useMediaQuery("(max-width:1000px)");
   const bgmatches = useMediaQuery("(max-width:1200px)");
   const mobileversion = useMediaQuery("(max-width:480px)");
@@ -350,7 +350,7 @@ function ChatCommunity() {
                 >
                   <Typography
                     sx={{
-                      color: "#fff",
+                      color: DarkMood === true ? "#fff" : "#000",
                       fontSize: matches || bgmatches ? "24px" : "32px",
                     }}
                   >
@@ -369,7 +369,7 @@ function ChatCommunity() {
                 <Box display="flex" mt={matches || bgmatches ? 1 : 2}>
                   <Typography
                     sx={{
-                      color: "#fff",
+                      color: DarkMood === true ? "#fff" : "#000",
                       fontSize: matches ? "11px" : "20px",
                       textAlign: matches ? "start" : "",
                     }}
@@ -386,7 +386,7 @@ function ChatCommunity() {
                 >
                   <Typography
                     sx={{
-                      color: "#fff",
+                      color: DarkMood === true ? "#fff" : "#000",
                       fontSize: matches || bgmatches ? "21px" : "32px",
                       textAlign: matches || bgmatches ? "start" : "",
                     }}
@@ -411,7 +411,7 @@ function ChatCommunity() {
                 >
                   <Typography
                     sx={{
-                      color: "#fff",
+                      color: DarkMood === true ? "#fff" : "#000",
 
                       fontSize: matches ? "11px" : "20px",
                       textAlign: matches || bgmatches ? "start" : "",
@@ -440,7 +440,7 @@ function ChatCommunity() {
                 >
                   <Typography
                     sx={{
-                      color: "#fff",
+                      color: DarkMood === true ? "#fff" : "#000",
                       fontSize: matches || bgmatches ? "21px" : "32px",
                       textAlign: matches || bgmatches ? "start" : "",
                     }}
@@ -466,7 +466,7 @@ function ChatCommunity() {
                 >
                   <Typography
                     sx={{
-                      color: "#fff",
+                      color: DarkMood === true ? "#fff" : "#000",
                       fontSize: matches ? "11px" : "20px",
                       textAlign: matches ? "start" : "",
                     }}
@@ -508,13 +508,28 @@ function ChatCommunity() {
           >
             <div className="row">
               <div className="col-7">
-                <h5 className="handings" onClick={() => handleEmojiaClick()}>
+                <h5
+                  className="handings"
+                  onClick={() => handleEmojiaClick()}
+                  style={{ color: DarkMood === true ? "#fff" : "#000" }}
+                >
                   Community Chat{" "}
                 </h5>
                 <div>
-                  <span className="handings">1 000 Members</span>
+                  <span
+                    className="handings"
+                    style={{ color: DarkMood === true ? "#fff" : "#000" }}
+                  >
+                    1 000 Members
+                  </span>
                   <span style={{ color: "#000", marginLeft: "2%" }}>|</span>
-                  <span className="handings" style={{ marginLeft: "1%" }}>
+                  <span
+                    className="handings"
+                    style={{
+                      marginLeft: "1%",
+                      color: DarkMood === true ? "#fff" : "#000",
+                    }}
+                  >
                     500 Online
                   </span>
                 </div>
@@ -525,13 +540,16 @@ function ChatCommunity() {
                     <InputLabel
                       id="demo-simple-select-helper-label"
                       sx={{
-                        color: "#fff",
+                        color: DarkMood === true ? "#fff" : "#000",
                         position: "absolute",
                         top: "-8px",
                         left: "-5px",
                       }}
                     >
-                      <img src={worldicon} />
+                      <img src={worldicon} style={{  filter:
+                DarkMood === true
+                  ? ""
+                  : "saturate(519%) contrast(904%) brightness(374%) invert(118%) sepia(50%) hue-rotate(57deg)"}}/>
                     </InputLabel>
                     <Select
                       size="small"
@@ -555,15 +573,15 @@ function ChatCommunity() {
                           openDLTuserDialouge === true
                             ? "#000"
                             : "",
-                        color: "#fff",
+                        color: DarkMood === true ? "#fff" : "#000",
                         "& .MuiInputBase-input": {
                           paddingRight: "26px !important",
                           marginRight: "15px  !important",
                           width: "59px",
                         },
                         "& .MuiSvgIcon-root": {
-                          fill: "#fff !important",
-                          color: "#fff !important",
+                          fill: DarkMood === true ? "#fff" : "#000" ,
+                          color:DarkMood === true ? "#fff" : "#000" ,
                         },
                         "& .MuiInputBase-root ": {
                           marginRight: "15px  !important",
@@ -609,7 +627,7 @@ function ChatCommunity() {
                       className="bi bi-info-circle-fill"
                       onClick={handleClickOpen}
                       style={{
-                        color: "#fff",
+                        color: DarkMood === true ? "#fff" : "#000",
                       }}
                     ></i>
 

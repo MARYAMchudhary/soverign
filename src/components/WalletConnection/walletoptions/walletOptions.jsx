@@ -14,14 +14,20 @@ import { connectors } from "./WalletConnectModels/connectors";
 import { toHex, truncateAddress } from "./WalletConnectModels/utils";
 
 let visitorIdValue = "";
-const WalletOptions = () => {
+const WalletOptions = ({ DarkMood }) => {
   const { address, isConnecting, isConnected, isDisconnected } = useAccount();
-  const { library, chainId, account, activate, deactivate, active } = useWeb3React();
+  const {
+    library,
+    chainId,
+    account,
+    activate,
+    deactivate,
+    active,
+  } = useWeb3React();
   const navigate = useNavigate();
   // const connectWallet = useWalletConnect();
   // const addressWalletConnect = useAddress();
   // const disconnect = useDisconnect();
-
 
   const [selectedOne, setselectedOne] = useState({
     box1: "",
@@ -34,7 +40,7 @@ const WalletOptions = () => {
   const [whichFunction, setwhichFunction] = useState("");
   const [visitorId, setVisitorId] = useState("");
 
-  const [ENS, setENS] = useState()
+  const [ENS, setENS] = useState();
   useEffect(() => {
     console.log("Address: ", address);
     // if (isConnected) {
@@ -71,12 +77,16 @@ const WalletOptions = () => {
   }, []);
   const getLibrary = (provider) => {
     return new ethers.providers.Web3Provider(provider);
-  }
+  };
   // Set MM/walletConnect provider in localStorage
-  const setProvider = (type) => { window.localStorage.setItem("provider", type) };
+  const setProvider = (type) => {
+    window.localStorage.setItem("provider", type);
+  };
 
   // Unset MM/walletConnect provider in localStorage
-  const refreshState = () => { window.localStorage.setItem("provider", undefined) };
+  const refreshState = () => {
+    window.localStorage.setItem("provider", undefined);
+  };
   const connectMetaMaskWC = async () => {
     let isCancelled = false;
     await activate(connectors.injected, () => {
@@ -88,15 +98,15 @@ const WalletOptions = () => {
       setProvider("injected");
       console.log("Connected Successfully");
     }
-  }
+  };
 
   const lookupENS = async () => {
     const provider = await library.provider;
-    const web3Provider = new providers.Web3Provider(provider)
-    console.log({ account })
-    const _ens = await web3Provider.lookupAddress(account)
-    if (_ens) setENS(_ens)
-  }
+    const web3Provider = new providers.Web3Provider(provider);
+    console.log({ account });
+    const _ens = await web3Provider.lookupAddress(account);
+    if (_ens) setENS(_ens);
+  };
 
   const connectWalletConnect = async () => {
     let isCancelled = false;
@@ -104,12 +114,12 @@ const WalletOptions = () => {
       console.log("Connection Rejected");
       isCancelled = true;
     });
-    console.log(isCancelled)
+    console.log(isCancelled);
     if (!isCancelled) {
       setProvider("walletConnect");
       console.log("Connected Successfully");
     }
-  }
+  };
   async function getVisitorId() {
     console.log("visitorId");
     const fpPromise = FingerprintJS.load();
@@ -122,28 +132,29 @@ const WalletOptions = () => {
   }
   useEffect(() => {
     const provider = window.localStorage.getItem("provider");
-    console.log("provider", provider)
+    console.log("provider", provider);
     if (provider) activate(connectors[provider]);
   }, [activate]);
 
   useEffect(() => {
     if (!account) return;
     if (!library) return;
-    lookupENS().then(() => {
-      console.log("DONE")
-    }).catch(err => console.log('err', err))
-
-  }, [account, library])
+    lookupENS()
+      .then(() => {
+        console.log("DONE");
+      })
+      .catch((err) => console.log("err", err));
+  }, [account, library]);
   const connectMetaMask = () => {
     setselectedOne({ box1: "add-border" });
     setwhichFunction("runMetaMask");
   };
 
   const runWalletConnect = () => {
-    console.log("WalletConnect")
-    connectWalletConnect()
+    console.log("WalletConnect");
+    connectWalletConnect();
     // connectWallet()
-  }
+  };
   const runMetaMask = () => {
     if (window.ethereum) {
       window.ethereum.request({ method: "eth_requestAccounts" }).then((res) => {
@@ -303,7 +314,7 @@ const WalletOptions = () => {
       const resp = await window.glow.connect();
       setwalletAdress(resp.address);
       setwalletName(value);
-    } catch (err) { }
+    } catch (err) {}
   };
 
   const connectGlow = () => {
@@ -356,7 +367,7 @@ const WalletOptions = () => {
     } else if (whichFunction === "runPortis") {
       runPortis();
     } else if (whichFunction === "runWalletConnect") {
-      connectWalletConnect()
+      connectWalletConnect();
     } else if (whichFunction === "") {
       alert("Please select a wallet to connect to.");
     }
@@ -365,7 +376,12 @@ const WalletOptions = () => {
   return (
     <>
       <div className="wallets-container">
-        <span className="heading">Connect Wallet</span>
+        <span
+          className="heading"
+          style={{ color: DarkMood === false ? "#000" : "" }}
+        >
+          Connect Wallet
+        </span>
         <div className="wallets-list">
           <div
             onClick={connectMetaMask}
@@ -386,7 +402,7 @@ const WalletOptions = () => {
           <div
             tabIndex="3"
             onClick={() => {
-              setselectedOne({ box3: "add-border" })
+              setselectedOne({ box3: "add-border" });
               setwhichFunction("runWalletConnect");
             }}
             className={`list-item space-y mb-2 `}

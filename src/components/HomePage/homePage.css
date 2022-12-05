@@ -1,15 +1,12 @@
-.main-container{
+.main-container {
     width: 100%;
     min-height: 100vh;
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position-y: 25%;
-    background-position-x: center;
-    background-attachment: fixed;
+
    
-    display:flex;
+    display: flex;
 }
-.sidenav{
+
+.sidenav {
     max-width: 75px;
     min-width: 60px;
     position: sticky;
@@ -22,27 +19,30 @@
     align-items: center;
 }
 
-.sideBarIcon{
+.sideBarIcon {
     height: 11vh;
     align-items: center;
     display: flex;
 }
-.navsvg{
-width: 40px;
-height: 40px;
+
+.navsvg {
+    width: 40px;
+    height: 40px;
 
     /* color: white; */
     cursor: pointer;
     margin-top: 6vh;
 }
-.hambrger-social{
+
+.hambrger-social {
     width: 1.8rem;
     height: auto;
     color: white;
     margin: 20px 10px;
     cursor: pointer;
 }
-.sidenav-social-icons{
+
+.sidenav-social-icons {
     width: 100%;
     height: 20vh;
     display: flex;
@@ -52,13 +52,14 @@ height: 40px;
     margin-bottom: 2rem;
 }
 
-.right-side-container{
+.right-side-container {
 
     width: 100%;
     display: flex;
     flex-direction: column;
 }
-.top-nav{
+
+.top-nav {
     width: 100%;
     min-height: 11vh;
     position: sticky;
@@ -72,7 +73,8 @@ height: 40px;
     justify-content: space-between;
     align-items: center;
 }
-.top-wallet-buttons{
+
+.top-wallet-buttons {
     width: 225px;
     height: 100%;
     display: flex;
@@ -81,7 +83,8 @@ height: 40px;
     align-items: center;
     gap: 5%;
 }
-.button1{
+
+.button1 {
     width: 3rem;
     height: 3rem;
     background-color: white;
@@ -90,7 +93,8 @@ height: 40px;
     justify-content: center;
     align-items: center;
 }
-.button2{
+
+.button2 {
     width: 3rem;
     height: 3rem;
     background-color: white;
@@ -99,38 +103,43 @@ height: 40px;
     justify-content: center;
     align-items: center;
 }
-.top-wallet-buttons .profileImage{
+
+.top-wallet-buttons .profileImage {
     border-radius: 5px;
 }
-.site-name-container{
-    
+
+.site-name-container {
+
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.site-name{
+
+.site-name {
     /* font-family: "Montserrat-Alt1"; */
     color: #A39F9F;
     font-weight: 400;
-font-size: 32px;
-margin: 0;
+    font-size: 32px;
+    margin: 0;
 
-    
+
 }
-.svgdimensions{
-    
-    
-    display:flex;
-    justify-content:center;
+
+.svgdimensions {
+
+
+    display: flex;
+    justify-content: center;
 }
-.audio-buttons-container{
+
+.audio-buttons-container {
     /* width: 35%; */
     height: 89vh;
 
-    
 
-    
+
+
     display: flex;
 
     justify-content: flex-end;
@@ -138,13 +147,14 @@ margin: 0;
     gap: 4%;
 }
 
-.play-community{
+.play-community {
     display: flex;
-    
+
     margin-bottom: 2rem;
 
 }
-.play-button-1{
+
+.play-button-1 {
     width: 3.4rem;
     height: 3.4rem;
     background-color: #454545;
@@ -155,7 +165,7 @@ margin: 0;
     margin-right: 10px;
 }
 
-.play-button-3{
+.play-button-3 {
     width: 10.5rem;
     height: 3.1rem;
     margin-left: 10px;
@@ -168,37 +178,44 @@ margin: 0;
     justify-content: flex-end;
     align-items: center;
 }
-.audio-buttons{
+
+.audio-buttons {
     width: 80%;
     height: auto;
     color: white;
 }
-.community1{
+
+.community1 {
     /* width: 25%; */
     height: auto;
-    background-color: #454545;;
+    background-color: #454545;
+    ;
     border-top-right-radius: 100%;
     border-bottom-right-radius: 100%;
     border-top-left-radius: 100%;
     position: absolute;
     left: 10px;
-    
+
 }
-.b-icon{
+
+.b-icon {
     width: 50px;
     height: 50px;
     opacity: 1;
 }
-.next-icon{
+
+.next-icon {
     width: 10%;
     height: auto;
     margin-right: 5px;
     color: white;
 }
+
 .play-button-3 span {
     color: white;
 }
-.hamburger{
+
+.hamburger {
     width: 250px;
     height: 100vh;
     background-color: #1D1D1D;
@@ -207,7 +224,8 @@ margin: 0;
     z-index: 999;
     transition: all 1s linear;
 }
-.close-sign{
+
+.close-sign {
     padding-left: 9%;
     padding-top: 3%;
     width: 20%;
@@ -215,7 +233,8 @@ margin: 0;
     color: white;
     cursor: pointer;
 }
-.menu-items{
+
+.menu-items {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -226,29 +245,33 @@ margin: 0;
 }
 
 
-.menu-items span{
+.menu-items span {
     padding: 0.4rem;
 }
+
 .menu-items span:hover {
     color: white;
     background-color: rgba(169, 169, 169, 0.2);
     width: fit-content;
     border-radius: 0.4rem;
-    color:white;
+    color: white;
 
 }
-.highlighted{
+
+.highlighted {
     background-color: rgba(169, 169, 169, 0.2);
     width: fit-content;
     border-radius: 0.4rem;
-    color:white;
+    color: white;
     padding: 0.4rem;
 }
-.hide-side-nav{
+
+.hide-side-nav {
     display: none;
 
 }
-.social-icons-for-hamburger{
+
+.social-icons-for-hamburger {
     width: 100%;
     height: 7vh;
     bottom: 0;
@@ -263,22 +286,38 @@ margin: 0;
 
 /* HOMEPAGE BACKGROUND */
 
-.homepage-bg{
+.homepage-bg {
     background-image: url('../../assets/Backgrounds/HomePageBackground-Desktop.gif');
-    
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: 25%;
+        background-position-x: center;
+        background-attachment: fixed;
+
 }
 
+.dark_mood {
+    background-color: "#000"
+}
+
+.light_mood {
+    background-color: #fff;
+}
+
+.light_mood_text {
+    color: "#000"
+}
 
 /* ABOUTPAGE BACKGROUND */
 
-.aboutpage-bg{
+.aboutpage-bg {
     background-image: url("../../assets/Backgrounds/AboutUsBackground.png");
 }
 
 /* OTHERPAGES BACKGROUND */
 
-.otherpages-bg{
-    background-image: url("../../assets/Backgrounds/BackgroundForAllOtherDesktop.png");
+.otherpages-bg {
+    background: url("../../assets/Backgrounds/BackgroundForAllOtherDesktop.png");
 }
 
 
@@ -287,61 +326,62 @@ margin: 0;
 
 
 
-@media screen and (max-width:575px){
+@media screen and (max-width:575px) {
 
-    .main-container{
+    .main-container {
         overflow-y: auto;
     }
 
 
-    .homepage-bg{
+    .homepage-bg {
         background-image: url(../../assets/Backgrounds/HomePageBackground-Mobile.gif);
         background-size: 100% 100%;
     }
 
 
-    .aboutpage-bg{
-        
+    .aboutpage-bg {
+
         background-image: url(../../assets/Backgrounds/AboutForMobile.png);
     }
-    
-    .otherpages-bg{
+
+    .otherpages-bg {
         background-image: url(../../assets/Backgrounds/BackgroundForAllOtherMobile.png);
 
     }
 
-    .mobile-sideBarIcon{
+    .mobile-sideBarIcon {
         width: 10%;
         display: flex;
         justify-content: center;
     }
-.site-name-container{
-    width: 90%;
-}
-.site-name-container .site-name{
-    margin-left: -25px;
-}
 
-    .sidenav{
+    .site-name-container {
+        width: 90%;
+    }
+
+    .site-name-container .site-name {
+        margin-left: -25px;
+    }
+
+    .sidenav {
         border: none;
         display: none;
     }
 
-    .right-side-container{
+    .right-side-container {
         width: 100%;
     }
 
-    .play-button-3{
+    .play-button-3 {
         display: none;
     }
 
-    .play-community{
+    .play-community {
         justify-content: flex-end;
     }
 
-    .community1{
+    .community1 {
         position: static;
     }
 
 }
-
