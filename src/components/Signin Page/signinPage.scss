@@ -1,3 +1,16 @@
+.bg-card {
+  background-color: #dadee1;
+}
+
+.bg-signin-card {
+  background-color: #0f0d11;
+}
+
+
+
+
+
+
 .signin-container {
   width: 100%;
   height: 89vh;
@@ -5,7 +18,8 @@
   justify-content: center;
   align-items: center;
 }
-.signin-container-rainbow{
+
+.signin-container-rainbow {
   width: 100%;
   display: flex;
   gap: 5%;
@@ -13,6 +27,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .signin-form {
   width: 35%;
   height: 60vh;
@@ -24,23 +39,28 @@
   align-items: center;
   flex-direction: column;
   gap: 3%;
+
   .signupLink {
     text-decoration: none;
     color: #fff;
   }
 }
+
 .signin-heading {
   color: white;
 }
+
 .email-input-container {
   width: 80%;
   height: auto;
   margin-bottom: 2%;
 }
+
 .signin-inputs-title h5 {
   font-size: 16px;
   color: white;
 }
+
 .email-input-container input {
   width: 100%;
   background: #282828;
@@ -57,14 +77,17 @@
     height: 44px;
   }
 }
+
 .password-input-container {
   width: 80%;
   height: auto;
 }
+
 .password-input-container h5 {
   font-size: 16px;
   color: white;
 }
+
 .password-input-container input {
   width: 100%;
   background: #282828;
@@ -81,15 +104,18 @@
     height: 44px;
   }
 }
+
 .signin-error {
   width: 80%;
   text-align: left;
   align-items: flex-start;
+
   p {
     color: rgb(236, 0, 0) !important;
     font-weight: 700;
   }
 }
+
 .continue-button {
   width: 80%;
   height: 6vh;
@@ -97,9 +123,11 @@
   border: none;
   margin-top: 2%;
 }
+
 .forgot {
   color: white;
 }
+
 .signin-container p {
   color: white;
 }

@@ -40,7 +40,7 @@ const Header = ({ DarkMood, setDarkMood }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLogoutOption, setIsLogoutOption] = useState(false);
   const [user, setUser] = useState("");
-  const mobileversion = useMediaQuery("(max-width:900px)");
+  const mobileversion = useMediaQuery("(max-width:1000px)");
   const [showOpenState, setshowOpenState] = useState("hide-side-nav");
   const [background, setBackground] = useState("");
 

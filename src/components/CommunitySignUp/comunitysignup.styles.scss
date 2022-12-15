@@ -1,3 +1,54 @@
+
+// Add a background-color for wallet alert
+.wallent-section-bg {
+  background-color: #dadee1;
+}
+
+.d-flex-all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-card-bg {
+  background-color: #141414;
+}
+
+.form-control {
+  box-shadow: none !important;
+}
+
+.divider {
+  width: 25px;
+  border-top: 3px solid #dadee1;
+}
+
+.btn-check {
+  background-color: black;
+  color: white;
+  border: 1px solid #f4f4f4;
+}
+
+.check-with-label {
+  display: none;
+}
+
+.check-with-label:checked+.label-for-check {
+  background-color: white;
+  color: black !important;
+}
+input{
+  box-shadow: none !important;
+}
+
+
+
+
+
+
+
+
+
 .community-signup-container {
   height: 89vh;
   display: flex;
@@ -80,6 +131,7 @@
 
         .username-input-div {
           position: relative;
+
           .username-input {
             padding-right: 80px;
           }
@@ -201,6 +253,7 @@
           font-size: 16px;
           margin-top: 10px;
         }
+
         .community-signup-continue-disabled {
           pointer-events: none;
           color: #818181;

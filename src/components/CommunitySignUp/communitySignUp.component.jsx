@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./comunitysignup.styles.scss";
 import CameraFilePicker from "../../assets/Icons/CameraFilePicker.svg";
+import Polygon from "../../assets/Icons/Polygon 4.png";
 import Checkbox from "@mui/material/Checkbox";
 
 // INTERESTS ICONS
@@ -16,6 +17,10 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import ImageCrop from "./ImageCrop";
 import ReactCrop from "react-image-crop";
+
+
+// Vector Image Import
+import VectorIcon from "./Vector.png"
 
 const CommunitySignUp = ({ DarkMood }) => {
   const navigate = useNavigate();
@@ -40,6 +45,8 @@ const CommunitySignUp = ({ DarkMood }) => {
   const [imagef, setImagef] = useState("");
   const [currentPage, setCurrentPage] = useState("choose-img");
   const [imgAfterCrop, setImgAfterCrop] = useState("");
+  const [isPasswordShown, setIsPasswordShown] = useState(false)
+  const [isConfirmPasswordShown, setIsConfirmPasswordShown] = useState(false)
   //MULTIPLE INTEREST SELECTION STARTS
   const [selectItem, setSelectItem] = useState([
     { id: "1", name: "Investing", selected: false, svgFile: MoneyIcon },
@@ -51,6 +58,13 @@ const CommunitySignUp = ({ DarkMood }) => {
     { id: "7", name: "Art", selected: false, svgFile: ArtIcon },
     { id: "8", name: "Law", selected: false, svgFile: LawIcon },
   ]);
+
+
+  // State for small screen
+  const [smallScreen, setSmallScreen] = useState({ smallScreen: false, step: 1 })
+  const isSmallScreen = smallScreen.smallScreen;
+
+
 
   const toggleSelectedItem = (e) => {
     if (!e.target.classList.contains("selected")) {
@@ -91,7 +105,7 @@ const CommunitySignUp = ({ DarkMood }) => {
 
     let imageObj1 = new Image();
     imageObj1.src = imagef;
-    imageObj1.onload = function() {
+    imageObj1.onload = function () {
       context.drawImage(
         imageObj1,
         imgCroppedArea.x,
@@ -127,7 +141,7 @@ const CommunitySignUp = ({ DarkMood }) => {
       const reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
       setImage(event.target.files[0]);
-      reader.onload = function(e) {
+      reader.onload = function (e) {
         onImageSelected(reader.result);
       };
     }
@@ -150,7 +164,6 @@ const CommunitySignUp = ({ DarkMood }) => {
     setProfileImageName(files[0].name);
     createProfleImage(files[0]);
   }
-  console.log(profileImageName);
   function createProfleImage(file) {
     console.log(file);
     if (file.type.includes("image")) {
@@ -237,242 +250,217 @@ const CommunitySignUp = ({ DarkMood }) => {
         });
     });
   }
+
+
+
+
+
+
+  var x = window.matchMedia("(max-width: 768px)")
+  x.addListener(() => { x.matches ? setSmallScreen({ ...smallScreen, smallScreen: true }) : setSmallScreen({ ...smallScreen, smallScreen: false }) }) // Attach listener function on state changes
+
+
+  useEffect(() => {
+    window.innerWidth <= 768 ? setSmallScreen({ smallScreen: true, step: 1 }) : setSmallScreen({ smallScreen: false, step: 1 })
+  }, [window.innerWidth])
+
+
+
+
+
+
+
   return (
-    <div className="community-signup-container">
-      {/* <h1 className="my-3">COMMUNITY SIGN UP</h1> */}
-      <div className="community-signup-body">
-        {/* LEFT SIDE CONTAINER STARTS */}
-        <div className="community-signup-leftside ms-3 my-4">
-          <div className="username-input-container">
-            <div className="community-signup-inputs-title">
-              <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
-                Username
-              </h5>
-              <span style={{ color: DarkMood === true ? "#fff" : "#000" }}>
-                Allowed Characters: A - Z, 0-9
-              </span>
-            </div>
-            <div className="username-input-div">
-              <input
-                className="username-input"
-                type="text"
-                placeholder="Enter username"
-                value={username}
-                onBlur={(e) => {
-                  console.log(e.target.value);
-                  if (e.target.value == "") {
-                    setIsAvailable("false");
-                    return;
-                  }
-                  axios
-                    .get(
-                      `${global.backendUrl}/getUserByUsername/${e.target.value}`
-                    )
-                    .then((responseUser) => {
-                      console.log(responseUser);
-                      if (responseUser.data.length > 0) {
-                        setIsAvailable("false");
-                      } else {
-                        setIsAvailable("true");
-                      }
-                      // console.log(responseUser.data[0].user_wallet_address)
-                    });
-                }}
-                onChange={(e) => {
-                  setIsAvailable("NotShown");
-                  setUsername(e.target.value);
-                }}
-              />
-              <p
-                hidden={isAvailable == "NotShown"}
-                className="available-username"
-              >
-                {isAvailable == "true" ? "Available" : "Already Reserved"}
-              </p>
+    <>
+      <h1 className={`m-3 ms-5 text-${DarkMood ? "white" : "dark"}`}>COMMUNITY SIGN UP</h1>
+      <div className="container">
+        <div className="row wallent-section-bg">
+          <div className="col-9 py-1 px-3">
+            <p className="mb-0 fs-6" >Your Wallet Address</p>
+            <div className="d-flex-all justify-content-start">
+              <img src={VectorIcon} className="img-fluid" width="30" alt="" />
+              <span className="fs-3">0x92398...a</span>
             </div>
           </div>
-          <div className="community-email-input-container">
-            <div className="community-signup-inputs-title">
-              <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
-                Email Address
-              </h5>
-            </div>
-            <input
-              type="email"
-              placeholder="example@gmail.com"
-              value={emailAddress}
-              onChange={(e) => {
-                setEmailAddress(e.target.value);
-              }}
-            />
-          </div>
-          <div className="wallet-input-container">
-            <div className="community-signup-inputs-title">
-              <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
-                Wallet Address
-              </h5>
-            </div>
-            <input
-              disabled
-              type="text"
-              placeholder="Enter wallet adress"
-              value={walletAddress}
-              onChange={(e) => {
-                setWalletAddress(e.target.value);
-              }}
-            />
-          </div>
-          <div className="community-password-input-container">
-            <div className="community-signup-inputs-title">
-              <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
-                Password
-              </h5>
-            </div>
-            <input
-              type="password"
-              placeholder="......."
-              value={password}
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-            />
-          </div>
-          <div className="confirm-password-container">
-            <div className="community-signup-inputs-title">
-              <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
-                Confirm Password
-              </h5>
-            </div>
-            <input
-              type="password"
-              placeholder="......."
-              value={confirmPassword}
-              onChange={(e) => {
-                setConfirmPassword(e.target.value);
-              }}
-            />
-            <p
-              hidden={!isPasswordError}
-              className="community-signup-inputs-error"
-            >
-              {passwordErrorMessage}
-            </p>
+          <div className="col-3 d-flex-all justify-content-end">
+            <button className="btn">Disconnet</button>
           </div>
         </div>
-        {/* LEFT SIDE CONTAINER ENDS */}
+        <div className={`row p-2 mt-3 text-center shadow mb-2 ${DarkMood ? "main-card-bg text-white" : "bg-light text-dark"}`}>
 
-        {/* RIGHT SIDE CONTAINER STARTS */}
-        <div className="community-signup-rightside ms-3 my-4">
-          <div className="community-signup-pofile-image">
-            <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
-              {" "}
-              Profile Image
-            </h5>
-            <p style={{ color: DarkMood === true ? "#fff" : "#000" }}>
-              Click to upload or drag and drop SVG, PNG, JPG or GIF{" "}
+
+
+          <div className={`col-12 col-md-4 ${isSmallScreen && smallScreen.step === 1 ? "d-block" : "d-none d-md-block"}`}>
+            <p className="mb-0">
+              <span className="fs-6">01/</span>
+              <span className="fs-2">Your Info</span>
+              <hr />
             </p>
-            <p style={{ color: DarkMood === true ? "#fff" : "#000" }}>
-              Max size - 1000px x 1000px
+            <div className="mt-3 text-start">
+              <label htmlFor="username-input" className="w-100">
+                Username
+                <input type="text" value={username}
+                  onBlur={(e) => {
+                    console.log(e.target.value);
+                    if (e.target.value == "") {
+                      setIsAvailable("false");
+                      return;
+                    }
+                    axios
+                      .get(
+                        `${global.backendUrl}/getUserByUsername/${e.target.value}`
+                      )
+                      .then((responseUser) => {
+                        console.log(responseUser);
+                        if (responseUser.data.length > 0) {
+                          setIsAvailable("false");
+                        } else {
+                          setIsAvailable("true");
+                        }
+                      });
+                  }}
+                  onChange={(e) => {
+                    setIsAvailable("NotShown");
+                    setUsername(e.target.value);
+                  }} className={`form-control bg-transparent text-${DarkMood ? "white" : "dark"}`} id="username-input" placeholder="User Name" />
+              </label>
+              <label htmlFor="email" className="w-100 mt-2">
+                Email Address
+                <input value={emailAddress}
+                  onChange={(e) => {
+                    setEmailAddress(e.target.value);
+                  }} type="email" className={`form-control bg-transparent text-${DarkMood ? "white" : "dark"}`} id="email" placeholder="Email Address" />
+              </label>
+              <label htmlFor="Wallet" className="w-100 mt-2">
+                Wallet Address
+                <input disabled
+                  value={walletAddress}
+                  onChange={(e) => {
+                    setWalletAddress(e.target.value);
+                  }} type="text" className={`form-control bg-transparent text-${DarkMood ? "white" : "dark"}`} id="Wallet" placeholder="Enter Wallet Address" />
+              </label>
+              <label htmlFor="password" className="w-100 mt-2">
+                Password
+                <div class="input-group">
+                  <input value={password}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }} type={!isPasswordShown ? "password" : "text"} id="password" class={`form-control bg-transparent text-${DarkMood ? "white" : "dark"} border-end-0`} placeholder="********" />
+                  <span onClick={() => setIsPasswordShown(!isPasswordShown)} class="input-group-text bg-transparent border-start-0 text-white" id="basic-addon2"><i class={`bi bi-eye${!isPasswordShown ? "" : "-slash"}`}></i></span>
+                </div>
+              </label>
+              <label htmlFor="confirmPassword" className="w-100 mt-2">
+                Confirm Password
+                <div class="input-group">
+                  <input value={confirmPassword}
+                    onChange={(e) => {
+                      setConfirmPassword(e.target.value);
+                    }} type={!isConfirmPasswordShown ? "password" : "text"} id="confirmPassword" class={`form-control bg-transparent text-${DarkMood ? "white" : "dark"} border-end-0`} placeholder="********" />
+                  <span onClick={() => setIsConfirmPasswordShown(!isConfirmPasswordShown)} class="input-group-text bg-transparent border-start-0 text-white" id="basic-addon2"><i class={`bi bi-eye${!isConfirmPasswordShown ? "" : "-slash"}`}></i></span>
+                </div>
+              </label>
+              <div className="col text-center">
+                {smallScreen.smallScreen === true ?
+                  <button className={`btn btn-${DarkMood ? "light" : "dark"} mt-2 w-100 `} onClick={() => setSmallScreen({ ...smallScreen, step: 2 })}>Continue <i class="bi bi-arrow-right ms-2"></i></button>
+                  : <></>
+                }
+              </div>
+            </div>
+          </div>
+          <div className={`col-12 col-md-4  ${smallScreen.smallScreen && smallScreen.step == 2 ? "d-block" : "d-none d-md-block"}`}>
+            <p className="mb-0">
+              <span className="fs-6">02/</span>
+              <span className="fs-2">Profile image</span>
+              <hr />
             </p>
-            <div
-              className={`profile-image ${"position-relative"} my-2 d-flex justify-content-center justify-content-sm-start`}
-            >
-              {currentPage === "choose-img" ? (
-                <img src={CameraFilePicker} alt="" onClick={onChooseImg} /> || (
-                  <div>
-                    <img
-                      alt=""
-                      src={imgAfterCrop}
-                      className="cropped-img"
-                      style={{ width: "41%", height: "100%" }}
+            <div className="mt-4">
+              <div className="position-relative d-flex-all">
+                <div
+                  className={`profile-image ${"position-relative"} my-2 d-flex justify-content-center justify-content-sm-start`}
+                >
+                  {currentPage === "choose-img" ? (
+                    <img src={DarkMood ? CameraFilePicker : Polygon} alt="" onClick={onChooseImg} /> || (
+                      <div>
+                        <img
+                          alt=""
+                          src={imgAfterCrop}
+                          className="cropped-img"
+                          style={{ width: "41%", height: "100%" }}
+                        />
+                      </div>
+                    )
+                  ) : currentPage === "crop-img" ? (
+                    <ImageCrop
+                      image={imagef}
+                      onCropDone={onCropDone}
                     />
-                  </div>
-                )
-              ) : currentPage === "crop-img" ? (
-                <ImageCrop
-                  image={imagef}
-                  onCropDone={onCropDone}
-                  // onCropCancel={onCropCancel}
-                />
-              ) : (
-                <div>
-                  <img
-                    alt=""
-                    src={imgAfterCrop}
-                    className="cropped-img"
-                    style={{ width: "41%", height: "100%" }}
+                  ) : (
+                    <div>
+                      <img
+                        alt=""
+                        src={imgAfterCrop}
+                        className="cropped-img"
+                        style={{ width: "41%", height: "100%" }}
+                        onClick={() => document.getElementById("fileInput").click()}
+                      />
+                    </div>
+                  )}
+
+                  <input
+                    style={{ width: "100px", height: "100px" }}
+                    type="file"
+                    id="fileInput"
+                    ref={inputRef}
+                    className="d-none"
+                    onChange={handleOnChange}
                   />
                 </div>
-              )}
-
-              <input
-                style={{ width: "100px", height: "100px" }}
-                type="file"
-                ref={inputRef}
-                onChange={handleOnChange}
-              />
+              </div>
+              <div className="d-flex-all flex-column">
+                <div className="mt-5 divider rounded-1"></div>
+                <p className="mb-0 mt-2">Click to upload or drag and drop SVG, PNG, JPG or GIF</p>
+                <p className="mb-0 mt-2 text-danger">Max Size 1000px * 1000px</p>
+              </div>
+              <div className="col text-center">
+                {!isSmallScreen ? <></> :
+                  <button className={`btn btn-${DarkMood ? "light" : "dark"} mt-2 w-100`} onClick={() => setSmallScreen({ ...smallScreen, step: 3 })}>Continue <i class="bi bi-arrow-right ms-2"></i></button>
+                }
+              </div>
             </div>
           </div>
-          <div className="community-signup-interests">
-            <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
-              Select your interests
-            </h5>
-            <div className="community-signup-interests-items">
-              {selectItem.map((item) => {
-                return (
-                  <div
-                    onClick={toggleSelectedItem}
-                    data-id={item.id}
-                    className={item.selected ? "selected" : ""}
-                  >
-                    <img
-                      src={item.svgFile}
-                      alt=""
-                      onClick={toggleSelectedItem}
-                      data-id={item.id}
-                    />
-                    <h6 onClick={toggleSelectedItem} data-id={item.id}>
-                      {item.name}
-                    </h6>
+          <div className={`col-12 col-md-4 ${smallScreen.step === 3 && smallScreen.smallScreen === true ? "d-block" : "d-none d-md-block"}`}>
+            <p className="mb-0">
+              <span className="fs-6">03/</span>
+              <span className="fs-2">Select your interests</span>
+              <hr />
+              <div className="mt-4">
+                <div className="row">
+                  {selectItem.map((item) => (
+                    <div onClick={toggleSelectedItem}
+                      data-id={item.id} className="col-12 col-md-6">
+                      <input type="checkbox" class="check-with-label" id={item.name} />
+                      <label onClick={toggleSelectedItem}
+                        data-id={item.id} class={`label-for-check btn ${DarkMood ? "text-white" : "text-dark"} w-100 border border-1 border-${DarkMood ? "light" : "secondary"}`} for={item.name}>{item.name}</label>
+                    </div>
+                  ))}
+                  <label htmlFor="form-check-input">
+                    <input type="checkbox" onClick={(e) => {
+                      setTerms(e.target.checked);
+                    }} className="form-check-input" id="form-check-input" />
+                    I agree to receive updates and announcements from Sovereign.
+                  </label>
+                  <div className="col">
+                    <button disabled={!terms} onClick={(e) => {
+                      updateUser();
+                    }} className={`btn btn-${DarkMood ? "light" : "dark"} w-100`}>Continue <i class="bi bi-arrow-right ms-2"></i></button>
                   </div>
-                );
-              })}
-            </div>
-          </div>
-          <div className="community-signup-agree-terms">
-            <div>
-              <input
-                type="checkbox"
-                className="me-2"
-                onClick={(e) => {
-                  // console.log(e.target.checked)
-                  setTerms(e.target.checked);
-                }}
-              />
-              <p
-                className="m-0 me-2"
-                style={{ color: DarkMood === true ? "#fff" : "#000" }}
-              >
-                I agree to receive updates and announcements from Sovereign.
-              </p>
-            </div>
-            {/* to="/verify-twitter" */}
-            <Link
-              onClick={(e) => {
-                updateUser();
-              }}
-              className={`community-signup-continue ${
-                terms == true && isAvailable == "true"
-                  ? ""
-                  : "community-signup-continue-disabled"
-              }`}
-            >
-              Continue
-            </Link>
+                </div>
+              </div>
+            </p>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
