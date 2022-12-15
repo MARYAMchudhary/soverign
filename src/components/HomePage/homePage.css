@@ -2,9 +2,11 @@
     width: 100%;
     min-height: 100vh;
 
-   
+
     display: flex;
 }
+
+
 
 .sidenav {
     max-width: 75px;
@@ -288,16 +290,16 @@
 
 .homepage-bg {
     background-image: url('../../assets/Backgrounds/HomePageBackground-Desktop.gif');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position-y: 25%;
-        background-position-x: center;
-        background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 25%;
+    background-position-x: center;
+    background-attachment: fixed;
 
 }
 
 .dark_mood {
-    background-color: "#000"
+    background-color: #000
 }
 
 .light_mood {
@@ -305,7 +307,7 @@
 }
 
 .light_mood_text {
-    color: "#000"
+    color: #000
 }
 
 /* ABOUTPAGE BACKGROUND */

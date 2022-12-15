@@ -9,8 +9,29 @@ import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDisconnect } from "wagmi";
 import { useAccount } from "wagmi";
+import HomePage from "../HomePage/homePage.component";
 import DarkIcon from "../../assets/dark_light/dark.png";
 import LightIcon from "../../assets/dark_light/light.png";
+import openSidebar from "../../assets/homeicons/openSidebar.png";
+import wallet from "../../assets/homeicons/wallet.png";
+import download from "../../assets/homeicons/download.png";
+import twitter from "../../assets/homeicons/twitter.png";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { motion, AnimatePresence } from "framer-motion";
+import message from "../../assets/homeicons/message.png";
+import {
+  AppBar,
+  Box,
+  Button,
+  Container,
+  IconButton,
+  Toolbar,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+import "./header.css";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 const Header = ({ DarkMood, setDarkMood }) => {
   // const { disconnect } = useDisconnect()
   const { address, isConnecting, isConnected, isDisconnected } = useAccount();
@@ -19,7 +40,7 @@ const Header = ({ DarkMood, setDarkMood }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLogoutOption, setIsLogoutOption] = useState(false);
   const [user, setUser] = useState("");
-
+  const mobileversion = useMediaQuery("(max-width:900px)");
   const [showOpenState, setshowOpenState] = useState("hide-side-nav");
   const [background, setBackground] = useState("");
 
@@ -34,6 +55,11 @@ const Header = ({ DarkMood, setDarkMood }) => {
   //!LIGHT_DARK MOOD
   const [color, setcolor] = useState("#28262B");
   const [toggle, settoggle] = useState(1);
+  //!SIDEBAR
+  const [opnMenu, setopnMenu] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
+
+  const [isActive, setIsActive] = useState(false);
 
   const minSwipeDistance = 50;
 
@@ -69,9 +95,6 @@ const Header = ({ DarkMood, setDarkMood }) => {
   };
 
   useEffect(() => {
-    if (window.location.pathname === "/") {
-      setBackground("homepage-bg");
-    }
     console.log("sessionStorage", sessionStorage.getItem("walletAddress"));
     if (
       sessionStorage.getItem("walletAddress") != null &&
@@ -92,11 +115,6 @@ const Header = ({ DarkMood, setDarkMood }) => {
     }
   }, [location]);
 
-  // const BACKGROUNDS = {
-  //   homepage: "homepage-bg",
-  //   aboutpage: "aboutpage-bg",
-  //   otherpages: "otherpages-bg",
-  // };
   function handleWalletLogout() {
     if (window.location.href.includes("profile")) {
       navigate("/signin");
@@ -107,394 +125,474 @@ const Header = ({ DarkMood, setDarkMood }) => {
     setIsLoggedIn(false);
     setIsLogoutOption(false);
   }
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
+  };
+  const handleClickList = () => {
+    setIsActive((current) => !current);
+  };
+
+  const isOpen = () => {
+    setopnMenu(true);
+  };
+
+  const closeMenu = () => {
+    setopnMenu(false);
+  };
+
   return (
-    <div
-      onTouchStart={onTouchStart}
-      onTouchMove={onTouchMove}
-      onTouchEnd={onTouchEnd}
-      // className={`main-container ${background}`}
-      className={`main-container ${
-        window.location.pathname === "/"
-          ? background
-          : DarkMood === true
-          ? "dark_mood"
-          : DarkMood === false
-          ? "light_mood"
-          : ""
-      }`}
-      style={{ backgroundColor: DarkMood === true ? "#000" : "#fff" }}
-      // data-bs-toggle="offcanvas"
-      // data-bs-target="#offcanvasExample"
-      // aria-controls="offcanvasExample"
-    >
-      {/* Bootstrap Off Canvas */}
-
-      <div
-        style={{
-          backgroundColor: DarkMood === true ? "#000" : "",
-          width: "250px",
-        }}
-        className={`offcanvas offcanvas-start ${showState}`}
-        tabindex="-1"
-        id="offcanvasExample"
-        aria-labelledby="offcanvasExampleLabel"
-      >
-        <div class="offcanvas-header">
-          <CloseSideBarIcon
-            onClick={() => {
-              setshowState("");
-            }}
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-            className="close-sign"
-            style={{
-              cursor: "pointer",
-              filter:
-                DarkMood === true
-                  ? ""
-                  : "saturate(519%) contrast(904%) brightness(374%) invert(118%) sepia(50%) hue-rotate(57deg)",
-              // color: DarkMood === true ? "#fff" : "#000",
-            }}
-          />
-        </div>
-        <div class="offcanvas-body">
-          <div className="menu-items">
-            <span
-              data-bs-dismiss="offcanvas"
-              onClick={() => {
-                sethighlightNav({ nav1: "highlighted" });
-                setshowOpenState("hide-side-nav");
-              }}
-              style={{ color: DarkMood === false ? "#000" : "" }}
-              className={`${highlightNav.nav1}`}
-            >
-              <Link style={{ color: "inherit" }} to="/About">
-                ABOUT
-              </Link>
-            </span>
-            <span
-              data-bs-dismiss="offcanvas"
-              onClick={() => {
-                sethighlightNav({ nav2: "highlighted" });
-                setshowOpenState("hide-side-nav");
-              }}
-              style={{ color: DarkMood === false ? "#000" : "" }}
-              className={`${highlightNav.nav2}`}
-            >
-              <a
-                href="https://manifesto.sovereigndao.com"
-                target="_blank"
-                style={{ color: "inherit" }}
-              >
-                MANIFESTO
-              </a>
-            </span>
-            <Link to="/DAO" style={{ color: "inherit" }}>
-              <span
-                data-bs-dismiss="offcanvas"
-                onClick={() => {
-                  sethighlightNav({ nav3: "highlighted" });
-                  setshowOpenState("hide-side-nav");
-                }}
-                style={{ color: DarkMood === false ? "#000" : "" }}
-                className={`${highlightNav.nav3}`}
-              >
-                DAO
-              </span>
-            </Link>
-          </div>
+    <>
+      {opnMenu ? (
+        <>
           <div
-            style={{ marginTop: "15%" }}
-            className="d-flex d-sm-none justify-content-center"
-          >
-            {isLoggedIn == true ? (
-              <div className="button1 ">
-                <Link to="/">
-                  <img width="24" height="24" src={NoMan} alt="" />
-                </Link>
-              </div>
-            ) : (
-              <div className="button1 ">
-                <Link to="/signin">
-                  <img width="24" height="24" src={WalletIcon} alt="" />
-                </Link>
-              </div>
-            )}
-            <div hidden className="button2 ms-2">
-              <Link to="/signin">
-                <LoginIcon />
-              </Link>
-            </div>
-          </div>
-          <div className="social-icons-for-hamburger">
-            <Link to="/Connectwallet">
-              <img
-                src={MessageIcon}
-                alt=""
-                className="hambrger-social"
-                style={{
-                  cursor: "pointer",
-                  filter:
-                    DarkMood === true
-                      ? ""
-                      : "saturate(519%) contrast(904%) brightness(374%) invert(0%) sepia(50%) hue-rotate(57deg)",
-                  // color: DarkMood === true ? "#fff" : "#000",
-                }}
-              />
-            </Link>
-            <a href="https://twitter.com/SVRNDAO" target="_blank">
-              <img
-                src={TwitterIcon}
-                alt=""
-                className="hambrger-social"
-                style={{
-                  cursor: "pointer",
-                  filter:
-                    DarkMood === true
-                      ? ""
-                      : "saturate(519%) contrast(904%) brightness(374%) invert(0%) sepia(50%) hue-rotate(57deg)",
-                  // color: DarkMood === true ? "#fff" : "#000",
-                }}
-              />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div className="sidenav">
-        <div className="sideBarIcon">
-          <SideBarIcon
-            onClick={closeOpenSign}
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasExample"
-            aria-controls="offcanvasExample"
+            className={"menu"}
             style={{
-              cursor: "pointer",
-              filter:
-                DarkMood === true
-                  ? ""
-                  : "saturate(519%) contrast(904%) brightness(374%) invert(118%) sepia(50%) hue-rotate(57deg)",
-              // color: DarkMood === true ? "#fff" : "#000",
+              backgroundColor: DarkMood === true ? "#000" : "rgb(241 241 241)",
             }}
-          />
-        </div>
-        <div className="sidenav-social-icons d-none d-sm-flex">
-          <Link to="/Connectwallet">
-            <img
-              src={MessageIcon}
-              className="navsvg"
-              alt="Icon"
-              style={{
-                cursor: "pointer",
-                filter:
-                  DarkMood === true
-                    ? ""
-                    : "saturate(519%) contrast(904%) brightness(374%) invert(0%) sepia(50%) hue-rotate(57deg)",
-                // color: DarkMood === true ? "#fff" : "#000",
-              }}
-            />
-          </Link>
-          <a href="https://twitter.com/SVRNDAO" target="_blank">
-            <img
-              src={TwitterIcon}
-              className="navsvg"
-              alt="Icon"
-              style={{
-                cursor: "pointer",
-                filter:
-                  DarkMood === true
-                    ? ""
-                    : "saturate(519%) contrast(904%) brightness(374%) invert(0%) sepia(50%) hue-rotate(57deg)",
-                // color: DarkMood === true ? "#fff" : "#000",
-              }}
-            />
-          </a>
-        </div>
-      </div>
-      <div className="right-side-container">
-        <div
-          className="top-nav justify-content-start justify-content-sm-between"
-          style={{
-            boxShadow: DarkMood === false ? "0px 1px 11px #bbb7b747" : "",
-          }}
-        >
-          <div className="mobile-sideBarIcon d-sm-none">
-            <SideBarIcon
-              onClick={closeOpenSign}
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasExample"
-              aria-controls="offcanvasExample"
-              style={{
-                cursor: "pointer",
-                filter:
-                  DarkMood === true
-                    ? ""
-                    : "saturate(519%) contrast(904%) brightness(374%) invert(118%) sepia(50%) hue-rotate(57deg)",
-              }}
-            />
-          </div>
-          <div className="site-name-container ms-sm-5">
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <h1
-                className="site-name"
-                style={{ color: DarkMood === false ? "#000" : "" }}
-              >
-                {" "}
-                SOVEREIGN
-              </h1>
-              {/* <img
-                
-                src={require("../../assets/Logo/SOVEREIGN.png")}
-                alt=""
-              /> */}
-            </Link>
-          </div>
-          <div className="top-wallet-buttons d-none d-sm-flex">
-            <div
-              style={{
-                border: "1px solid #28262B",
-                display: "flex",
-                width: "23%",
-              }}
-            >
-              <div
-                onClick={() => {
-                  settoggle(1);
-                  if (window.location.pathname === "/") {
-                    setDarkMood(true);
-                  } else {
-                    setDarkMood(true);
-                  }
-                  // setDarkMood(true);
-                }}
-                style={{
-                  backgroundColor: toggle == 1 ? "#28262B" : "",
-                  padding: "9%",
-                  filter:
-                    DarkMood === true
-                      ? ""
-                      : "saturate(519%) contrast(904%) brightness(374%) invert(118%) sepia(50%) hue-rotate(57deg)",
-                  // color: DarkMood === true ? "#fff" : "#000",
-                }}
-              >
-                <img src={DarkIcon} alt="" srcset="" />
-              </div>
-              <div
-                onClick={() => {
-                  settoggle(2);
-                  if (window.location.pathname === "/") {
-                    setDarkMood(true);
-                  } else {
-                    setDarkMood(false);
-                  }
-                }}
-                style={{
-                  backgroundColor: toggle == 2 ? "#28262B" : "",
-                  padding: "9%",
-                }}
-              >
-                <img src={LightIcon} alt="" srcset="" />
-              </div>
-            </div>
-            <div>
-              {isLoggedIn == true ? (
-                <div className="button1" style={{ position: "relative" }}>
-                  <Link
-                    className="svgdimensions"
-                    onMouseEnter={() => setIsLogoutOption(!isLogoutOption)}
+          >
+            <div className="menuContent">
+              {isActive && (
+                <>
+                  <Container
+                    maxWidth={"xl"}
+                    sx={{
+                      display: "flex",
+                      justifyContent: "end",
+                      display: mobileversion ? "none" : "block",
+                    }}
                   >
-                    {user != "" ? (
-                      <img
-                        className="profileImage"
-                        width="30"
-                        height="30"
-                        src={`${global.backendUrl}/nodeassets/${user.user_image}`}
-                        alt=""
-                      />
-                    ) : (
-                      <img width="24" height="24" src={NoMan} alt="" />
-                    )}
-                  </Link>
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: "0%",
+                        left: "69%",
+                        backgroundColor: "#999B9E",
+                      }}
+                      p={5}
+                    >
+                      <Box
+                        display={"flex"}
+                        alignItems={"center"}
+                        justifyContent="space-between"
+                      >
+                        <Box
+                          style={{
+                            backgroundColor: "#fff",
+                            width: "11%",
+                            height: "44px",
+                          }}
+                          display="flex"
+                          alignItems={"center"}
+                          justifyContent="center"
+                        >
+                          <img src={download} />
+                        </Box>
+                        <Typography sx={{ color: "#000", fontSize: "40px" }}>
+                          Your account
+                        </Typography>
+                      </Box>
+                      <Box my={4}>
+                        <Typography sx={{ color: "#000", fontSize: "16px" }}>
+                          Reinventing Cooperation and Coproduction for an
+                          Evolving Internet..
+                        </Typography>
+                      </Box>
+
+                      <Box
+                        display={"flex"}
+                        alignItems={"center"}
+                        justifyContent="space-between"
+                      >
+                        <Box
+                          sx={{ backgroundColor: "#000", color: "#fff" }}
+                          p={1}
+                        >
+                          Connect Wallet
+                        </Box>
+                        <Box sx={{ color: "#000" }} p={1}>
+                          Sign in
+                          <ChevronRightIcon sx={{ color: "#000" }} />
+                        </Box>
+                      </Box>
+                    </Box>
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        top: "40%",
+                        left: "69%",
+                        backgroundColor: "#fff",
+                      }}
+                      p={5}
+                    >
+                      <Box
+                        display={"flex"}
+                        alignItems={"start"}
+                        justifyContent="space-between"
+                        flexDirection={"column"}
+                      >
+                        <Box
+                          style={{
+                            backgroundColor: "#999B9E",
+                            width: "11%",
+                            height: "44px",
+                          }}
+                          display="flex"
+                          alignItems={"center"}
+                          justifyContent="center"
+                        >
+                          <img src={message} />
+                        </Box>
+                        <Typography
+                          sx={{ color: "#000", fontSize: "33px" }}
+                          mt={4}
+                        >
+                          Sovereign Community
+                        </Typography>
+                      </Box>
+                      <Box my={1}>
+                        <Typography sx={{ color: "#000", fontSize: "16px" }}>
+                          Help us keep the community strong. Our community is
+                          home for many different people from all walks of life.
+                        </Typography>
+                      </Box>
+
+                      <Box
+                        display={"flex"}
+                        alignItems={"center"}
+                        justifyContent="space-between"
+                        my={4}
+                      >
+                        <Box
+                          sx={{ border: "1px solid #000", color: "#000" }}
+                          p={1}
+                          display="flex"
+                        >
+                          <Box mr={1}>
+                            <img src={message} />
+                          </Box>
+                          Sovereign Chat
+                        </Box>
+                        <Box sx={{ color: "#000" }} p={1} display="flex">
+                          <Box mr={2}>
+                            <img src={twitter} />
+                          </Box>
+                          Twitter
+                        </Box>
+                      </Box>
+                    </Box>
+                  </Container>
+                </>
+              )}
+              <Box
+                onClick={closeMenu}
+                sx={{ position: "absolute", top: "4%", left: "4%" }}
+              >
+                <CloseIcon
+                  sx={{ color: DarkMood === true ? "#fff" : "#000" }}
+                />
+              </Box>
+              <ul
+                className="list"
+                style={{ color: DarkMood === true ? "#fff" : "#000" }}
+              >
+                <Link
+                  to={"/About"}
+                  onClick={closeMenu}
+                  style={{ color: DarkMood === true ? "#fff" : "#000" }}
+                >
+                  <li
+                    className={
+                      DarkMood === true ? "hoverelement" : "hoverlight"
+                    }
+                  >
+                    About
+                  </li>
+                </Link>
+                <Link
+                  to={"/manifesto"}
+                  onClick={closeMenu}
+                  style={{ color: DarkMood === true ? "#fff" : "#000" }}
+                >
+                  <li
+                    className={
+                      DarkMood === true ? "hoverelement" : "hoverlight"
+                    }
+                  >
+                    Manifesto
+                  </li>
+                </Link>
+                <Link
+                  to={"/DAO"}
+                  onClick={closeMenu}
+                  style={{ color: DarkMood === true ? "#fff" : "#000" }}
+                >
+                  <li
+                    className={
+                      DarkMood === true ? "hoverelement" : "hoverlight"
+                    }
+                  >
+                    DAO
+                  </li>
+                </Link>
+                {/* <Link to={"/DAO"} onClick={closeMenu}> */}
+
+                <li
+                  className={DarkMood === true ? "hoverelement" : "hoverlight"}
+                >
+                  FAQ
+                </li>
+                {/* </Link> */}
+                <li
+                  className={
+                    isActive && DarkMood === true ? "mintdark" : "hoverlight"
+                  }
+                  onClick={handleClickList}
+                >
+                  Mint
+                </li>
+                <li
+                  className={DarkMood === true ? "hoverelement" : "hoverlight"}
+                >
+                  Release 1
+                </li>
+                <li
+                  className={DarkMood === true ? "hoverelement" : "hoverlight"}
+                >
+                  Release 2
+                </li>
+                <li
+                  className={DarkMood === true ? "hoverelement" : "hoverlight"}
+                >
+                  Swap
+                </li>
+              </ul>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <Box
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+            // // className={`main-container ${background}`}
+            // className={`main-container ${
+            //   window.location.pathname === "/"
+            //     ? background
+            //     : DarkMood === true
+            //     ? "dark_mood"
+            //     : DarkMood === false
+            //     ? "light_mood"
+            //     : ""
+            // }`}
+            className={DarkMood === true ? "dark_mood" : "light_mood"}
+          >
+            <AppBar
+              position="fixed"
+              sx={{ backgroundColor: DarkMood === true ? "#000" : "#fff" }}
+            >
+              <Toolbar sx={{ display: "flex", justifyContent: "space-around" }}>
+                <Box>
+                  <IconButton
+                    size="large"
+                    edge="start"
+                    color="inherit"
+                    aria-label="menu"
+                    // className="menu"
+                    onClick={isOpen}
+                    // style={{ transition: "all 0.3s ease-in-out" }}
+                  >
+                    <img
+                      src={openSidebar}
+                      style={{
+                        filter:
+                          DarkMood === true
+                            ? ""
+                            : "saturate(519%) contrast(904%) brightness(374%) invert(118%) sepia(50%) hue-rotate(57deg)",
+                      }}
+                    />
+                  </IconButton>
+                </Box>
+                <Box>
+                  <Typography
+                    variant="h6"
+                    component="div"
+                    sx={{
+                      color: DarkMood === true ? "#fff" : "#000",
+                      fontWeight: 700,
+                    }}
+                  >
+                    SOVEREIGN
+                  </Typography>
+                </Box>
+                <Box display="flex" alignItems={"center"}>
                   <div
-                    className={`flex-column text-center ${
-                      isLogoutOption ? "d-flex" : "d-none"
-                    }`}
                     style={{
-                      borderRadius: "6px",
-                      position: "absolute",
-                      top: "7px",
-                      width: 100,
-                      marginTop: 45,
+                      border: "1px solid #28262B",
+                      display: "flex",
+                      width: "50px",
                     }}
                   >
                     <div
-                      className="item-dropdown-profile"
-                      onMouseLeave={() => setIsLogoutOption(!isLogoutOption)}
+                      onClick={() => {
+                        settoggle(1);
+
+                        setDarkMood(true);
+                      }}
+                      style={{
+                        backgroundColor: toggle == 1 ? "#28262B" : "",
+                        padding: "9%",
+                        filter:
+                          DarkMood === true
+                            ? ""
+                            : "saturate(519%) contrast(904%) brightness(374%) invert(118%) sepia(50%) hue-rotate(57deg)",
+                        // color: DarkMood === true ? "#fff" : "#000",
+                      }}
                     >
-                      <div
-                        className="dropdown-profile d-flex flex-column"
-                        style={{
-                          padding: "0px 12px",
-                          background: "#1e1e1e",
-                          borderRadius: "10px",
-                          overflow: "hidden",
-                        }}
-                      >
+                      <img src={DarkIcon} alt="" srcset="" />
+                    </div>
+                    <div
+                      onClick={() => {
+                        settoggle(2);
+
+                        setDarkMood(false);
+                      }}
+                      style={{
+                        backgroundColor: toggle == 2 ? "#28262B" : "",
+                        padding: "9%",
+                      }}
+                    >
+                      <img src={LightIcon} alt="" srcset="" />
+                    </div>
+                  </div>
+                  <div style={{ marginLeft: "20px" }}>
+                    {isLoggedIn == true ? (
+                      <div className="button1" style={{ position: "relative" }}>
+                        <Link
+                          className="svgdimensions"
+                          onMouseEnter={() =>
+                            setIsLogoutOption(!isLogoutOption)
+                          }
+                        >
+                          {user != "" ? (
+                            <img
+                              className="profileImage"
+                              width="30"
+                              height="30"
+                              src={`${global.backendUrl}/nodeassets/${user.user_image}`}
+                              alt=""
+                            />
+                          ) : (
+                            <img width="24" height="24" src={NoMan} alt="" />
+                          )}
+                        </Link>
                         <div
-                          className="row d-flex walletDropdownStyleProfle"
-                          style={{ padding: "5px 0px", cursor: "pointer" }}
-                          onClick={() => {
-                            navigate("/myprofile");
+                          className={`flex-column text-center ${
+                            isLogoutOption ? "d-flex" : "d-none"
+                          }`}
+                          style={{
+                            borderRadius: "6px",
+                            position: "absolute",
+                            top: "7px",
+                            width: 100,
+                            marginTop: 45,
                           }}
                         >
-                          <div className="col-12">
-                            <span
-                              style={{ borderRadius: "6px", color: "#fff" }}
-                            >
-                              My Profile
-                            </span>
-                          </div>
-                        </div>
-                        <hr style={{ margin: "5px 0px", height: 2 }} />
-                        <div
-                          className="row d-flex walletDropdownStyleProfile"
-                          style={{ padding: "5px 0px" }}
-                          onClick={handleWalletLogout}
-                        >
-                          <div className="col-12">
-                            <span
+                          <div
+                            className="item-dropdown-profile"
+                            onMouseLeave={() =>
+                              setIsLogoutOption(!isLogoutOption)
+                            }
+                          >
+                            <div
+                              className="dropdown-profile d-flex flex-column"
                               style={{
-                                borderRadius: "6px",
-                                color: "#fff",
-                                cursor: "pointer",
+                                padding: "0px 12px",
+                                background: "#1e1e1e",
+                                borderRadius: "10px",
+                                overflow: "hidden",
                               }}
                             >
-                              Logout
-                            </span>
+                              <div
+                                className="row d-flex walletDropdownStyleProfle"
+                                style={{
+                                  padding: "5px 0px",
+                                  cursor: "pointer",
+                                }}
+                                onClick={() => {
+                                  navigate("/myprofile");
+                                }}
+                              >
+                                <div className="col-12">
+                                  <span
+                                    style={{
+                                      borderRadius: "6px",
+                                      color: "#fff",
+                                    }}
+                                  >
+                                    My Profile
+                                  </span>
+                                </div>
+                              </div>
+                              <hr style={{ margin: "5px 0px", height: 2 }} />
+                              <div
+                                className="row d-flex walletDropdownStyleProfile"
+                                style={{ padding: "5px 0px" }}
+                                onClick={handleWalletLogout}
+                              >
+                                <div className="col-12">
+                                  <span
+                                    style={{
+                                      borderRadius: "6px",
+                                      color: "#fff",
+                                      cursor: "pointer",
+                                    }}
+                                  >
+                                    Logout
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
+                    ) : (
+                      <div>
+                        <Link to="/signin" className="svgdimensions">
+                          <img
+                            width="24px"
+                            height="24px"
+                            style={{
+                              filter:
+                                DarkMood === true
+                                  ? ""
+                                  : "saturate(519%) contrast(904%) brightness(374%) invert(118%) sepia(50%) hue-rotate(57deg)",
+                            }}
+                            src={wallet}
+                            alt=""
+                          />
+                        </Link>
+                      </div>
+                    )}
+                    <div hidden className="button2">
+                      <Link to="/signin">
+                        <LoginIcon className="svgdimensions" />
+                      </Link>
                     </div>
                   </div>
-                </div>
-              ) : (
-                <div className="button1">
-                  <Link to="/signin" className="svgdimensions">
-                    <img width="24" height="24" src={WalletIcon} alt="" />
-                  </Link>
-                </div>
-              )}
-              <div hidden className="button2">
-                <Link to="/signin">
-                  <LoginIcon className="svgdimensions" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-        <Outlet />
-      </div>
-    </div>
+                </Box>
+              </Toolbar>
+            </AppBar>
+          </Box>
+          <Outlet />
+        </>
+      )}
+    </>
   );
 };
 
