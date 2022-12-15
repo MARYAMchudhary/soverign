@@ -390,10 +390,9 @@ const Header = ({ DarkMood, setDarkMood }) => {
             //     ? "light_mood"
             //     : ""
             // }`}
-            className={DarkMood === true ? "dark_mood" : "light_mood"}
+            className={DarkMood === true ? "dark_mood position-sticky top-0" : "light_mood position-sticky top-0"} style={{ zIndex: "10" }}
           >
-            <AppBar
-              position="sticky" className="top-0 mb-3"
+            <AppBar className="top-0 position-sticky mb-3"
               sx={{ backgroundColor: DarkMood === true ? "#000" : "#fff" }}
             >
               <Toolbar sx={{ display: "flex", justifyContent: "space-around" }}>
@@ -405,7 +404,7 @@ const Header = ({ DarkMood, setDarkMood }) => {
                     aria-label="menu"
                     // className="menu"
                     onClick={isOpen}
-                    // style={{ transition: "all 0.3s ease-in-out" }}
+                  // style={{ transition: "all 0.3s ease-in-out" }}
                   >
                     <img
                       src={openSidebar}
@@ -492,9 +491,8 @@ const Header = ({ DarkMood, setDarkMood }) => {
                           )}
                         </Link>
                         <div
-                          className={`flex-column text-center ${
-                            isLogoutOption ? "d-flex" : "d-none"
-                          }`}
+                          className={`flex-column text-center ${isLogoutOption ? "d-flex" : "d-none"
+                            }`}
                           style={{
                             borderRadius: "6px",
                             position: "absolute",
