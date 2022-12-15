@@ -150,7 +150,7 @@ const Header = ({ DarkMood, setDarkMood }) => {
       {opnMenu ? (
         <>
           <div
-            className={"menu"}
+            className="menu"
             style={{
               backgroundColor: DarkMood === true ? "#000" : "rgb(241 241 241)",
             }}
@@ -393,7 +393,7 @@ const Header = ({ DarkMood, setDarkMood }) => {
             className={DarkMood === true ? "dark_mood" : "light_mood"}
           >
             <AppBar
-              position="fixed"
+              position="sticky" className="top-0 mb-3"
               sx={{ backgroundColor: DarkMood === true ? "#000" : "#fff" }}
             >
               <Toolbar sx={{ display: "flex", justifyContent: "space-around" }}>

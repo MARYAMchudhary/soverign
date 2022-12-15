@@ -70,7 +70,8 @@
 }
 
 .menu {
-    position: absolute;
+    position: sticky;
+    
     top: 10;
     left: 0;
     width: 100%;
