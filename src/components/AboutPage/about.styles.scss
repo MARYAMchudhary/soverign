@@ -1,3 +1,44 @@
+.right-15rem {
+  right: -15rem;
+}
+
+.mt-6 {
+  margin-top: 6rem;
+}
+
+
+.mt-7 {
+  margin-top: 7rem;
+}
+
+.mt-10 {
+  margin-top: 10rem;
+}
+
+.circle {
+  width: 200px;
+  height: 200px;
+  top: -18px;
+  opacity: 0.2;
+  border: 1px solid #FFFFFF;
+  position: absolute;
+  border-radius: 100%;
+  left: -50px;
+}
+
+@media (max-width:768px) {
+  .right-15rem {
+    right: 0;
+  }
+
+  .circle {
+    top: 0;
+    left: 0;
+  }
+}
+
+
+
 .about-page-container {
   // height: 89vh;
 
@@ -279,6 +320,7 @@
         .about-page-end {
           .hexagon-container {
             justify-content: center;
+
             .hexagon {
               width: 35%;
 

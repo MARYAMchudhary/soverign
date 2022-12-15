@@ -45,6 +45,8 @@ const CommunitySignUp = ({ DarkMood }) => {
   const [imagef, setImagef] = useState("");
   const [currentPage, setCurrentPage] = useState("choose-img");
   const [imgAfterCrop, setImgAfterCrop] = useState("");
+  const [isPasswordShown, setIsPasswordShown] = useState(false)
+  const [isConfirmPasswordShown, setIsConfirmPasswordShown] = useState(false)
   //MULTIPLE INTEREST SELECTION STARTS
   const [selectItem, setSelectItem] = useState([
     { id: "1", name: "Investing", selected: false, svgFile: MoneyIcon },
@@ -320,14 +322,14 @@ const CommunitySignUp = ({ DarkMood }) => {
                   onChange={(e) => {
                     setIsAvailable("NotShown");
                     setUsername(e.target.value);
-                  }} className="form-control bg-transparent text-white" id="username-input" placeholder="User Name" />
+                  }} className={`form-control bg-transparent text-${DarkMood ? "white" : "dark"}`} id="username-input" placeholder="User Name" />
               </label>
               <label htmlFor="email" className="w-100 mt-2">
                 Email Address
                 <input value={emailAddress}
                   onChange={(e) => {
                     setEmailAddress(e.target.value);
-                  }} type="email" className="form-control bg-transparent text-white" id="email" placeholder="Email Address" />
+                  }} type="email" className={`form-control bg-transparent text-${DarkMood ? "white" : "dark"}`} id="email" placeholder="Email Address" />
               </label>
               <label htmlFor="Wallet" className="w-100 mt-2">
                 Wallet Address
@@ -335,7 +337,7 @@ const CommunitySignUp = ({ DarkMood }) => {
                   value={walletAddress}
                   onChange={(e) => {
                     setWalletAddress(e.target.value);
-                  }} type="text" className="form-control bg-transparent text-white" id="Wallet" placeholder="Enter Wallet Address" />
+                  }} type="text" className={`form-control bg-transparent text-${DarkMood ? "white" : "dark"}`} id="Wallet" placeholder="Enter Wallet Address" />
               </label>
               <label htmlFor="password" className="w-100 mt-2">
                 Password
@@ -343,8 +345,8 @@ const CommunitySignUp = ({ DarkMood }) => {
                   <input value={password}
                     onChange={(e) => {
                       setPassword(e.target.value);
-                    }} type="password" id="password" class="form-control bg-transparent text-white border-end-0" placeholder="********" />
-                  <span class="input-group-text bg-transparent border-start-0 text-white" id="basic-addon2"><i class="bi bi-eye"></i></span>
+                    }} type={!isPasswordShown ? "password" : "text"} id="password" class={`form-control bg-transparent text-${DarkMood ? "white" : "dark"} border-end-0`} placeholder="********" />
+                  <span onClick={() => setIsPasswordShown(!isPasswordShown)} class="input-group-text bg-transparent border-start-0 text-white" id="basic-addon2"><i class={`bi bi-eye${!isPasswordShown ? "" : "-slash"}`}></i></span>
                 </div>
               </label>
               <label htmlFor="confirmPassword" className="w-100 mt-2">
@@ -353,8 +355,8 @@ const CommunitySignUp = ({ DarkMood }) => {
                   <input value={confirmPassword}
                     onChange={(e) => {
                       setConfirmPassword(e.target.value);
-                    }} type="password" id="confirmPassword" class="form-control bg-transparent text-white border-end-0" placeholder="********" />
-                  <span class="input-group-text bg-transparent border-start-0 text-white" id="basic-addon2"><i class="bi bi-eye"></i></span>
+                    }} type={!isConfirmPasswordShown ? "password" : "text"} id="confirmPassword" class={`form-control bg-transparent text-${DarkMood ? "white" : "dark"} border-end-0`} placeholder="********" />
+                  <span onClick={() => setIsConfirmPasswordShown(!isConfirmPasswordShown)} class="input-group-text bg-transparent border-start-0 text-white" id="basic-addon2"><i class={`bi bi-eye${!isConfirmPasswordShown ? "" : "-slash"}`}></i></span>
                 </div>
               </label>
               <div className="col text-center">
