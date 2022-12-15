@@ -53,9 +53,12 @@ const SigninPage = ({ DarkMood }) => {
   }
   function signin() {
     let formData = {
-      email: email,
-      password: password,
+      email,
+      password,
     };
+
+    if (!email.trim() || !password.trim()) return setErrorMessage("Invalid email or password")
+
     axios.post(`${global.backendUrl}/signin`, formData).then((response) => {
       console.log(response);
       if (response.data.result == true) {
@@ -91,83 +94,55 @@ const SigninPage = ({ DarkMood }) => {
   }
   return (
     <>
-      <div className="signin-container">
-        {connectRainbow == false ? (
-          <div className="signin-form">
-            <h2
-              className="signin-heading"
-              style={{ color: DarkMood === true ? "#fff" : "#000" }}
-            >
-              Sign in
-            </h2>
-            <div className="email-input-container">
-              <div className="signin-inputs-title">
-                <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
-                  Email Address
-                </h5>
-              </div>
-              <input
-                value={email}
-                type="email"
-                placeholder="example@gmail.com"
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  setErrorMessage("");
-                }}
-              />
-            </div>
-            <div className="password-input-container">
-              <div className="signin-inputs-title">
-                <h5 style={{ color: DarkMood === true ? "#fff" : "#000" }}>
-                  {" "}
-                  Password
-                </h5>
-              </div>
-              <input
-                value={password}
-                type="password"
-                placeholder="......."
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                  setErrorMessage("");
-                }}
-              />
-            </div>
-            <div className="signin-error">
-              <p>{errorMessage}</p>
-            </div>
-            <button
-              onClick={(e) => {
-                signin();
-              }}
-              className="continue-button"
-            >
-              Continue
-            </button>
-            <h5
-              className="forgot"
-              style={{ color: DarkMood === true ? "#fff" : "#000" }}
-            >
-              <Link
-                to="/forgot-password"
-                style={{ color: DarkMood === true ? "#fff" : "#000" }}
-              >
-                Forgot Password?
-              </Link>
-            </h5>
-            <p style={{ color: DarkMood === true ? "#fff" : "#000" }}>
-              Don't have a community account?{" "}
-              <Link className="signupLink" to="/Connectwallet">
-                <strong style={{ color: DarkMood === true ? "#fff" : "#000" }}>
-                  {" "}
-                  Sign Up
-                </strong>
-              </Link>
-            </p>
+      <div className="container">
+
+        <div className="row">
+          <div className="col-7 bg-card p-4 d-none d-md-flex text-dark flex-column justify-content-end">
+            <p><span>02/</span><span className="fs-1">Sign In</span></p>
+            <p>More than a digital currency, Sovereign will serve as an evolving social platform</p>
           </div>
-        ) : (
-          <RainbowApi />
-        )}
+          <div className={`col-12 col-md-5 ${DarkMood ? "bg-signin-card text-white" : "bg-light text-dark"} p-3 p-md-4 px-md-5`}>
+            <p className="fs-1"><i class="bi bi-box-arrow-in-right me-2"></i>Sign In</p>
+            <hr />
+            <div className="row mt-4">
+              <div className="col-12">
+                <label htmlFor="email" className="w-100">
+                  Email
+                  <input onChange={(e) => {
+                    setEmail(e.target.value);
+                    setErrorMessage("");
+                  }} value={email} placeholder="Email" type="text" id="email" className={`form-control bg-transparent text-${DarkMood ? "white" : "dark"} w-100`} />
+                </label>
+              </div>
+              <div className="col-12 mt-2">
+                <label htmlFor="password" className="w-100">
+                  Password
+                  <div class="input-group mb-3">
+                    <input onChange={(e) => {
+                      setPassword(e.target.value);
+                      setErrorMessage("");
+                    }} value={password} type="password" id="password" class={`form-control bg-transparent text-${DarkMood ? "white" : "dark"} border-end-0`} placeholder=" Password" />
+                    <span class="input-group-text border-start-0 bg-transparent"><i class={`bi bi-eye text-${DarkMood ? "white" : "dark"}`}></i></span>
+                  </div>
+                </label>
+              </div>
+              <div className="col-12 mt-4">
+                <Link
+                  to="/forgot-password" className={`${DarkMood ? "text-white" : "text-dark"}`}
+                >
+                  Forgot Password?
+                </Link>
+              </div>
+              <div className="col-12">
+                <div className="signin-error mt-3">
+                  <p className="mb-0 text-danger">{errorMessage}</p>
+                </div>
+                <button onClick={signin} className={`btn btn-${DarkMood ? "light" : "dark"} mt-1 w-100`}>Countinue<i class="bi bi-arrow-right ms-2"></i></button>
+                <p className="mt-5">Don't have an account? <Link className={`text-${DarkMood ? "white" : "dark"}`} to="/Connectwallet">Sign Up</Link></p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
