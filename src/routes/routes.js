@@ -36,7 +36,7 @@ const Routing = () => {
           path="/"
           element={<Header DarkMood={DarkMood} setDarkMood={setDarkMood} />}
         >
-          <Route index element={<HomePage />} />
+          <Route index element={<HomePage DarkMood={DarkMood} />} />
           <Route path="About" element={<About DarkMood={DarkMood} />} />
           <Route path="DAO" element={<DAOPage DarkMood={DarkMood} />} />
           <Route path="signup3" element={<SignUpPage3 DarkMood={DarkMood} />} />
