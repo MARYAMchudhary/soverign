@@ -1,0 +1,49 @@
+.pb-md-6 {
+    padding-bottom: 6rem !important;
+}
+
+.input-range {
+    width: 100%;
+    background-color: white;
+    border-radius: 12px;
+    border: 0.5px solid black;
+    // padding: 4px;
+    margin-top: 15px;
+    position: relative;
+    -webkit-appearance: none !important;
+    height: 7px;
+}
+
+
+.input-range::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    height: 15px;
+    width: 15px;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.inner-content {
+    background-color: black;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    border-radius: 12px;
+    // padding: 4px;
+    margin-top: 15px;
+    height: 10px;
+    width: 50%;
+}
+
+.top-10 {
+    top: -4rem;
+}
+
+@media (max-width:768px) {
+    .pb-md-6 {
+        padding-bottom: 24px !important;
+    }
+    .top-10{
+        top: 0;
+    }
+}

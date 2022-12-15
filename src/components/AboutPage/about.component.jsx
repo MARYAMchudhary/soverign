@@ -39,7 +39,7 @@ const About = ({ DarkMood }) => (
     </div>
     <div className="container-fluid text-white">
 
-      <div className="row mt-7">
+      <div className="row mt-7 d-none d-md-block">
         <h3>Out Team</h3>
         <div className="col-12 col-md-2 ms-0 ms-md-5">
           <div className="card bg-transparent px-2 py-5 border-1 border-secondary rounded-0 text-center">

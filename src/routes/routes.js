@@ -22,6 +22,9 @@ import MyProfile from "../components/MyProfile/myProfile.component";
 import ProfileSetting from "../components/ProfileSetting/profileSetting.component";
 import StakingDapp from "../components/Staking Dapp/stakingDapp";
 import CommunityGuidelines from "../components/chatcommunity/CommunityGuideline/communityGuidelines.component";
+
+import TokenPresale from "../components/TokenPresale/TokenPresale"
+
 import { useState } from "react";
 
 const Routing = () => {
@@ -97,6 +100,9 @@ const Routing = () => {
             path="CG"
             element={<CommunityGuidelines DarkMood={DarkMood} />}
           />
+
+          {/* New Route of TokenPresale */}
+          <Route path="TokenPresale" element={<TokenPresale />} />
         </Route>
       </Routes>
     </>
