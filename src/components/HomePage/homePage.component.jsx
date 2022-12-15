@@ -90,15 +90,16 @@ const HomePage = ({ DarkMood }) => {
 
   return (
     <>
-      <Box mt={2} className={DarkMood === true ? "dark_mood" : "light_mood"}>
-        <Box style={{ backgroundColor: "#000" }}>
-          <Box p={6}>
-            <img
-              src={main}
-              style={{ width: "100%", height: "100%", backgroundColor: "#000" }}
-            />
-          </Box>
+      <Box
+        className={DarkMood === true ? "dark_mood mt-n3" : "light_mood mt-n3"}
+      >
+        <Box p={6} sx={{ backgroundColor: "#000" }}>
+          <img
+            src={main}
+            style={{ width: "100%", height: "100%", backgroundColor: "#000" }}
+          />
         </Box>
+
         {/* //!LOWER BAR */}
         <Box
           sx={{
