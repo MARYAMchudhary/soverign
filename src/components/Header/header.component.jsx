@@ -380,20 +380,10 @@ const Header = ({ DarkMood, setDarkMood }) => {
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
             onTouchEnd={onTouchEnd}
-            // // className={`main-container ${background}`}
-            // className={`main-container ${
-            //   window.location.pathname === "/"
-            //     ? background
-            //     : DarkMood === true
-            //     ? "dark_mood"
-            //     : DarkMood === false
-            //     ? "light_mood"
-            //     : ""
-            // }`}
             className={
               DarkMood === true
-                ? "dark_mood position-sticky top-0"
-                : "light_mood position-sticky top-0"
+                ? "dark_mood position-sticky top-0 mb-3"
+                : "light_mood position-sticky top-0 mb-3"
             }
             style={{ zIndex: "11" }}
           >
@@ -409,9 +399,7 @@ const Header = ({ DarkMood, setDarkMood }) => {
                     edge="start"
                     color="inherit"
                     aria-label="menu"
-                    // className="menu"
                     onClick={isOpen}
-                    // style={{ transition: "all 0.3s ease-in-out" }}
                   >
                     <img
                       src={openSidebar}

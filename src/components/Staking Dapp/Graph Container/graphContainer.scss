@@ -1,20 +1,16 @@
 .graph-container{
     width: 78%;
     min-height: 25vh;
-    // background-color: pink;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 2%;
+    gap: 1%;
 }
 .graph-childs{
     width: 30%;
     height: 100%;
-    // background-color: purple;
-    background: rgba(29,29,29,0.25);
     backdrop-filter: blur(2.5px);
-    border-radius: 16px;
     display: flex;
     flex-direction: column;
     color: white;

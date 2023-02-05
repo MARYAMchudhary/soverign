@@ -4,17 +4,30 @@ import { Scrollbar } from "react-scrollbars-custom";
 import Tickicon from "../../assets/Icons/Rectangle.png";
 import sender from "../../assets/Hexagons/Sender-pic.png";
 import sendicon from "../../assets/chatcommunity/send.png";
-import Smileicon from "../../assets/chatcommunity/grammerly.png";
 import crossicon from "../../assets/chatcommunity/crossicon.png";
-import gif from "../../assets/chatcommunity/gif.png";
+import CloseIcon from "@mui/icons-material/Close";
 import replyicon from "../../assets/chatcommunity/reply.png";
-import trashicon from "../../assets/chatcommunity/trash.png";
 import adminicon from "../../assets/chatcommunity/admin.png";
 import worldicon from "../../assets/chatcommunity/worldwide 1.png";
 import crossiconlist from "../../assets/chatcommunity/cross.png";
 import cross1 from "../../assets/chatcommunity/cross1.png";
 import Doublecheck from "../../assets/chatcommunity/Doublecheck.png";
 import EmojiPicker from "emoji-picker-react";
+import account from "../../assets/homeicons/account.png";
+import verify from "../../assets/homeicons/verify.png";
+import light_twitter from "../../assets/homeicons/light_twitter.png";
+import seting from "../../assets/homeicons/seting.png";
+import wallet from "../../assets/homeicons/wallet.png";
+import polygon from "../../assets/homeicons/polygon.png";
+import none from "../../assets/homeicons/none.png";
+import trashicon from "../../assets/homeicons/delete.png";
+import Smileicon from "../../assets/homeicons/smile.png";
+import gif from "../../assets/homeicons/gif.png";
+import snd from "../../assets/homeicons/snd.png";
+import line from "../../assets/homeicons/Line.png";
+import lightdelete from "../../assets/homeicons/lightdelete.png";
+import lightnone from "../../assets/homeicons/lightnone.png";
+import darksmile from "../../assets/homeicons/darksmile.png";
 import {
   useMediaQuery,
   Select,
@@ -26,9 +39,8 @@ import {
   DialogTitle,
   Slide,
   InputLabel,
-} from "@mui/material";
-
-import {
+  Divider,
+  Container,
   Box,
   Button,
   Typography,
@@ -50,15 +62,7 @@ const style = {
 
   bgcolor: "transparent",
 };
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor:
-    theme.palette.mode === "dark" ? "#1A2027" : "rgba(29, 29, 29, 0.25)",
-  ...theme.typography.body2,
 
-  border: "2px solid gray",
-  backdropFilter: "blur(15px)",
-  borderRadius: "0.6rem",
-}));
 const languageOptions = [
   {
     value: 0,
@@ -334,209 +338,254 @@ function ChatCommunity({ DarkMood }) {
     });
   };
   return (
-    <div>
-      <div className={matches || bgmatches ? "container-md" : "container-sm"}>
+    <div
+      className={
+        DarkMood === false ? "light_mood mt-n3 py-2" : "dark_mood mt-n3 py-2"
+      }
+    >
+      <div className={matches || bgmatches ? "container-md" : "container-sm "}>
         <div
           className="row"
-          style={{ display: "flex", justifyContent: "space-around" }}
+          style={{ display: "flex", justifyContent: "center" }}
         >
-          <div className="col-md-5 col-sm-12 order-sm-1">
-            <Stack spacing={matches ? 2 : 2}>
-              <Item sx={{ padding: matches || bgmatches ? "2%" : 3 }}>
-                <Box
-                  display="flex"
-                  justifyContent={"space-between"}
-                  alignItems="center"
+          <div
+            className="col-md-5 col-sm-12 order-sm-1"
+            style={{ backgroundColor: DarkMood === true ? "#18151b" : "#fff" }}
+          >
+            <Box
+              sx={{
+                padding: matches || bgmatches ? "2%" : 2,
+                borderBottom: "1px solid #9d9ea1",
+                borderLeft: "2px solid #3CC0A1",
+              }}
+            >
+              <Box display="flex" alignItems="center" sx={{}}>
+                <img
+                  src={account}
+                  style={{
+                    width: matches || bgmatches ? "29px" : "30px",
+                    height: matches || bgmatches ? "29px" : "30px",
+                  }}
+                  alt=""
+                />
+                <Typography
+                  sx={{
+                    color: DarkMood === true ? "#fff" : "#000",
+                    fontSize: matches || bgmatches ? "24px" : "24px",
+                  }}
+                  mx={2}
                 >
-                  <Typography
-                    sx={{
-                      color: DarkMood === true ? "#fff" : "#000",
-                      fontSize: matches || bgmatches ? "24px" : "32px",
-                    }}
-                  >
-                    Account
-                  </Typography>
-                  <img
-                    className="tick-container"
-                    src={Tickicon}
-                    style={{
-                      width: matches || bgmatches ? "29px" : "32px",
-                      height: matches || bgmatches ? "29px" : "32px",
-                    }}
-                    alt=""
-                  />
-                </Box>
-                <Box display="flex" mt={matches || bgmatches ? 1 : 2}>
-                  <Typography
-                    sx={{
-                      color: DarkMood === true ? "#fff" : "#000",
-                      fontSize: matches ? "11px" : "20px",
-                      textAlign: matches ? "start" : "",
-                    }}
-                  >
-                    Created community account
-                  </Typography>
-                </Box>
-              </Item>
-              <Item sx={{ padding: matches || bgmatches ? "2%" : 3 }}>
-                <Box
-                  display="flex"
-                  justifyContent={"space-between"}
-                  alignItems="center"
+                  Account
+                </Typography>
+              </Box>
+              <Box mt={matches || bgmatches ? 1 : 2}>
+                <Typography
+                  sx={{
+                    color: DarkMood === true ? "#fff" : "#000",
+                    fontSize: matches ? "11px" : "16px",
+                    textAlign: matches ? "start" : "",
+                  }}
                 >
-                  <Typography
-                    sx={{
-                      color: DarkMood === true ? "#fff" : "#000",
-                      fontSize: matches || bgmatches ? "21px" : "32px",
-                      textAlign: matches || bgmatches ? "start" : "",
-                    }}
-                  >
-                    Follows Twitter Account
-                  </Typography>
-                  <img
-                    className="tick-container"
-                    src={Tickicon}
-                    style={{
-                      width: matches || bgmatches ? "29px" : "32px",
-                      height: matches || bgmatches ? "29px" : "32px",
-                    }}
-                    alt="Unavailable"
-                  />
-                </Box>
-                <Box
-                  display="flex"
-                  mt={matches || bgmatches ? 1 : 3}
-                  justifyContent="space-between"
-                  alignItems={"end"}
+                  Created community account
+                </Typography>
+              </Box>
+              <Box
+                sx={{ color: "#3CC0A1" }}
+                my={2}
+                display="flex"
+                alignItems="center"
+                mt={3}
+              >
+                <img src={verify} />
+                <Typography mx={2}>Created</Typography>
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                padding: matches || bgmatches ? "2%" : 2,
+                borderBottom: "1px solid #9d9ea1",
+                borderLeft: "2px solid #3CC0A1",
+              }}
+            >
+              <Box display="flex" alignItems="center">
+                <img
+                  src={light_twitter}
+                  style={
+                    {
+                      // width: matches || bgmatches ? "29px" : "32px",
+                      // height: matches || bgmatches ? "29px" : "32px",
+                    }
+                  }
+                />
+                <Typography
+                  sx={{
+                    color: DarkMood === true ? "#fff" : "#000",
+                    fontSize: matches || bgmatches ? "24px" : "24px",
+                  }}
+                  mx={2}
                 >
-                  <Typography
-                    sx={{
-                      color: DarkMood === true ? "#fff" : "#000",
-
-                      fontSize: matches ? "11px" : "20px",
-                      textAlign: matches || bgmatches ? "start" : "",
-                    }}
-                  >
-                    Follows @SVRNDAO on Twitter
-                  </Typography>
-                  <Button
-                    size="small"
-                    sx={{
-                      backgroundColor: "#fff",
-                      color: "#34C759",
-                      fontSize: matches ? "10px" : "16px",
-                      padding: "1% 5% 1% 5%;",
-                    }}
-                  >
-                    VERIFIED
-                  </Button>
-                </Box>
-              </Item>
-              <Item sx={{ padding: matches || bgmatches ? "2%" : 3 }}>
-                <Box
-                  display="flex"
-                  justifyContent={"space-between"}
-                  alignItems="center"
+                  Follows Twitter
+                </Typography>
+              </Box>
+              <Box mt={matches || bgmatches ? 1 : 2}>
+                <Typography
+                  sx={{
+                    color: DarkMood === true ? "#fff" : "#000",
+                    fontSize: matches ? "11px" : "16px",
+                    textAlign: matches ? "start" : "",
+                  }}
                 >
-                  <Typography
-                    sx={{
-                      color: DarkMood === true ? "#fff" : "#000",
-                      fontSize: matches || bgmatches ? "21px" : "32px",
-                      textAlign: matches || bgmatches ? "start" : "",
-                    }}
-                  >
-                    Wallet Balance
-                  </Typography>
-                  <img
-                    className="tick-container"
-                    src={crossicon}
-                    style={{
-                      width: matches || bgmatches ? "29px" : "32px",
-                      height: matches || bgmatches ? "29px" : "32px",
-                    }}
-                    alt="Unavailable"
-                  />
-                </Box>
-                <Box
-                  display="flex"
-                  mt={matches || bgmatches ? 1 : 3}
-                  justifyContent="space-between"
-                  textAlign={"start"}
-                  alignItems="center"
+                  Follows @SVRNDAO on Twitter
+                </Typography>
+              </Box>
+              <Box
+                sx={{ color: "#3CC0A1" }}
+                my={2}
+                display="flex"
+                alignItems="center"
+                mt={3}
+              >
+                <img src={verify} />
+                <Typography mx={2}>Verified</Typography>
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                padding: matches || bgmatches ? "2%" : 2,
+                borderBottom: "1px solid #9d9ea1",
+                borderLeft: "2px solid #FF493B",
+              }}
+            >
+              <Box display="flex" alignItems="center">
+                <img
+                  src={wallet}
+                  style={
+                    {
+                      // width: matches || bgmatches ? "29px" : "32px",
+                      // height: matches || bgmatches ? "29px" : "32px",
+                    }
+                  }
+                />
+                <Typography
+                  sx={{
+                    color: DarkMood === true ? "#fff" : "#000",
+                    fontSize: matches || bgmatches ? "24px" : "24px",
+                  }}
+                  mx={2}
                 >
+                  Wallet balance
+                </Typography>
+              </Box>
+              <Box mt={matches || bgmatches ? 1 : 2}>
+                <Typography
+                  sx={{
+                    color: DarkMood === true ? "#fff" : "#000",
+                    fontSize: matches ? "11px" : "16px",
+                    textAlign: matches ? "start" : "",
+                  }}
+                >
+                  Maintains a minimum of 0.1 ETH in a ETH network wallet.
+                </Typography>
+              </Box>
+              <Box sx={{ color: "#FF493B" }} my={2} display="flex" mt={3}>
+                <Typography sx={{ textDecoration: "underline" }}>
+                  start verification
+                </Typography>
+              </Box>
+            </Box>
+            <Box
+              // sx={{
+              //   padding: matches || bgmatches ? "2%" : 2,
+              // }}
+              pt={6}
+            >
+              <Box
+                display="flex"
+                alignItems="center"
+                justifyContent={"space-between"}
+                mt={2}
+                p={2}
+              >
+                <Box display="flex" alignItems="center">
+                  <img src={polygon} />
                   <Typography
                     sx={{
                       color: DarkMood === true ? "#fff" : "#000",
-                      fontSize: matches ? "11px" : "20px",
-                      textAlign: matches ? "start" : "",
+                      fontSize: matches || bgmatches ? "24px" : "20px",
                     }}
+                    mx={2}
                   >
-                    Maintains a minimum of 0.1
-                    {matches || bgmatches ? "" : <br />} ETH in a ETH network
-                    wallet.
+                    @Dividedsign
                   </Typography>
-                  <Button
-                    size="small"
-                    sx={{
-                      backgroundColor: "#fff",
-                      color: "#FF493B",
-                      fontSize: matches ? "10px" : "16px",
-                      padding: "1% 7% 1% 7%;",
-                    }}
-                  >
-                    VERIFY
-                  </Button>
                 </Box>
-              </Item>
-            </Stack>
+                <img
+                  src={seting}
+                  style={{
+                    filter:
+                      DarkMood === true
+                        ? ""
+                        : "saturate(519%) contrast(904%) brightness(374%) invert(118%) sepia(50%) hue-rotate(57deg)",
+                  }}
+                />
+              </Box>
+            </Box>
           </div>
 
           <div
-            className="col-md-5 col-sm-12 chat-main order-sm-2 mt-3 mt-md-0"
+            className="col-md-7 col-sm-12 chat-main order-sm-2 mt-3 mt-md-0"
             style={{
               backdropFilter: "blur(15px)",
               padding: "1%",
-              borderRadius: "0.6rem",
+
+              borderLeft: "1px solid #9d9ea1",
               backgroundColor:
-                openDialouge === true ||
-                openDLTDialouge === true ||
-                openADMINDialouge === true ||
-                openDLTuserDialouge === true
-                  ? "#B3B3B3"
-                  : "rgba(29, 29, 29, 0.25)",
+                DarkMood === true ? "rgba(21, 19, 24, 1)" : "#EBEBEB",
+              // openDialouge === true ||
+              // openDLTDialouge === true ||
+              // openADMINDialouge === true ||
+              // openDLTuserDialouge === true
+              //   ? "rgba(21, 19, 24, 1)"
+              //   : "rgba(21, 19, 24, 1)",
             }}
           >
-            <div className="row">
-              <div className="col-7">
-                <h5
+            <div className="row py-3">
+              <div className="col-8">
+                <span
                   className="handings"
                   onClick={() => handleEmojiaClick()}
-                  style={{ color: DarkMood === true ? "#fff" : "#000" }}
+                  style={{
+                    color: DarkMood === true ? "#fff" : "#000",
+                    fontSize: "24px",
+                  }}
                 >
-                  Community Chat{" "}
-                </h5>
-                <div>
-                  <span
-                    className="handings"
-                    style={{ color: DarkMood === true ? "#fff" : "#000" }}
-                  >
-                    1 000 Members
-                  </span>
-                  <span style={{ color: "#000", marginLeft: "2%" }}>|</span>
-                  <span
-                    className="handings"
-                    style={{
-                      marginLeft: "1%",
-                      color: DarkMood === true ? "#fff" : "#000",
-                    }}
-                  >
-                    500 Online
-                  </span>
-                </div>
+                  Sovereign Chat
+                </span>
+                <span
+                  className="mx-3"
+                  onClick={() => handleEmojiaClick()}
+                  style={{
+                    color:
+                      DarkMood === true ? "rgba(209, 222, 242, 0.63)" : "#000",
+                    fontSize: "12px",
+                  }}
+                >
+                  370 Members
+                </span>
+                <span
+                  className="handings"
+                  onClick={() => handleEmojiaClick()}
+                  style={{
+                    color: DarkMood === true ? "#1BC47D" : "#1BC47D",
+                    fontSize: "12px",
+                  }}
+                >
+                  120 Online
+                </span>
               </div>
-              <div className="col-5 side-info">
-                <div>
-                  <FormControl>
+
+              <div className="col-4 d-flex justify-content-end">
+                <div className="mx-2">
+                  <FormControl sx={{ border: "1px solid #fff" }}>
                     <InputLabel
                       id="demo-simple-select-helper-label"
                       sx={{
@@ -546,10 +595,15 @@ function ChatCommunity({ DarkMood }) {
                         left: "-5px",
                       }}
                     >
-                      <img src={worldicon} style={{  filter:
-                DarkMood === true
-                  ? ""
-                  : "saturate(519%) contrast(904%) brightness(374%) invert(118%) sepia(50%) hue-rotate(57deg)"}}/>
+                      <img
+                        src={worldicon}
+                        style={{
+                          filter:
+                            DarkMood === true
+                              ? ""
+                              : "saturate(519%) contrast(904%) brightness(374%) invert(118%) sepia(50%) hue-rotate(57deg)",
+                        }}
+                      />
                     </InputLabel>
                     <Select
                       size="small"
@@ -575,17 +629,17 @@ function ChatCommunity({ DarkMood }) {
                             : "",
                         color: DarkMood === true ? "#fff" : "#000",
                         "& .MuiInputBase-input": {
-                          paddingRight: "26px !important",
-                          marginRight: "15px  !important",
+                          // paddingRight: "26px !important",
+                          // marginRight: "15px  !important",
                           width: "59px",
                         },
                         "& .MuiSvgIcon-root": {
-                          fill: DarkMood === true ? "#fff" : "#000" ,
-                          color:DarkMood === true ? "#fff" : "#000" ,
+                          fill: DarkMood === true ? "#fff" : "#000",
+                          color: DarkMood === true ? "#fff" : "#000",
                         },
-                        "& .MuiInputBase-root ": {
-                          marginRight: "15px  !important",
-                        },
+                        // "& .MuiInputBase-root ": {
+                        //   marginRight: "15px  !important",
+                        // },
                       }}
                       onChange={(e) => setAge(e.target.value)}
                       fullWidth
@@ -610,291 +664,49 @@ function ChatCommunity({ DarkMood }) {
                     </Select>
                   </FormControl>
                 </div>
-                <div>
-                  <div
-                    className="icon-div"
-                    style={{
-                      backgroundColor:
-                        openDialouge === true ||
-                        openDLTDialouge === true ||
-                        openADMINDialouge === true ||
-                        openDLTuserDialouge === true
-                          ? "#000"
-                          : "",
-                    }}
-                  >
-                    <i
-                      className="bi bi-info-circle-fill"
-                      onClick={handleClickOpen}
-                      style={{
-                        color: DarkMood === true ? "#fff" : "#000",
-                      }}
-                    ></i>
 
-                    <Dialog
-                      p={2}
-                      sx={{
-                        "& .MuiPaper-root.MuiDialog-paper": {
-                          backgroundColor: "#b3b3b314 !important",
-                          backdropFilter: "blur(15px)",
-                        },
-                        "& .MuiDialog-container": {
-                          width: mobileversion ? "109%" : "39% !important",
-                          position: "absolute",
-                          backgroundColor: "transparent !important",
-                          top: mobileversion ? "410px" : "113px",
-                          left: mobileversion ? "-20px" : "726px",
-                          height: mobileversion ? "49%" : "85% !important",
-                          "& .MuiPaper-root": {
-                            width: "100%",
-                            maxWidth: "466px",
-                          },
-                        },
-                        "& .MuiBackdrop-root": {
-                          backgroundColor: "transparent !important",
-                        },
-                      }}
-                      open={openDialouge}
-                      TransitionComponent={Transition}
-                      keepMounted
-                      onClose={handleCloseDialoge}
-                      aria-describedby="alert-dialog-slide-description"
-                    >
-                      <DialogTitle
-                        sx={{
-                          fontWeight: 600,
-                          fontSize: "24px",
-                          display: "flex",
-                          justifyContent: "center",
-                        }}
-                      >
-                        Community Guidelines
-                      </DialogTitle>
-                      <DialogContent>
-                        <DialogContentText
-                          sx={{
-                            // fontWeight: 500,
-                            fontSize: "15px",
-                            // display: "flex",
-                            textAlign: "center",
-                            color: "#000",
-                          }}
-                        >
-                          Help us keep the community strong. Our community is
-                          home for many different people from all walks of life.
-                          Please be respectful and courteous of other people at
-                          all times.
-                        </DialogContentText>
-                        <Box>
-                          <DialogContentText>
-                            <Box
-                              mt={2}
-                              display="flex"
-                              alignItems={"center"}
-                              sx={{
-                                backgroundColor: "#454444",
-                                borderRadius: "8px",
-                                padding: "6px",
-                              }}
-                            >
-                              <img
-                                src={crossiconlist}
-                                style={{ width: "20px", height: "20px" }}
-                              />
-                              <Typography
-                                ml={3}
-                                sx={{
-                                  // fontWeight: 600,
-                                  fontSize: "13px",
-                                  color: "#fff",
-                                }}
-                              >
-                                Be respectful to other members of the community
-                              </Typography>
-                            </Box>
-                            <Box
-                              mt={2}
-                              display="flex"
-                              alignItems={"center"}
-                              // p={1}
-                              sx={{
-                                backgroundColor: "#454444",
-                                borderRadius: "8px",
-                                padding: "6px",
-                              }}
-                            >
-                              <img
-                                src={crossiconlist}
-                                style={{ width: "20px", height: "20px" }}
-                              />{" "}
-                              <Typography
-                                ml={3}
-                                sx={{
-                                  // fontWeight: 600,
-                                  fontSize: "13px",
-                                  color: "#fff",
-                                }}
-                              >
-                                No Racial Slurs, Homophobia, Xenophobia
-                              </Typography>
-                            </Box>{" "}
-                            <Box
-                              mt={2}
-                              display="flex"
-                              alignItems={"center"}
-                              // p={1}
-                              sx={{
-                                backgroundColor: "#454444",
-                                borderRadius: "8px",
-                                padding: "6px",
-                              }}
-                            >
-                              <img
-                                src={crossiconlist}
-                                style={{ width: "20px", height: "20px" }}
-                              />{" "}
-                              <Typography
-                                ml={3}
-                                sx={{
-                                  // fontWeight: 600,
-                                  fontSize: "13px",
-                                  color: "#fff",
-                                }}
-                              >
-                                No Unsolicited Advertising
-                              </Typography>
-                            </Box>{" "}
-                            <Box
-                              mt={2}
-                              display="flex"
-                              alignItems={"center"}
-                              // p={1}
-                              sx={{
-                                backgroundColor: "#454444",
-                                borderRadius: "8px",
-                                padding: "6px",
-                              }}
-                            >
-                              <img
-                                src={crossiconlist}
-                                style={{ width: "20px", height: "20px" }}
-                              />{" "}
-                              <Typography
-                                ml={3}
-                                sx={{
-                                  // fontWeight: 600,
-                                  fontSize: "13px",
-                                  color: "#fff",
-                                }}
-                              >
-                                No Trolling for nefarious reasons
-                              </Typography>
-                            </Box>{" "}
-                            <Box
-                              mt={2}
-                              display="flex"
-                              alignItems={"center"}
-                              // p={1}
-                              sx={{
-                                backgroundColor: "#454444",
-                                borderRadius: "8px",
-                                padding: "6px",
-                              }}
-                            >
-                              <img
-                                src={crossiconlist}
-                                style={{ width: "20px", height: "20px" }}
-                              />
-                              <Typography
-                                ml={3}
-                                sx={{
-                                  // fontWeight: 600,
-                                  fontSize: "13px",
-                                  color: "#fff",
-                                }}
-                              >
-                                Do not post links
-                              </Typography>
-                            </Box>
-                            <Box
-                              mt={2}
-                              display="flex"
-                              alignItems={"center"}
-                              // p={1}
-                              sx={{
-                                backgroundColor: "#454444",
-                                borderRadius: "8px",
-                                padding: "6px",
-                              }}
-                            >
-                              <img
-                                src={crossiconlist}
-                                style={{ width: "20px", height: "20px" }}
-                              />{" "}
-                              <Typography
-                                ml={3}
-                                sx={{
-                                  // fontWeight: 600,
-                                  fontSize: "13px",
-                                  color: "#fff",
-                                }}
-                              >
-                                Foster meaningful and genuine interactions
-                              </Typography>
-                            </Box>
-                            <Box
-                              mt={2}
-                              display="flex"
-                              alignItems={"center"}
-                              // p={1}
-                              sx={{
-                                backgroundColor: "#454444",
-                                borderRadius: "8px",
-                                padding: "6px",
-                              }}
-                            >
-                              <img
-                                src={crossiconlist}
-                                style={{ width: "20px", height: "20px" }}
-                              />{" "}
-                              <Typography
-                                ml={3}
-                                sx={{
-                                  // fontWeight: 600,
-                                  fontSize: "13px",
-                                  color: "#fff",
-                                }}
-                              >
-                                Do not make other users uncomfortable by sharing
-                                NSFW content.
-                              </Typography>
-                            </Box>
-                          </DialogContentText>
-                        </Box>
-                      </DialogContent>
-                      <Box
-                        display="flex"
-                        justifyContent="center"
-                        my={2}
-                        onClick={handleCloseDialoge}
-                      >
-                        <img src={cross1} />
-                      </Box>
-                    </Dialog>
-                  </div>
+                <div
+                  className="p-2"
+                  style={{
+                    backgroundColor: DarkMood === true ? "#000" : "#F4F4F4",
+                    // openDialouge === true ||
+                    // openDLTDialouge === true ||
+                    // openADMINDialouge === true ||
+                    // openDLTuserDialouge === true
+                    //   ? "#000"
+                    //   : "",
+                    border: "1px solid #fff",
+                  }}
+                >
+                  <i
+                    className="bi bi-info-circle-fill"
+                    onClick={handleClickOpen}
+                    style={{
+                      color: DarkMood === true ? "#fff" : "#000",
+                    }}
+                  ></i>
                 </div>
               </div>
             </div>
             {/* //!Announcement */}
-            <div className="row mt-2">
-              <div className="announcement">
+            <div className=" mt-2">
+              <div
+                className="d-flex justify-content-center"
+                style={{
+                  backgroundColor: DarkMood === true ? "#28262B" : "#F4F4F4",
+                }}
+              >
                 <select
-                  className="form-select form-select-sm mycontrol-announce"
-                  style={{ width: "auto" }}
+                  className="form-select form-select-sm "
+                  style={{
+                    width: "auto",
+                    backgroundColor: DarkMood === true ? "#28262B" : "#F4F4F4",
+                    color: DarkMood === true ? "#fff" : "#000",
+                    border: "none",
+                  }}
                   aria-label=".form-select-sm example"
                 >
-                  <option selected>Announcements </option>
-                  <option value={1}>One</option>
+                  <option value="">Announcements </option>
                 </select>
               </div>
             </div>
@@ -902,6 +714,270 @@ function ChatCommunity({ DarkMood }) {
             <Scrollbar
               style={{ width: "auto", maxHeight: matches ? 200 : 450 }}
             >
+              <Dialog
+                p={2}
+                fullWidth={false}
+                fullScreen={false}
+                maxWidth={"md"}
+                // scroll={'body'||'paper'}
+                sx={{
+                  "& .MuiPaper-root.MuiDialog-paper": {
+                    backgroundColor: "rgba(0, 0, 0, 0.3) !important",
+                    backdropFilter: "blur(12px)",
+                  },
+                  "& .MuiDialog-container": {
+                    width: mobileversion ? "109%" : "52% !important",
+                    position: "absolute",
+                    // backgroundColor: "transparent !important",
+                    top: mobileversion ? "410px" : "123px",
+                    left: mobileversion ? "-20px" : "552px",
+                    height: mobileversion ? "49%" : "100% !important",
+                    // "& .MuiPaper-root": {
+                    //   width: "100%",
+                    //   maxWidth: "466px",
+                    // },
+                  },
+                  //   "& .MuiBackdrop-root": {
+                  //     backgroundColor: "transparent !important",
+                  //   },
+                }}
+                open={openDialouge}
+                TransitionComponent={Transition}
+                // keepMounted
+                onClose={handleCloseDialoge}
+                aria-describedby="alert-dialog-slide-description"
+              >
+                <DialogTitle
+                  sx={{
+                    fontWeight: 600,
+                    fontSize: "24px",
+                    display: "flex",
+                    justifyContent: "center",
+                    textAlign: "center",
+                    flexDirection: "column",
+                    color: "#fff",
+                  }}
+                >
+                  Community Guidelines
+                  <Box display="flex" justifyContent="center" my={2}>
+                    <img src={line} />
+                  </Box>
+                </DialogTitle>
+
+                <DialogContent>
+                  <DialogContentText
+                    sx={{
+                      // fontWeight: 500,
+                      fontSize: "15px",
+                      // display: "flex",
+                      textAlign: "center",
+                      color: "#fff",
+                    }}
+                    my={3}
+                  >
+                    Help us keep the community strong. Our community is home for
+                    many different people from all walks of life. Please be
+                    respectful and courteous of other people at all times.
+                  </DialogContentText>
+
+                  <DialogContentText sx={{ backgroundColor: "#3E3B42" }} p={2}>
+                    <Box
+                      mt={2}
+                      display="flex"
+                      alignItems={"center"}
+                      // sx={{
+                      //   backgroundColor: "#454444",
+                      //   borderRadius: "8px",
+                      //   padding: "6px",
+                      // }}
+                    >
+                      <img
+                        src={none}
+                        style={{ width: "20px", height: "20px" }}
+                      />
+                      <Typography
+                        ml={3}
+                        sx={{
+                          // fontWeight: 600,
+                          fontSize: "13px",
+                          color: "#fff",
+                        }}
+                      >
+                        Be respectful to other members of the community
+                      </Typography>
+                    </Box>
+                    <Box
+                      mt={2}
+                      display="flex"
+                      alignItems={"center"}
+                      // p={1}
+                      // sx={{
+                      //   backgroundColor: "#454444",
+                      //   borderRadius: "8px",
+                      //   padding: "6px",
+                      // }}
+                    >
+                      <img
+                        src={none}
+                        style={{ width: "20px", height: "20px" }}
+                      />{" "}
+                      <Typography
+                        ml={3}
+                        sx={{
+                          // fontWeight: 600,
+                          fontSize: "13px",
+                          color: "#fff",
+                        }}
+                      >
+                        No Racial Slurs, Homophobia, Xenophobia
+                      </Typography>
+                    </Box>{" "}
+                    <Box
+                      mt={2}
+                      display="flex"
+                      alignItems={"center"}
+                      // p={1}
+                      // sx={{
+                      //   backgroundColor: "#454444",
+                      //   borderRadius: "8px",
+                      //   padding: "6px",
+                      // }}
+                    >
+                      <img
+                        src={none}
+                        style={{ width: "20px", height: "20px" }}
+                      />{" "}
+                      <Typography
+                        ml={3}
+                        sx={{
+                          // fontWeight: 600,
+                          fontSize: "13px",
+                          color: "#fff",
+                        }}
+                      >
+                        No Unsolicited Advertising
+                      </Typography>
+                    </Box>{" "}
+                    <Box
+                      mt={2}
+                      display="flex"
+                      alignItems={"center"}
+                      // p={1}
+                      // sx={{
+                      //   backgroundColor: "#454444",
+                      //   borderRadius: "8px",
+                      //   padding: "6px",
+                      // }}
+                    >
+                      <img
+                        src={none}
+                        style={{ width: "20px", height: "20px" }}
+                      />{" "}
+                      <Typography
+                        ml={3}
+                        sx={{
+                          // fontWeight: 600,
+                          fontSize: "13px",
+                          color: "#fff",
+                        }}
+                      >
+                        No Trolling for nefarious reasons
+                      </Typography>
+                    </Box>{" "}
+                    <Box
+                      mt={2}
+                      display="flex"
+                      alignItems={"center"}
+                      // p={1}
+                      // sx={{
+                      //   backgroundColor: "#454444",
+                      //   borderRadius: "8px",
+                      //   padding: "6px",
+                      // }}
+                    >
+                      <img
+                        src={none}
+                        style={{ width: "20px", height: "20px" }}
+                      />
+                      <Typography
+                        ml={3}
+                        sx={{
+                          // fontWeight: 600,
+                          fontSize: "13px",
+                          color: "#fff",
+                        }}
+                      >
+                        Do not post links
+                      </Typography>
+                    </Box>
+                    <Box
+                      mt={2}
+                      display="flex"
+                      alignItems={"center"}
+                      // p={1}
+                      // sx={{
+                      //   backgroundColor: "#454444",
+                      //   borderRadius: "8px",
+                      //   padding: "6px",
+                      // }}
+                    >
+                      <img
+                        src={none}
+                        style={{ width: "20px", height: "20px" }}
+                      />{" "}
+                      <Typography
+                        ml={3}
+                        sx={{
+                          // fontWeight: 600,
+                          fontSize: "13px",
+                          color: "#fff",
+                        }}
+                      >
+                        Foster meaningful and genuine interactions
+                      </Typography>
+                    </Box>
+                    <Box
+                      mt={2}
+                      display="flex"
+                      alignItems={"center"}
+                      // p={1}
+                      // sx={{
+                      //   backgroundColor: "#454444",
+                      //   borderRadius: "8px",
+                      //   padding: "6px",
+                      // }}
+                    >
+                      <img
+                        src={none}
+                        style={{ width: "20px", height: "20px" }}
+                      />{" "}
+                      <Typography
+                        ml={3}
+                        sx={{
+                          // fontWeight: 600,
+                          fontSize: "13px",
+                          color: "#fff",
+                        }}
+                      >
+                        Do not make other users uncomfortable by sharing NSFW
+                        content.
+                      </Typography>
+                    </Box>
+                  </DialogContentText>
+                  <Box
+                    display="flex"
+                    justifyContent="center"
+                    my={2}
+                    onClick={handleCloseDialoge}
+                  >
+                    <Box sx={{ border: "1px solid #fff", color: "#fff" }} p={1}>
+                      <CloseIcon sx={{ color: "#fff" }} />
+                      Close
+                    </Box>
+                  </Box>
+                </DialogContent>
+              </Dialog>
+
               <Box sx={{ width: "auto" }}>
                 {chatArray.map((i, index) => {
                   let obj = chatArray.find((obj) => obj.id === i.id);
@@ -921,37 +997,22 @@ function ChatCommunity({ DarkMood }) {
                               md={8}
                               xs={9}
                               display="flex"
+                              flexDirection={
+                                i.status === false ? "row" : "column"
+                              }
                               mt={2}
-                              // sx={{
-                              //   // justifyContent: "space-evenly",
-                              //   alignItems: "end",
-                              // }}
                             >
-                              <Box>
-                                <img src={sender} alt="" srcset="" />
-                              </Box>
-                              <Box
-                                display="flex"
-                                alignSelf={"flex-start"}
-                                flexDirection="column"
-                                className="server-text"
-                                // sx={{
-                                //   backgroundColor: "#000",
-                                //   color: "#fff",
-                                //   borderRadius: "8px 8px 8px 0px",
-                                // }}
-                                p={1}
-                                ml={2}
-                              >
-                                <Box
-                                  sx={{
-                                    color: "grey",
-                                    borderBottom: "1px solid #000",
-                                  }}
-                                >
+                              <Box display="flex" alignItems={"center"}>
+                                <Box>
+                                  <img src={sender} alt="" srcset="" />
+                                </Box>
+                                <Box>
                                   {i.ref !== null && i.status === true && (
                                     <>
-                                      <span>
+                                      <span
+                                        style={{ color: "#0577FD" }}
+                                        className="mx-2"
+                                      >
                                         {" "}
                                         {i.ref.message}
                                         {/* --- {i.ref.username} */}
@@ -961,32 +1022,57 @@ function ChatCommunity({ DarkMood }) {
                                     </>
                                   )}
                                 </Box>
+                              </Box>
 
+                              <Box
+                                display="flex"
+                                flexDirection="column"
+                                className="server-text my-3"
+                                sx={{
+                                  backgroundColor:
+                                    DarkMood === true ? "#2F3237" : "#fff",
+                                  color: DarkMood === true ? "#fff" : "#000",
+                                  borderRadius: "0px 6px 6px 6px",
+                                }}
+                                p={1}
+                                ml={3}
+                              >
                                 {i.status === true
                                   ? i.message
                                   : "This message has been deleted"}
-
-                                {i.count_reaction > 0 && (
-                                  <Box
-                                    display="flex"
-                                    sx={{
-                                      backgroundColor: "grey",
-                                      borderRadius: "15px",
-                                      width: "24%",
-                                      padding: "4px",
-                                    }}
-                                  >
-                                    <img
-                                      src={i.reactions}
-                                      style={{ width: "20px", height: "20px" }}
-                                    />
-                                    {i.count_reaction > 1 && (
-                                      <span style={{ fontSize: "10px" }}>
-                                        {i.count_reaction}
-                                      </span>
-                                    )}
-                                  </Box>
-                                )}
+                                <Box display="flex" justifyContent="end">
+                                  {i.status === false ? (
+                                    ""
+                                  ) : (
+                                    <>
+                                      {i.count_reaction > 0 && (
+                                        <Box
+                                          // display="flex"
+                                          // justifyContent="end"
+                                          sx={{
+                                            backgroundColor: "grey",
+                                            borderRadius: "15px",
+                                            width: "fit-content",
+                                            padding: "4px",
+                                          }}
+                                        >
+                                          <img
+                                            src={i.reactions}
+                                            style={{
+                                              width: "20px",
+                                              height: "20px",
+                                            }}
+                                          />
+                                          {i.count_reaction > 1 && (
+                                            <span style={{ fontSize: "10px" }}>
+                                              {i.count_reaction}
+                                            </span>
+                                          )}
+                                        </Box>
+                                      )}
+                                    </>
+                                  )}
+                                </Box>
                               </Box>
                             </Grid>
                             <Grid item md={4} xs={3}>
@@ -998,7 +1084,11 @@ function ChatCommunity({ DarkMood }) {
                                       flexDirection={"column"}
                                     >
                                       <img
-                                        src={trashicon}
+                                        src={
+                                          DarkMood === true
+                                            ? trashicon
+                                            : lightdelete
+                                        }
                                         style={{
                                           width:
                                             matches || bgmatches
@@ -1029,30 +1119,27 @@ function ChatCommunity({ DarkMood }) {
                                           "& .MuiDialog-container": {
                                             width: mobileversion
                                               ? "451px"
-                                              : "466px !important",
+                                              : "47% !important",
                                             position: "absolute",
                                             backgroundColor:
                                               "#b3b3b314 !important",
                                             backdropFilter: "blur(15px)",
                                             top: mobileversion
                                               ? "440px"
-                                              : "140px",
+                                              : "164px",
                                             left: mobileversion
                                               ? "12px"
-                                              : "759px",
-
-                                            height: mobileversion
-                                              ? "41%"
-                                              : "75% !important",
+                                              : "585px",
+                                            // height: mobileversion ? "41%" : "75% !important",
                                             // borderRadius:"10px",
-                                            "& .MuiPaper-root": {
-                                              width: "100%",
-                                              maxWidth: "467px",
-                                            },
+                                            // "& .MuiPaper-root": {
+                                            //   width: "100%",
+                                            //   maxWidth: "467px",
+                                            // },
                                           },
                                           "& .MuiBackdrop-root": {
-                                            backgroundColor:
-                                              "transparent !important",
+                                            // backgroundColor: "transparent !important",
+                                            display: "none",
                                           },
                                         }}
                                         open={openDLTDialouge}
@@ -1067,8 +1154,18 @@ function ChatCommunity({ DarkMood }) {
                                             fontSize: "24px",
                                             display: "flex",
                                             justifyContent: "center",
+                                            textAlign: "center",
+                                            flexDirection: "column",
+                                            color: "#fff",
                                           }}
                                         >
+                                          <Box
+                                            display="flex"
+                                            justifyContent="center"
+                                            my={2}
+                                          >
+                                            <img src={trashicon} />
+                                          </Box>
                                           Are you sure you want to delete this
                                           comment?
                                         </DialogTitle>
@@ -1083,14 +1180,17 @@ function ChatCommunity({ DarkMood }) {
                                               color: "#000",
                                             }}
                                           >
-                                            <Button
-                                              size="small"
+                                            <Box
+                                              className="btnhover"
                                               sx={{
-                                                backgroundColor: "#454444",
+                                                border: "1px solid #fff",
+
                                                 color: "#fff",
-                                                padding: "2%",
-                                                borderRadius: "8px",
+
+                                                // borderRadius: "8px",
                                               }}
+                                              p={1}
+                                              px={3}
                                               onClick={() => {
                                                 let all_data = chatArray;
                                                 all_data[index] = {
@@ -1106,21 +1206,21 @@ function ChatCommunity({ DarkMood }) {
                                                 handleCloseDLT();
                                               }}
                                             >
-                                              Yes
-                                            </Button>
-                                            <Button
-                                              size="small"
+                                              Delete
+                                            </Box>
+                                            <Box
+                                              className="btnhover"
                                               sx={{
-                                                backgroundColor: "#454444",
+                                                border: "1px solid #fff",
                                                 color: "#fff",
                                                 marginLeft: "5%",
-                                                padding: "2%",
-                                                borderRadius: "8px",
                                               }}
+                                              p={1}
+                                              px={3}
                                               onClick={() => handleCloseDLT()}
                                             >
                                               No
-                                            </Button>
+                                            </Box>
                                           </DialogContentText>
                                         </DialogContent>
                                         <Box
@@ -1134,16 +1234,17 @@ function ChatCommunity({ DarkMood }) {
                                       </Dialog>
                                       <img
                                         src={replyicon}
-                                        style={{
-                                          width:
-                                            matches || bgmatches
-                                              ? "19px"
-                                              : "21px",
-                                          height:
-                                            matches || bgmatches
-                                              ? "19px"
-                                              : "21px",
-                                        }}
+                                        className="my-2"
+                                        // style={{
+                                        //   width:
+                                        //     matches || bgmatches
+                                        //       ? "19px"
+                                        //       : "21px",
+                                        //   height:
+                                        //     matches || bgmatches
+                                        //       ? "19px"
+                                        //       : "21px",
+                                        // }}
                                         onClick={(e) => {
                                           settextField({
                                             ...textField,
@@ -1155,17 +1256,21 @@ function ChatCommunity({ DarkMood }) {
                                         }}
                                       />
                                       <img
-                                        src={Smileicon}
-                                        style={{
-                                          width:
-                                            matches || bgmatches
-                                              ? "21px"
-                                              : "27px",
-                                          height:
-                                            matches || bgmatches
-                                              ? "21px"
-                                              : "27px",
-                                        }}
+                                        src={
+                                          DarkMood === true
+                                            ? Smileicon
+                                            : darksmile
+                                        }
+                                        // style={{
+                                        //   width:
+                                        //     matches || bgmatches
+                                        //       ? "21px"
+                                        //       : "27px",
+                                        //   height:
+                                        //     matches || bgmatches
+                                        //       ? "21px"
+                                        //       : "27px",
+                                        // }}
                                         onClick={() => {
                                           handleOpen();
                                           setCurrentChatIndex(index);
@@ -1174,17 +1279,21 @@ function ChatCommunity({ DarkMood }) {
                                     </Box>
                                     <Box ml={matches || bgmatches ? 0 : 1}>
                                       <img
-                                        src={adminicon}
-                                        style={{
-                                          width:
-                                            matches || bgmatches
-                                              ? "21px"
-                                              : "27px",
-                                          height:
-                                            matches || bgmatches
-                                              ? "21px"
-                                              : "27px",
-                                        }}
+                                        src={
+                                          DarkMood === true ? none : lightnone
+                                        }
+                                        style={
+                                          {
+                                            // width:
+                                            //   matches || bgmatches
+                                            //     ? "21px"
+                                            //     : "27px",
+                                            // height:
+                                            //   matches || bgmatches
+                                            //     ? "21px"
+                                            //     : "27px",
+                                          }
+                                        }
                                         onClick={() => {
                                           handleClickADMIN();
                                         }}
@@ -1219,17 +1328,19 @@ function ChatCommunity({ DarkMood }) {
                                   <Box display={"flex"}>
                                     <Box>
                                       <img
-                                        src={adminicon}
-                                        style={{
-                                          width:
-                                            matches || bgmatches
-                                              ? "21px"
-                                              : "27px",
-                                          height:
-                                            matches || bgmatches
-                                              ? "21px"
-                                              : "27px",
-                                        }}
+                                        src={
+                                          DarkMood === true ? none : lightnone
+                                        }
+                                        // style={{
+                                        //   width:
+                                        //     matches || bgmatches
+                                        //       ? "21px"
+                                        //       : "27px",
+                                        //   height:
+                                        //     matches || bgmatches
+                                        //       ? "21px"
+                                        //       : "27px",
+                                        // }}
                                         onClick={() => {
                                           handleClickADMIN();
                                         }}
@@ -1240,17 +1351,21 @@ function ChatCommunity({ DarkMood }) {
                                       flexDirection={"column"}
                                     >
                                       <img
-                                        src={trashicon}
-                                        style={{
-                                          width:
-                                            matches || bgmatches
-                                              ? "18px"
-                                              : "24px",
-                                          height:
-                                            matches || bgmatches
-                                              ? "18px"
-                                              : "24px",
-                                        }}
+                                        src={
+                                          DarkMood === true
+                                            ? trashicon
+                                            : lightdelete
+                                        }
+                                        // style={{
+                                        //   width:
+                                        //     matches || bgmatches
+                                        //       ? "18px"
+                                        //       : "24px",
+                                        //   height:
+                                        //     matches || bgmatches
+                                        //       ? "18px"
+                                        //       : "24px",
+                                        // }}
                                         onClick={() => {
                                           handleClickDLTuser();
                                         }}
@@ -1268,29 +1383,27 @@ function ChatCommunity({ DarkMood }) {
                                           "& .MuiDialog-container": {
                                             width: mobileversion
                                               ? "451px"
-                                              : "466px !important",
+                                              : "47% !important",
                                             position: "absolute",
                                             backgroundColor:
                                               "#b3b3b314 !important",
                                             backdropFilter: "blur(15px)",
                                             top: mobileversion
                                               ? "440px"
-                                              : "140px",
+                                              : "164px",
                                             left: mobileversion
                                               ? "12px"
-                                              : "759px",
-                                            height: mobileversion
-                                              ? "41%"
-                                              : "75% !important",
+                                              : "585px",
+                                            // height: mobileversion ? "41%" : "75% !important",
                                             // borderRadius:"10px",
-                                            "& .MuiPaper-root": {
-                                              width: "100%",
-                                              maxWidth: "467px",
-                                            },
+                                            // "& .MuiPaper-root": {
+                                            //   width: "100%",
+                                            //   maxWidth: "467px",
+                                            // },
                                           },
                                           "& .MuiBackdrop-root": {
-                                            backgroundColor:
-                                              "transparent !important",
+                                            // backgroundColor: "transparent !important",
+                                            display: "none",
                                           },
                                         }}
                                         open={openDLTuserDialouge}
@@ -1305,11 +1418,22 @@ function ChatCommunity({ DarkMood }) {
                                             fontSize: "24px",
                                             display: "flex",
                                             justifyContent: "center",
+                                            textAlign: "center",
+                                            flexDirection: "column",
+                                            color: "#fff",
                                           }}
                                         >
+                                          <Box
+                                            display="flex"
+                                            justifyContent="center"
+                                            my={2}
+                                          >
+                                            <img src={trashicon} />
+                                          </Box>
                                           Are you sure you want to delete this
                                           comment?
                                         </DialogTitle>
+
                                         <DialogContent>
                                           <DialogContentText
                                             sx={{
@@ -1321,14 +1445,17 @@ function ChatCommunity({ DarkMood }) {
                                               color: "#000",
                                             }}
                                           >
-                                            <Button
-                                              size="small"
+                                            <Box
+                                              className="btnhover"
                                               sx={{
-                                                backgroundColor: "#454444",
+                                                border: "1px solid #fff",
+
                                                 color: "#fff",
-                                                padding: "2%",
-                                                borderRadius: "8px",
+
+                                                // borderRadius: "8px",
                                               }}
+                                              p={1}
+                                              px={3}
                                               onClick={() => {
                                                 let all_data = chatArray;
                                                 all_data[index] = {
@@ -1343,23 +1470,23 @@ function ChatCommunity({ DarkMood }) {
                                                 handleCloseDLTuser();
                                               }}
                                             >
-                                              Yes
-                                            </Button>
-                                            <Button
-                                              size="small"
+                                              Delete
+                                            </Box>
+                                            <Box
+                                              className="btnhover"
                                               sx={{
-                                                backgroundColor: "#454444",
+                                                border: "1px solid #fff",
                                                 color: "#fff",
                                                 marginLeft: "5%",
-                                                padding: "2%",
-                                                borderRadius: "8px",
                                               }}
+                                              p={1}
+                                              px={3}
                                               onClick={() =>
                                                 handleCloseDLTuser()
                                               }
                                             >
                                               No
-                                            </Button>
+                                            </Box>
                                           </DialogContentText>
                                         </DialogContent>
                                         <Box
@@ -1372,17 +1499,18 @@ function ChatCommunity({ DarkMood }) {
                                         </Box>
                                       </Dialog>
                                       <img
+                                        className="my-1"
                                         src={replyicon}
-                                        style={{
-                                          width:
-                                            matches || bgmatches
-                                              ? "19px"
-                                              : "21px",
-                                          height:
-                                            matches || bgmatches
-                                              ? "19px"
-                                              : "21px",
-                                        }}
+                                        // style={{
+                                        //   width:
+                                        //     matches || bgmatches
+                                        //       ? "19px"
+                                        //       : "21px",
+                                        //   height:
+                                        //     matches || bgmatches
+                                        //       ? "19px"
+                                        //       : "21px",
+                                        // }}
                                         onClick={(e) => {
                                           settextField({
                                             ...textField,
@@ -1394,17 +1522,21 @@ function ChatCommunity({ DarkMood }) {
                                         }}
                                       />{" "}
                                       <img
-                                        src={Smileicon}
-                                        style={{
-                                          width:
-                                            matches || bgmatches
-                                              ? "21px"
-                                              : "27px",
-                                          height:
-                                            matches || bgmatches
-                                              ? "21px"
-                                              : "27px",
-                                        }}
+                                        src={
+                                          DarkMood === true
+                                            ? Smileicon
+                                            : darksmile
+                                        }
+                                        // style={{
+                                        //   width:
+                                        //     matches || bgmatches
+                                        //       ? "21px"
+                                        //       : "27px",
+                                        //   height:
+                                        //     matches || bgmatches
+                                        //       ? "21px"
+                                        //       : "27px",
+                                        // }}
                                         onClick={() => {
                                           handleOpen();
                                           setCurrentChatIndex(index);
@@ -1420,10 +1552,20 @@ function ChatCommunity({ DarkMood }) {
                               md={10}
                               xs={9}
                               display="flex"
-                              mt={2}
-                              justifyContent="end"
+                              flexDirection="column-reverse"
+                              alignItems="end"
                             >
-                              <Box className="user-text" p={1} mr={2}>
+                              <Box
+                                className="user-text"
+                                sx={{
+                                  backgroundColor:
+                                    DarkMood === true ? "#fff" : "#000",
+                                  color: DarkMood === true ? "#000" : "#fff",
+                                  borderRadius: "6px 0px 6px 6px",
+                                }}
+                                p={1}
+                                mx={3}
+                              >
                                 {/* //!reply box  */}
 
                                 <Box
@@ -1473,7 +1615,7 @@ function ChatCommunity({ DarkMood }) {
                                   </Box>
                                 )}
                               </Box>
-                              <Box>
+                              <Box my={1}>
                                 <img src={sender} alt="" srcset="" />
                               </Box>
                             </Grid>
@@ -1486,57 +1628,89 @@ function ChatCommunity({ DarkMood }) {
 
                 {/* //!CHAT FOOTER */}
 
-                <Box sx={{ position: "fixed", bottom: 0 }} display="flex">
-                  {textField.ref !== null && (
+                <Box
+                  sx={{
+                    position: "fixed",
+                    bottom: 0,
+                    backgroundColor: DarkMood === true ? "#2F3237" : "#fff",
+                    color: DarkMood === true ? "#fff" : "#000",
+                    width: "97%",
+                    bottom: "1%",
+                  }}
+                  display="flex"
+                  justifyContent={"space-between"}
+                  // flexDirection="column"
+                  alignItems={"center"}
+                >
+                  {/* {textField.ref !== null && (
                     <Box className={"reply-box"}>{textField.ref.message}</Box>
-                  )}
+                  )} */}
 
-                  <Grid container>
-                    <Grid item md={2} xs={2}>
-                      <Box
-                        sx={{ backgroundColor: "#000", borderRadius: "10px" }}
-                        display="flex"
-                        justifyContent={"center"}
-                        alignItems={"center"}
-                        p={1}
-                      >
-                        <img src={gif} />
-                      </Box>
-                    </Grid>
+                  <Box
+                    // sx={{ backgroundColor: "#000", borderRadius: "10px" }}
+                    display="flex"
+                    justifyContent={"center"}
+                    alignItems={"center"}
+                    p={1}
+                  >
+                    <img
+                      src={gif}
+                      style={{
+                        filter:
+                          DarkMood === true
+                            ? ""
+                            : "saturate(519%) contrast(904%) brightness(374%) invert(118%) sepia(50%) hue-rotate(57deg)",
+                      }}
+                    />
+                    <Box sx={{ backgroundColor: "#000" ,height:"24px",width:"1px"}} ml={2}></Box>
+                    <Box
+                      ml={matches ? 1 : 2}
+                      sx={{
+                        display: "flex",
+                        flexDirection: "row",
+                        alignItems: "center",
+                      }}
+                    >
+                      <form action="" onSubmit={(e) => handleChatSubmit(e)}>
+                        <input
+                          className="w-100 p-1"
+                          style={{
+                            backgroundColor:
+                              DarkMood === true ? "#2F3237" : "#fff",
+                            color: DarkMood === true ? "#fff" : "#000",
+                            border: "none",
+                          }}
+                          placeholder="Type message"
+                          value={textField.textarea}
+                          onChange={(e) => {
+                            settextField({
+                              ...textField,
+                              textarea: e.target.value,
+                            });
+                            // setCurrentMessage(e.target.value);
+                          }}
+                        />
+                      </form>
+                    </Box>
+                  </Box>
 
-                    <Grid item md={10} xs={10}>
-                      <Box
-                        ml={matches ? 1 : 2}
-                        sx={{
-                          display: "flex",
-                          flexDirection: "row",
-                          alignItems: "center",
-                        }}
-                      >
-                        <form action="" onSubmit={(e) => handleChatSubmit(e)}>
-                          <input
-                            className="input-chat"
-                            placeholder="Type message"
-                            value={textField.textarea}
-                            onChange={(e) => {
-                              settextField({
-                                ...textField,
-                                textarea: e.target.value,
-                              });
-                              // setCurrentMessage(e.target.value);
-                            }}
-                          />
-                        </form>
-                        <Box
-                          className="snder-btn"
-                          onClick={handleChatSubmit}
-                          // onClick={sendMessage}
-                        >
-                          <img src={sendicon} alt="" />
-                        </Box>
-                      </Box>
-                    </Grid>
-                  </Grid>
+                  <Box
+                    className=""
+                    onClick={handleChatSubmit}
+                    mx={1}
+                    // onClick={sendMessage}
+                  >
+                    <img
+                      src={snd}
+                      alt=""
+                      style={{
+                        filter:
+                          DarkMood === true
+                            ? ""
+                            : "saturate(519%) contrast(904%) brightness(374%) invert(118%) sepia(50%) hue-rotate(57deg)",
+                      }}
+                    />
+                  </Box>
                 </Box>
               </Box>
             </Scrollbar>
@@ -1572,18 +1746,18 @@ function ChatCommunity({ DarkMood }) {
                   boxShadow: "none",
                 },
                 "& .MuiDialog-container": {
-                  width: mobileversion ? "451px" : "466px !important",
+                  width: mobileversion ? "451px" : "47% !important",
                   position: "absolute",
                   backgroundColor: "#b3b3b314 !important",
                   backdropFilter: "blur(15px)",
-                  top: mobileversion ? "440px" : "140px",
-                  left: mobileversion ? "12px" : "759px",
-                  height: mobileversion ? "41%" : "75% !important",
+                  top: mobileversion ? "440px" : "164px",
+                  left: mobileversion ? "12px" : "585px",
+                  // height: mobileversion ? "41%" : "75% !important",
                   // borderRadius:"10px",
-                  "& .MuiPaper-root": {
-                    width: "100%",
-                    maxWidth: "467px",
-                  },
+                  // "& .MuiPaper-root": {
+                  //   width: "100%",
+                  //   maxWidth: "467px",
+                  // },
                 },
                 "& .MuiBackdrop-root": {
                   // backgroundColor: "transparent !important",
@@ -1602,14 +1776,21 @@ function ChatCommunity({ DarkMood }) {
                   fontSize: "24px",
                   display: "flex",
                   justifyContent: "center",
+                  textAlign: "center",
+                  flexDirection: "column",
+                  color: "#fff",
                 }}
               >
+                <Box display="flex" justifyContent="center" my={2}>
+                  <img src={none} />
+                </Box>
                 Are you sure you want to BAN this user?{" "}
               </DialogTitle>
+
               <DialogContent>
                 <DialogContentText
                   sx={{
-                    fontWeight: 500,
+                    fontWeight: 450,
                     fontSize: "15px",
                     display: "flex",
                     justifyContent: "center",
@@ -1617,41 +1798,36 @@ function ChatCommunity({ DarkMood }) {
                     color: "#000",
                   }}
                 >
-                  <Button
-                    size="small"
+                  <Box
+                    className="btnhover"
                     sx={{
-                      backgroundColor: "#454444",
+                      border: "1px solid #fff",
+
                       color: "#fff",
-                      padding: "2%",
-                      borderRadius: "8px",
+
+                      // borderRadius: "8px",
                     }}
+                    p={1}
+                    px={3}
                     onClick={() => handleCloseADMIN()}
                   >
-                    Yes
-                  </Button>
-                  <Button
-                    size="small"
+                    Delete
+                  </Box>
+                  <Box
+                    className="btnhover"
                     sx={{
-                      backgroundColor: "#454444",
+                      border: "1px solid #fff",
                       color: "#fff",
                       marginLeft: "5%",
-                      padding: "2%",
-                      borderRadius: "8px",
                     }}
+                    p={1}
+                    px={3}
                     onClick={() => handleCloseADMIN()}
                   >
                     No
-                  </Button>
+                  </Box>
                 </DialogContentText>
               </DialogContent>
-              <Box
-                display="flex"
-                justifyContent="center"
-                my={2}
-                onClick={handleCloseADMIN}
-              >
-                <img src={cross1} />
-              </Box>
             </Dialog>
           </div>
         </div>
